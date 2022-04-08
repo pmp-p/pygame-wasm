@@ -442,7 +442,7 @@ END: Cython Metadata */
   #define __Pyx_PyFrame_SetLineNumber(frame, lineno) PyFrame_SetLineNumber(frame, lineno)
 #else
   #define __Pyx_PyCode_HasFreeVars(co)  (PyCode_GetNumFree(co) > 0)
-  #define __Pyx_PyFrame_SetLineNumber(frame, lineno)  (frame)->f_lineno = (lineno)
+  #define __Pyx_PyFrame_SetLineNumber(frame, lineno)
 #endif
 #if !CYTHON_FAST_THREAD_STATE || PY_VERSION_HEX < 0x02070000
   #define __Pyx_PyThreadState_Current PyThreadState_GET()
