@@ -221,7 +221,7 @@ PyGame_static_init()
 
 #include "rwobject.c"
 
-#define pgSurface_New(surface) pgSurface_New2((surface), 1)
+#define pgSurface_New(surface) (pgSurfaceObject *)pgSurface_New2((surface), 1)
 #include "image.c"
 
 #include "imageext.c"
@@ -258,8 +258,22 @@ PyGame_static_init()
 
 #include "music.c"
 
-#include "_sdl2/controller.c"
+#include "gfxdraw.c"
 
 #include "alphablit.c"
-
 #include "surface_fill.c"
+#include "pixelarray.c"
+#include "pixelcopy.c"
+#include "newbuffer.c"
+
+
+#include "_sdl2/controller.c"
+#include "_sdl2/touch.c"
+#include "transform.c"
+// that remove some warnings
+#undef MAX
+#undef MIN
+#include "scale2x.c"
+
+
+

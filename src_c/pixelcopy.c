@@ -21,7 +21,7 @@
 */
 
 #include <stddef.h>
-#include "pygame.h"
+
 
 #include "palette.h"
 
@@ -31,19 +31,21 @@
 
 #include <SDL_endian.h>
 
+
 typedef enum {
-    VIEWKIND_RED,
-    VIEWKIND_GREEN,
-    VIEWKIND_BLUE,
-    VIEWKIND_ALPHA,
+    PXC_VIEWKIND_RED,
+    PXC_VIEWKIND_GREEN,
+    PXC_VIEWKIND_BLUE,
+    PXC_VIEWKIND_ALPHA,
     VIEWKIND_COLORKEY,
     VIEWKIND_RGB
 } _pc_view_kind_t;
 
-typedef union {
-    Uint32 value;
-    Uint8 bytes[sizeof(Uint32)];
-} _pc_pixel_t;
+
+
+#if !defined(BUILD_STATIC)
+
+#include "pygame.h"
 
 static int
 _validate_view_format(const char *format)
@@ -104,6 +106,8 @@ _validate_view_format(const char *format)
     return 0;
 }
 
+
+
 static int
 _is_swapped(Py_buffer *view_p)
 {
@@ -120,6 +124,8 @@ _is_swapped(Py_buffer *view_p)
 #endif
     return 0;
 }
+
+
 
 static int
 _view_kind(PyObject *obj, void *view_kind_vptr)
@@ -152,19 +158,19 @@ _view_kind(PyObject *obj, void *view_kind_vptr)
     switch (ch) {
         case 'R':
         case 'r':
-            *view_kind_ptr = VIEWKIND_RED;
+            *view_kind_ptr = PXC_VIEWKIND_RED;
             break;
         case 'G':
         case 'g':
-            *view_kind_ptr = VIEWKIND_GREEN;
+            *view_kind_ptr = PXC_VIEWKIND_GREEN;
             break;
         case 'B':
         case 'b':
-            *view_kind_ptr = VIEWKIND_BLUE;
+            *view_kind_ptr = PXC_VIEWKIND_BLUE;
             break;
         case 'A':
         case 'a':
-            *view_kind_ptr = VIEWKIND_ALPHA;
+            *view_kind_ptr = PXC_VIEWKIND_ALPHA;
             break;
         case 'C':
         case 'c':
@@ -182,6 +188,15 @@ _view_kind(PyObject *obj, void *view_kind_vptr)
     }
     return 1;
 }
+
+#endif // BUILD_STATIC
+
+
+typedef union {
+    Uint32 value;
+    Uint8 bytes[sizeof(Uint32)];
+} _pc_pixel_t;
+
 
 static int
 _copy_mapped(Py_buffer *view_p, SDL_Surface *surf)
@@ -289,18 +304,18 @@ _copy_colorplane(Py_buffer *view_p, SDL_Surface *surf,
     }
     /* Select appropriate color plane element within the pixel */
     switch (view_kind) {
-        case VIEWKIND_RED:
+        case PXC_VIEWKIND_RED:
             element = &r;
             break;
-        case VIEWKIND_GREEN:
+        case PXC_VIEWKIND_GREEN:
             element = &g;
             break;
-        case VIEWKIND_BLUE:
+        case PXC_VIEWKIND_BLUE:
             element = &b;
             break;
-        default: /* VIEWKIND_ALPHA or VIEWKIND_COLORKEY */
+        default: /* PXC_VIEWKIND_ALPHA or VIEWKIND_COLORKEY */
             /* element is unused for VIEWKIND_COLORKEY */
-            assert(view_kind == VIEWKIND_ALPHA ||
+            assert(view_kind == PXC_VIEWKIND_ALPHA ||
                    view_kind == VIEWKIND_COLORKEY);
             element = &a;
     }
@@ -333,7 +348,7 @@ _copy_colorplane(Py_buffer *view_p, SDL_Surface *surf,
         }
     }
     else if ((view_kind != VIEWKIND_COLORKEY) &&
-             (view_kind != VIEWKIND_ALPHA || mode != SDL_BLENDMODE_NONE)) {
+             (view_kind != PXC_VIEWKIND_ALPHA || mode != SDL_BLENDMODE_NONE)) {
         for (x = 0; x < w; ++x) {
             for (y = 0; y < h; ++y) {
                 for (z = 0; z < pixelsize; ++z) {
