@@ -708,8 +708,8 @@ _rwops_from_pystr(PyObject *obj)
             }
             strcpy(extension, ext);
         }
-        Py_DECREF(oencoded);
         rw->hidden.unknown.data1 = (void *)extension;
+        Py_DECREF(oencoded);
         return rw;
     }
 

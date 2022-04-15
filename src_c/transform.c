@@ -91,7 +91,8 @@ _get_factor(PyObject *factorobj, float *x, float *y)
     return 1;
 }
 #if defined(BUILD_STATIC)
-extern int _PgSurface_SrcAlpha(SDL_Surface *surf);
+extern int
+_PgSurface_SrcAlpha(SDL_Surface *surf);
 #else
 static int
 _PgSurface_SrcAlpha(SDL_Surface *surf)

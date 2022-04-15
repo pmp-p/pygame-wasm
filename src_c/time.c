@@ -68,8 +68,9 @@ static PyObject *
 pg_time_autoinit(PyObject *self, PyObject *_null)
 {
 #if defined(__EMSCRIPTEN__)
-    puts( __FILE__
-        ":71+308 TODO: SDL_CreateMutex() is invalid on __EMSCRIPTEN__ sdl2 port");
+    puts(__FILE__
+         ":71+308 TODO: SDL_CreateMutex() is invalid on __EMSCRIPTEN__ sdl2 "
+         "port");
 #else
     /* allocate a mutex for timer data holding struct*/
 
@@ -77,7 +78,6 @@ pg_time_autoinit(PyObject *self, PyObject *_null)
         timermutex = SDL_CreateMutex();
         if (!timermutex)
             return RAISE(pgExc_SDLError, SDL_GetError());
-
     }
 #endif
     Py_RETURN_NONE;

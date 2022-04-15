@@ -22,7 +22,6 @@
 
 #include <stddef.h>
 
-
 #include "palette.h"
 
 #include "pgcompat.h"
@@ -30,7 +29,6 @@
 #include "doc/pixelcopy_doc.h"
 
 #include <SDL_endian.h>
-
 
 typedef enum {
     PXC_VIEWKIND_RED,
@@ -40,8 +38,6 @@ typedef enum {
     VIEWKIND_COLORKEY,
     VIEWKIND_RGB
 } _pc_view_kind_t;
-
-
 
 #if !defined(BUILD_STATIC)
 
@@ -106,8 +102,6 @@ _validate_view_format(const char *format)
     return 0;
 }
 
-
-
 static int
 _is_swapped(Py_buffer *view_p)
 {
@@ -124,8 +118,6 @@ _is_swapped(Py_buffer *view_p)
 #endif
     return 0;
 }
-
-
 
 static int
 _view_kind(PyObject *obj, void *view_kind_vptr)
@@ -189,14 +181,12 @@ _view_kind(PyObject *obj, void *view_kind_vptr)
     return 1;
 }
 
-#endif // BUILD_STATIC
-
+#endif  // BUILD_STATIC
 
 typedef union {
     Uint32 value;
     Uint8 bytes[sizeof(Uint32)];
 } _pc_pixel_t;
-
 
 static int
 _copy_mapped(Py_buffer *view_p, SDL_Surface *surf)
