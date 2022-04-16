@@ -33,17 +33,17 @@ END: Cython Metadata */
     #else
       #define __Pyx_PyFloat_FromString(obj)  PyFloat_FromString(obj, NULL)
     #endif
-    
+
 
     #if PY_MAJOR_VERSION <= 2
     #define PyDict_GetItemWithError _PyDict_GetItemWithError
     #endif
-    
+
 
     #if (PY_VERSION_HEX < 0x030700b1 || (CYTHON_COMPILING_IN_PYPY && PYPY_VERSION_NUM < 0x07030600)) && !defined(PyContextVar_Get)
     #define PyContextVar_Get(var, d, v)         ((d) ?             ((void)(var), Py_INCREF(d), (v)[0] = (d), 0) :             ((v)[0] = NULL, 0)         )
     #endif
-    
+
 #ifndef Py_PYTHON_H
     #error Python headers needed to compile C extensions, please install development version of Python.
 #elif PY_VERSION_HEX < 0x02070000 || (0x03000000 <= PY_VERSION_HEX && PY_VERSION_HEX < 0x03030000)
@@ -1237,8 +1237,8 @@ struct __pyx_opt_args_7cpython_11contextvars_get_value;
 struct __pyx_opt_args_7cpython_11contextvars_get_value_no_default;
 
 /* "cpython/contextvars.pxd":112
- * 
- * 
+ *
+ *
  * cdef inline object get_value(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the default value of the context variable,
@@ -1249,8 +1249,8 @@ struct __pyx_opt_args_7cpython_11contextvars_get_value {
 };
 
 /* "cpython/contextvars.pxd":129
- * 
- * 
+ *
+ *
  * cdef inline object get_value_no_default(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the provided default value if no such value was found.
@@ -1265,10 +1265,10 @@ struct __pyx_opt_args_6pygame_5_sdl2_5video_7Texture_draw;
 struct __pyx_opt_args_6pygame_5_sdl2_5video_5Image_draw;
 
 /* "_sdl2/video.pxd":421
- * 
+ *
  *     cpdef object get_viewport(self)
  *     cpdef object blit(self, object source, Rect dest=*, Rect area=*, int special_flags=*)             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef class Texture:
  */
 struct __pyx_opt_args_6pygame_5_sdl2_5video_8Renderer_blit {
@@ -1280,7 +1280,7 @@ struct __pyx_opt_args_6pygame_5_sdl2_5video_8Renderer_blit {
 
 /* "_sdl2/video.pxd":430
  *     cdef readonly int height
- * 
+ *
  *     cdef draw_internal(self, SDL_Rect *csrcrect, SDL_Rect *cdstrect, float angle=*, SDL_Point *originptr=*,             # <<<<<<<<<<<<<<
  *                        bint flip_x=*, bint flip_y=*)
  *     cpdef void draw(self, srcrect=*, dstrect=*, float angle=*, origin=*,
@@ -1298,7 +1298,7 @@ struct __pyx_opt_args_6pygame_5_sdl2_5video_7Texture_draw_internal {
  *                        bint flip_x=*, bint flip_y=*)
  *     cpdef void draw(self, srcrect=*, dstrect=*, float angle=*, origin=*,             # <<<<<<<<<<<<<<
  *                     bint flip_x=*, bint flip_y=*)
- * 
+ *
  */
 struct __pyx_opt_args_6pygame_5_sdl2_5video_7Texture_draw {
   int __pyx_n;
@@ -1312,7 +1312,7 @@ struct __pyx_opt_args_6pygame_5_sdl2_5video_7Texture_draw {
 
 /* "_sdl2/video.pxd":448
  *     cdef public Rect srcrect
- * 
+ *
  *     cpdef void draw(self, srcrect=*, dstrect=*)             # <<<<<<<<<<<<<<
  */
 struct __pyx_opt_args_6pygame_5_sdl2_5video_5Image_draw {
@@ -1325,10 +1325,10 @@ struct __pyx_opt_args_6pygame_7_sprite_12LayeredDirty_add_internal;
 
 /* "pygame/_sprite.pyx":701
  *         self.add(*sprites, **kwargs)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 struct __pyx_opt_args_6pygame_7_sprite_14LayeredUpdates_add_internal {
   int __pyx_n;
@@ -1337,10 +1337,10 @@ struct __pyx_opt_args_6pygame_7_sprite_14LayeredUpdates_add_internal {
 
 /* "pygame/_sprite.pyx":1063
  *                     setattr(self, key, val)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 struct __pyx_opt_args_6pygame_7_sprite_12LayeredDirty_add_internal {
   int __pyx_n;
@@ -1348,8 +1348,8 @@ struct __pyx_opt_args_6pygame_7_sprite_12LayeredDirty_add_internal {
 };
 
 /* "_sdl2/video.pxd":409
- * 
- * 
+ *
+ *
  * cdef class Window:             # <<<<<<<<<<<<<<
  *     cdef SDL_Window* _win
  *     cdef int _is_borrowed
@@ -1363,7 +1363,7 @@ struct __pyx_obj_6pygame_5_sdl2_5video_Window {
 
 /* "_sdl2/video.pxd":413
  *     cdef int _is_borrowed
- * 
+ *
  * cdef class Renderer:             # <<<<<<<<<<<<<<
  *     cdef SDL_Renderer* _renderer
  *     cdef Color _draw_color
@@ -1381,7 +1381,7 @@ struct __pyx_obj_6pygame_5_sdl2_5video_Renderer {
 
 /* "_sdl2/video.pxd":423
  *     cpdef object blit(self, object source, Rect dest=*, Rect area=*, int special_flags=*)
- * 
+ *
  * cdef class Texture:             # <<<<<<<<<<<<<<
  *     cdef SDL_Texture* _tex
  *     cdef Color _color
@@ -1399,7 +1399,7 @@ struct __pyx_obj_6pygame_5_sdl2_5video_Texture {
 
 /* "_sdl2/video.pxd":435
  *                     bint flip_x=*, bint flip_y=*)
- * 
+ *
  * cdef class Image:             # <<<<<<<<<<<<<<
  *     cdef Color _color
  *     cdef public float angle
@@ -1421,11 +1421,11 @@ struct __pyx_obj_6pygame_5_sdl2_5video_Image {
 
 
 /* "pygame/_sprite.pyx":128
- * 
- * 
+ *
+ *
  * cdef class Sprite:             # <<<<<<<<<<<<<<
  *     """simple base class for visible game objects
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_Sprite {
   PyObject_HEAD
@@ -1439,10 +1439,10 @@ struct __pyx_obj_6pygame_7_sprite_Sprite {
 
 /* "pygame/_sprite.pyx":125
  * from ._sdl2.video cimport *
- * 
+ *
  * cdef class AbstractGroup             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_AbstractGroup {
   PyObject_HEAD
@@ -1454,10 +1454,10 @@ struct __pyx_obj_6pygame_7_sprite_AbstractGroup {
 
 /* "pygame/_sprite.pyx":578
  *         return "<%s(%d sprites)>" % (self.__class__.__name__, len(self))
- * 
+ *
  * cdef class Group(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """container class for many Sprites
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_Group {
   struct __pyx_obj_6pygame_7_sprite_AbstractGroup __pyx_base;
@@ -1466,10 +1466,10 @@ struct __pyx_obj_6pygame_7_sprite_Group {
 
 /* "pygame/_sprite.pyx":604
  * RenderClear = Group
- * 
+ *
  * cdef class RenderUpdates(Group):             # <<<<<<<<<<<<<<
  *     """Group class that tracks dirty updates
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_RenderUpdates {
   struct __pyx_obj_6pygame_7_sprite_Group __pyx_base;
@@ -1478,10 +1478,10 @@ struct __pyx_obj_6pygame_7_sprite_RenderUpdates {
 
 /* "pygame/_sprite.pyx":633
  *        return dirty
- * 
+ *
  * cdef class OrderedUpdates(RenderUpdates):             # <<<<<<<<<<<<<<
  *     """RenderUpdates class that draws Sprites in order of addition
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_OrderedUpdates {
   struct __pyx_obj_6pygame_7_sprite_RenderUpdates __pyx_base;
@@ -1490,11 +1490,11 @@ struct __pyx_obj_6pygame_7_sprite_OrderedUpdates {
 
 
 /* "pygame/_sprite.pyx":663
- * 
- * 
+ *
+ *
  * cdef class LayeredUpdates(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """LayeredUpdates Group handles layers, which are drawn like OrderedUpdates
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_LayeredUpdates {
   struct __pyx_obj_6pygame_7_sprite_AbstractGroup __pyx_base;
@@ -1505,11 +1505,11 @@ struct __pyx_obj_6pygame_7_sprite_LayeredUpdates {
 
 
 /* "pygame/_sprite.pyx":1004
- * 
- * 
+ *
+ *
  * cdef class LayeredDirty(LayeredUpdates):             # <<<<<<<<<<<<<<
  *     """LayeredDirty Group is for DirtySprites; subclasses LayeredUpdates
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_LayeredDirty {
   struct __pyx_obj_6pygame_7_sprite_LayeredUpdates __pyx_base;
@@ -1521,11 +1521,11 @@ struct __pyx_obj_6pygame_7_sprite_LayeredDirty {
 
 
 /* "pygame/_sprite.pyx":1293
- * 
- * 
+ *
+ *
  * cdef class GroupSingle(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """A group container that holds a single most recent item.
- * 
+ *
  */
 struct __pyx_obj_6pygame_7_sprite_GroupSingle {
   struct __pyx_obj_6pygame_7_sprite_AbstractGroup __pyx_base;
@@ -1536,7 +1536,7 @@ struct __pyx_obj_6pygame_7_sprite_GroupSingle {
 
 /* "_sdl2/video.pxd":413
  *     cdef int _is_borrowed
- * 
+ *
  * cdef class Renderer:             # <<<<<<<<<<<<<<
  *     cdef SDL_Renderer* _renderer
  *     cdef Color _draw_color
@@ -1551,7 +1551,7 @@ static struct __pyx_vtabstruct_6pygame_5_sdl2_5video_Renderer *__pyx_vtabptr_6py
 
 /* "_sdl2/video.pxd":423
  *     cpdef object blit(self, object source, Rect dest=*, Rect area=*, int special_flags=*)
- * 
+ *
  * cdef class Texture:             # <<<<<<<<<<<<<<
  *     cdef SDL_Texture* _tex
  *     cdef Color _color
@@ -1566,7 +1566,7 @@ static struct __pyx_vtabstruct_6pygame_5_sdl2_5video_Texture *__pyx_vtabptr_6pyg
 
 /* "_sdl2/video.pxd":435
  *                     bint flip_x=*, bint flip_y=*)
- * 
+ *
  * cdef class Image:             # <<<<<<<<<<<<<<
  *     cdef Color _color
  *     cdef public float angle
@@ -1579,11 +1579,11 @@ static struct __pyx_vtabstruct_6pygame_5_sdl2_5video_Image *__pyx_vtabptr_6pygam
 
 
 /* "pygame/_sprite.pyx":315
- * 
- * 
+ *
+ *
  * cdef class AbstractGroup:             # <<<<<<<<<<<<<<
  *     """base class for containers of sprites
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup {
@@ -1596,11 +1596,11 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *__pyx_vtabptr_6py
 
 
 /* "pygame/_sprite.pyx":128
- * 
- * 
+ *
+ *
  * cdef class Sprite:             # <<<<<<<<<<<<<<
  *     """simple base class for visible game objects
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_Sprite {
@@ -1612,10 +1612,10 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_Sprite *__pyx_vtabptr_6pygame_7_
 
 /* "pygame/_sprite.pyx":578
  *         return "<%s(%d sprites)>" % (self.__class__.__name__, len(self))
- * 
+ *
  * cdef class Group(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """container class for many Sprites
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_Group {
@@ -1626,10 +1626,10 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_Group *__pyx_vtabptr_6pygame_7_s
 
 /* "pygame/_sprite.pyx":604
  * RenderClear = Group
- * 
+ *
  * cdef class RenderUpdates(Group):             # <<<<<<<<<<<<<<
  *     """Group class that tracks dirty updates
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_RenderUpdates {
@@ -1640,10 +1640,10 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_RenderUpdates *__pyx_vtabptr_6py
 
 /* "pygame/_sprite.pyx":633
  *        return dirty
- * 
+ *
  * cdef class OrderedUpdates(RenderUpdates):             # <<<<<<<<<<<<<<
  *     """RenderUpdates class that draws Sprites in order of addition
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_OrderedUpdates {
@@ -1653,11 +1653,11 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_OrderedUpdates *__pyx_vtabptr_6p
 
 
 /* "pygame/_sprite.pyx":663
- * 
- * 
+ *
+ *
  * cdef class LayeredUpdates(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """LayeredUpdates Group handles layers, which are drawn like OrderedUpdates
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates {
@@ -1668,11 +1668,11 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *__pyx_vtabptr_6p
 
 
 /* "pygame/_sprite.pyx":1004
- * 
- * 
+ *
+ *
  * cdef class LayeredDirty(LayeredUpdates):             # <<<<<<<<<<<<<<
  *     """LayeredDirty Group is for DirtySprites; subclasses LayeredUpdates
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_LayeredDirty {
@@ -1682,11 +1682,11 @@ static struct __pyx_vtabstruct_6pygame_7_sprite_LayeredDirty *__pyx_vtabptr_6pyg
 
 
 /* "pygame/_sprite.pyx":1293
- * 
- * 
+ *
+ *
  * cdef class GroupSingle(AbstractGroup):             # <<<<<<<<<<<<<<
  *     """A group container that holds a single most recent item.
- * 
+ *
  */
 
 struct __pyx_vtabstruct_6pygame_7_sprite_GroupSingle {
@@ -5851,12 +5851,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
  * # with the hasattr function.
  * if 'callable' not in dir(__builtins__):
  *     callable = lambda obj: hasattr(obj, '__call__')             # <<<<<<<<<<<<<<
- * 
+ *
  * # Don't depend on pygame.mask if it's not there...
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12lambda(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12lambda(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5864,7 +5864,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12lambda = {"lambda", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12lambda, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_12lambda(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12lambda(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5960,7 +5960,7 @@ static PyObject *__pyx_lambda_funcdef_6pygame_7_sprite_lambda(CYTHON_UNUSED PyOb
 
 /* "pygame/_sprite.pyx":148
  *     cdef dict __dict__
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self.__dict__ = {}
  *         self.__g = {} # The groups the sprite is in
@@ -5994,11 +5994,11 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite___cinit__(struct __pyx_obj_6pygame_
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pygame/_sprite.pyx":149
- * 
+ *
  *     def __cinit__(self):
  *         self.__dict__ = {}             # <<<<<<<<<<<<<<
  *         self.__g = {} # The groups the sprite is in
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -6012,7 +6012,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite___cinit__(struct __pyx_obj_6pygame_
  *     def __cinit__(self):
  *         self.__dict__ = {}
  *         self.__g = {} # The groups the sprite is in             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, *groups):
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
@@ -6025,7 +6025,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite___cinit__(struct __pyx_obj_6pygame_
 
   /* "pygame/_sprite.pyx":148
  *     cdef dict __dict__
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self.__dict__ = {}
  *         self.__g = {} # The groups the sprite is in
@@ -6045,7 +6045,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite___cinit__(struct __pyx_obj_6pygame_
 
 /* "pygame/_sprite.pyx":152
  *         self.__g = {} # The groups the sprite is in
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
  *         if groups:
  *             self.add(*groups)
@@ -6083,11 +6083,11 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_2__init__(struct __pyx_obj_6pygame_
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":153
- * 
+ *
  *     def __init__(self, *groups):
  *         if groups:             # <<<<<<<<<<<<<<
  *             self.add(*groups)
- * 
+ *
  */
   __pyx_t_1 = (PyTuple_GET_SIZE(__pyx_v_groups) != 0);
   if (__pyx_t_1) {
@@ -6096,7 +6096,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_2__init__(struct __pyx_obj_6pygame_
  *     def __init__(self, *groups):
  *         if groups:
  *             self.add(*groups)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def add(self, *groups):
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
@@ -6107,17 +6107,17 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_2__init__(struct __pyx_obj_6pygame_
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "pygame/_sprite.pyx":153
- * 
+ *
  *     def __init__(self, *groups):
  *         if groups:             # <<<<<<<<<<<<<<
  *             self.add(*groups)
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":152
  *         self.__g = {} # The groups the sprite is in
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
  *         if groups:
  *             self.add(*groups)
@@ -6138,10 +6138,10 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_2__init__(struct __pyx_obj_6pygame_
 
 /* "pygame/_sprite.pyx":156
  *             self.add(*groups)
- * 
+ *
  *     def add(self, *groups):             # <<<<<<<<<<<<<<
  *         """add the sprite to groups
- * 
+ *
  */
 
 /* Python wrapper */
@@ -6185,7 +6185,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_4add(struct __pyx_obj_6pygame
   __Pyx_RefNannySetupContext("add", 0);
 
   /* "pygame/_sprite.pyx":165
- * 
+ *
  *         """
  *         has = self.__g.__contains__             # <<<<<<<<<<<<<<
  *         for group in groups:
@@ -6300,7 +6300,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_4add(struct __pyx_obj_6pygame
  *                     self.add_internal(<AbstractGroup>group)
  *             else:
  *                 self.add(*group)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def remove(self, *groups):
  */
     /*else*/ {
@@ -6328,10 +6328,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_4add(struct __pyx_obj_6pygame
 
   /* "pygame/_sprite.pyx":156
  *             self.add(*groups)
- * 
+ *
  *     def add(self, *groups):             # <<<<<<<<<<<<<<
  *         """add the sprite to groups
- * 
+ *
  */
 
   /* function exit code */
@@ -6354,10 +6354,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_4add(struct __pyx_obj_6pygame
 
 /* "pygame/_sprite.pyx":174
  *                 self.add(*group)
- * 
+ *
  *     def remove(self, *groups):             # <<<<<<<<<<<<<<
  *         """remove the sprite from groups
- * 
+ *
  */
 
 /* Python wrapper */
@@ -6401,7 +6401,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_6remove(struct __pyx_obj_6pyg
   __Pyx_RefNannySetupContext("remove", 0);
 
   /* "pygame/_sprite.pyx":183
- * 
+ *
  *         """
  *         has = self.__g.__contains__             # <<<<<<<<<<<<<<
  *         for group in groups:
@@ -6537,7 +6537,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_6remove(struct __pyx_obj_6pyg
  *                     self.remove_internal(<AbstractGroup>group)
  *             else:
  *                 self.remove(*group)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, group):
  */
     /*else*/ {
@@ -6565,10 +6565,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_6remove(struct __pyx_obj_6pyg
 
   /* "pygame/_sprite.pyx":174
  *                 self.add(*group)
- * 
+ *
  *     def remove(self, *groups):             # <<<<<<<<<<<<<<
  *         """remove the sprite from groups
- * 
+ *
  */
 
   /* function exit code */
@@ -6591,13 +6591,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_6remove(struct __pyx_obj_6pyg
 
 /* "pygame/_sprite.pyx":192
  *                 self.remove(*group)
- * 
+ *
  *     cpdef void add_internal(self, group):             # <<<<<<<<<<<<<<
  *         self.__g[group] = 0
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6671,10 +6671,10 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_add_internal(struct __pyx_obj_6pyga
   }
 
   /* "pygame/_sprite.pyx":193
- * 
+ *
  *     cpdef void add_internal(self, group):
  *         self.__g[group] = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void remove_internal(self, group):
  */
   if (unlikely(__pyx_v_self->_Sprite__g == Py_None)) {
@@ -6685,10 +6685,10 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_add_internal(struct __pyx_obj_6pyga
 
   /* "pygame/_sprite.pyx":192
  *                 self.remove(*group)
- * 
+ *
  *     cpdef void add_internal(self, group):             # <<<<<<<<<<<<<<
  *         self.__g[group] = 0
- * 
+ *
  */
 
   /* function exit code */
@@ -6704,7 +6704,7 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_add_internal(struct __pyx_obj_6pyga
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6712,7 +6712,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_9add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_9add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6806,13 +6806,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_8add_internal(struct __pyx_ob
 
 /* "pygame/_sprite.pyx":195
  *         self.__g[group] = 0
- * 
+ *
  *     cpdef void remove_internal(self, group):             # <<<<<<<<<<<<<<
  *         del self.__g[group]
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6886,10 +6886,10 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_remove_internal(struct __pyx_obj_6p
   }
 
   /* "pygame/_sprite.pyx":196
- * 
+ *
  *     cpdef void remove_internal(self, group):
  *         del self.__g[group]             # <<<<<<<<<<<<<<
- * 
+ *
  *     def update(self, *args, **kwargs):
  */
   if (unlikely(__pyx_v_self->_Sprite__g == Py_None)) {
@@ -6900,10 +6900,10 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_remove_internal(struct __pyx_obj_6p
 
   /* "pygame/_sprite.pyx":195
  *         self.__g[group] = 0
- * 
+ *
  *     cpdef void remove_internal(self, group):             # <<<<<<<<<<<<<<
  *         del self.__g[group]
- * 
+ *
  */
 
   /* function exit code */
@@ -6919,7 +6919,7 @@ static void __pyx_f_6pygame_7_sprite_6Sprite_remove_internal(struct __pyx_obj_6p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6927,7 +6927,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_11remove_internal = {"remove_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_11remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7021,10 +7021,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_10remove_internal(struct __py
 
 /* "pygame/_sprite.pyx":198
  *         del self.__g[group]
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """method to control sprite behavior
- * 
+ *
  */
 
 /* Python wrapper */
@@ -7065,14 +7065,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_12update(CYTHON_UNUSED struct
 
 /* "pygame/_sprite.pyx":213
  *         pass
- * 
+ *
  *     def kill(self):             # <<<<<<<<<<<<<<
  *         """remove the Sprite from all Groups
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_15kill(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_15kill(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7081,7 +7081,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_6Sprite_14kill, "remove the Sprite from all Groups\n\n        Sprite.kill(): return None\n\n        The Sprite is removed from all the Groups that contain it. This won't\n        change anything about the state of the Sprite. It is possible to\n        continue to use the Sprite after this method has been called, including\n        adding it to Groups.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_15kill = {"kill", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_15kill, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_6Sprite_14kill};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_15kill(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_15kill(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7124,7 +7124,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_14kill(struct __pyx_obj_6pyga
   __Pyx_RefNannySetupContext("kill", 0);
 
   /* "pygame/_sprite.pyx":224
- * 
+ *
  *         """
  *         for c in self.__g:             # <<<<<<<<<<<<<<
  *             c.remove_internal(self)
@@ -7153,7 +7153,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_14kill(struct __pyx_obj_6pyga
  *         for c in self.__g:
  *             c.remove_internal(self)             # <<<<<<<<<<<<<<
  *         self.__g.clear()
- * 
+ *
  */
     __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_c, __pyx_n_s_remove_internal); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 225, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -7185,7 +7185,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_14kill(struct __pyx_obj_6pyga
  *         for c in self.__g:
  *             c.remove_internal(self)
  *         self.__g.clear()             # <<<<<<<<<<<<<<
- * 
+ *
  *     def groups(self):
  */
   if (unlikely(__pyx_v_self->_Sprite__g == Py_None)) {
@@ -7196,10 +7196,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_14kill(struct __pyx_obj_6pyga
 
   /* "pygame/_sprite.pyx":213
  *         pass
- * 
+ *
  *     def kill(self):             # <<<<<<<<<<<<<<
  *         """remove the Sprite from all Groups
- * 
+ *
  */
 
   /* function exit code */
@@ -7221,14 +7221,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_14kill(struct __pyx_obj_6pyga
 
 /* "pygame/_sprite.pyx":228
  *         self.__g.clear()
- * 
+ *
  *     def groups(self):             # <<<<<<<<<<<<<<
  *         """list of Groups that contain this Sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_17groups(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_17groups(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7237,7 +7237,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_6Sprite_16groups, "list of Groups that contain this Sprite\n\n        Sprite.groups(): return group_list\n\n        Returns a list of all the Groups that contain this Sprite.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_17groups = {"groups", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_17groups, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_6Sprite_16groups};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_17groups(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_17groups(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7271,10 +7271,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_16groups(struct __pyx_obj_6py
   __Pyx_RefNannySetupContext("groups", 0);
 
   /* "pygame/_sprite.pyx":236
- * 
+ *
  *         """
  *         return list(self.__g)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def alive(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -7286,10 +7286,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_16groups(struct __pyx_obj_6py
 
   /* "pygame/_sprite.pyx":228
  *         self.__g.clear()
- * 
+ *
  *     def groups(self):             # <<<<<<<<<<<<<<
  *         """list of Groups that contain this Sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -7305,14 +7305,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_16groups(struct __pyx_obj_6py
 
 /* "pygame/_sprite.pyx":238
  *         return list(self.__g)
- * 
+ *
  *     def alive(self):             # <<<<<<<<<<<<<<
  *         """does the sprite belong to any groups
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_19alive(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_19alive(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7321,7 +7321,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_6Sprite_18alive, "does the sprite belong to any groups\n\n        Sprite.alive(): return bool\n\n        Returns True when the Sprite belongs to one or more Groups.\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_19alive = {"alive", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_19alive, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_6Sprite_18alive};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_19alive(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_19alive(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7361,7 +7361,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_18alive(struct __pyx_obj_6pyg
  *         Returns True when the Sprite belongs to one or more Groups.
  *         """
  *         return truth(self.__g)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __repr__(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -7393,10 +7393,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_18alive(struct __pyx_obj_6pyg
 
   /* "pygame/_sprite.pyx":238
  *         return list(self.__g)
- * 
+ *
  *     def alive(self):             # <<<<<<<<<<<<<<
  *         """does the sprite belong to any groups
- * 
+ *
  */
 
   /* function exit code */
@@ -7414,10 +7414,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_18alive(struct __pyx_obj_6pyg
 
 /* "pygame/_sprite.pyx":247
  *         return truth(self.__g)
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s sprite(in %d groups)>" % (self.__class__.__name__, len(self.__g))
- * 
+ *
  */
 
 /* Python wrapper */
@@ -7447,11 +7447,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_20__repr__(struct __pyx_obj_6
   __Pyx_RefNannySetupContext("__repr__", 0);
 
   /* "pygame/_sprite.pyx":248
- * 
+ *
  *     def __repr__(self):
  *         return "<%s sprite(in %d groups)>" % (self.__class__.__name__, len(self.__g))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_class); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 248, __pyx_L1_error)
@@ -7486,10 +7486,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_20__repr__(struct __pyx_obj_6
 
   /* "pygame/_sprite.pyx":247
  *         return truth(self.__g)
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s sprite(in %d groups)>" % (self.__class__.__name__, len(self.__g))
- * 
+ *
  */
 
   /* function exit code */
@@ -7507,7 +7507,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_20__repr__(struct __pyx_obj_6
 
 /* "pygame/_sprite.pyx":143
  *     """
- * 
+ *
  *     cdef public dict __g             # <<<<<<<<<<<<<<
  *     cdef public object image
  *     cdef public Rect rect
@@ -7617,7 +7617,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_10_Sprite__g_4__del__(struct __pyx_
 }
 
 /* "pygame/_sprite.pyx":144
- * 
+ *
  *     cdef public dict __g
  *     cdef public object image             # <<<<<<<<<<<<<<
  *     cdef public Rect rect
@@ -7719,7 +7719,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_5image_4__del__(struct __pyx_obj_6p
  *     cdef public object image
  *     cdef public Rect rect             # <<<<<<<<<<<<<<
  *     cdef dict __dict__
- * 
+ *
  */
 
 /* Python wrapper */
@@ -7832,7 +7832,7 @@ static int __pyx_pf_6pygame_7_sprite_6Sprite_4rect_4__del__(struct __pyx_obj_6py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_23__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_23__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7840,7 +7840,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_23__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_23__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_23__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_23__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7904,7 +7904,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_22__reduce_cython__(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_25__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_25__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7912,7 +7912,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_6Sprite_25__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_6Sprite_25__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_25__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_6Sprite_25__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8012,14 +8012,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6Sprite_24__setstate_cython__(CYTHON_
 
 /* "pygame/_sprite.pyx":304
  *         return self._visible
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),             # <<<<<<<<<<<<<<
  *                        lambda self, value: self._set_visible(value),
  *                        doc="you can make this sprite disappear without "
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_8lambda1(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_8lambda1(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8027,7 +8027,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_8lambda1 = {"lambda1", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_8lambda1, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_8lambda1(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_8lambda1(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8145,7 +8145,7 @@ static PyObject *__pyx_lambda_funcdef_6pygame_7_sprite_11DirtySprite_lambda1(CYT
 }
 
 /* "pygame/_sprite.pyx":305
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),
  *                        lambda self, value: self._set_visible(value),             # <<<<<<<<<<<<<<
  *                        doc="you can make this sprite disappear without "
@@ -8153,7 +8153,7 @@ static PyObject *__pyx_lambda_funcdef_6pygame_7_sprite_11DirtySprite_lambda1(CYT
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_9lambda2(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_9lambda2(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8161,7 +8161,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_9lambda2 = {"lambda2", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_9lambda2, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_9lambda2(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_9lambda2(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8292,14 +8292,14 @@ static PyObject *__pyx_lambda_funcdef_6pygame_7_sprite_11DirtySprite_lambda2(CYT
 
 /* "pygame/_sprite.pyx":283
  *     """
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.dirty = 1
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8307,7 +8307,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_1__init__ = {"__init__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8396,7 +8396,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
 
   /* "pygame/_sprite.pyx":285
  *     def __init__(self, *groups):
- * 
+ *
  *         self.dirty = 1             # <<<<<<<<<<<<<<
  *         self.blendmode = 0  # pygame 1.8, referred to as special_flags in
  *                             # the documentation of Surface.blit
@@ -8404,7 +8404,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dirty, __pyx_int_1) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":286
- * 
+ *
  *         self.dirty = 1
  *         self.blendmode = 0  # pygame 1.8, referred to as special_flags in             # <<<<<<<<<<<<<<
  *                             # the documentation of Surface.blit
@@ -8438,7 +8438,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
  *                                                     # initialized differently.
  *         self.source_rect = None             # <<<<<<<<<<<<<<
  *         Sprite.__init__(self, *groups)
- * 
+ *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_source_rect, Py_None) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
 
@@ -8446,7 +8446,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
  *                                                     # initialized differently.
  *         self.source_rect = None
  *         Sprite.__init__(self, *groups)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _set_visible(self, val):
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6pygame_7_sprite_Sprite), __pyx_n_s_init); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
@@ -8467,9 +8467,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
 
   /* "pygame/_sprite.pyx":283
  *     """
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.dirty = 1
  */
 
@@ -8490,14 +8490,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite___init__(CYTHON_UNUSED 
 
 /* "pygame/_sprite.pyx":294
  *         Sprite.__init__(self, *groups)
- * 
+ *
  *     def _set_visible(self, val):             # <<<<<<<<<<<<<<
  *         """set the visible value (0 or 1) and makes the sprite dirty"""
  *         self._visible = val
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_3_set_visible(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_3_set_visible(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8506,7 +8506,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_11DirtySprite_2_set_visible, "set the visible value (0 or 1) and makes the sprite dirty");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_3_set_visible = {"_set_visible", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_3_set_visible, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_11DirtySprite_2_set_visible};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_3_set_visible(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_3_set_visible(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8609,7 +8609,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_2_set_visible(CYTHON_UN
  *         self._visible = val
  *         if self.dirty < 2:             # <<<<<<<<<<<<<<
  *             self.dirty = 1
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dirty); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8623,7 +8623,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_2_set_visible(CYTHON_UN
  *         self._visible = val
  *         if self.dirty < 2:
  *             self.dirty = 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _get_visible(self):
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dirty, __pyx_int_1) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
@@ -8633,13 +8633,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_2_set_visible(CYTHON_UN
  *         self._visible = val
  *         if self.dirty < 2:             # <<<<<<<<<<<<<<
  *             self.dirty = 1
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":294
  *         Sprite.__init__(self, *groups)
- * 
+ *
  *     def _set_visible(self, val):             # <<<<<<<<<<<<<<
  *         """set the visible value (0 or 1) and makes the sprite dirty"""
  *         self._visible = val
@@ -8661,14 +8661,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_2_set_visible(CYTHON_UN
 
 /* "pygame/_sprite.pyx":300
  *             self.dirty = 1
- * 
+ *
  *     def _get_visible(self):             # <<<<<<<<<<<<<<
  *         """return the visible value of that sprite"""
  *         return self._visible
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_5_get_visible(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_5_get_visible(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8677,7 +8677,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_11DirtySprite_4_get_visible, "return the visible value of that sprite");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_5_get_visible = {"_get_visible", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_5_get_visible, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_11DirtySprite_4_get_visible};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_5_get_visible(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_5_get_visible(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8756,7 +8756,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_4_get_visible(CYTHON_UN
  *     def _get_visible(self):
  *         """return the visible value of that sprite"""
  *         return self._visible             # <<<<<<<<<<<<<<
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),
  */
   __Pyx_XDECREF(__pyx_r);
@@ -8768,7 +8768,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_4_get_visible(CYTHON_UN
 
   /* "pygame/_sprite.pyx":300
  *             self.dirty = 1
- * 
+ *
  *     def _get_visible(self):             # <<<<<<<<<<<<<<
  *         """return the visible value of that sprite"""
  *         return self._visible
@@ -8787,14 +8787,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_4_get_visible(CYTHON_UN
 
 /* "pygame/_sprite.pyx":310
  *                            "assign 0 for invisible and 1 for visible")
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s DirtySprite(in %d groups)>" % \
  *             (self.__class__.__name__, len(self.groups()))
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_7__repr__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_7__repr__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8802,7 +8802,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11DirtySprite_7__repr__ = {"__repr__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11DirtySprite_7__repr__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_7__repr__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11DirtySprite_7__repr__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8883,11 +8883,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_6__repr__(CYTHON_UNUSED
   __Pyx_RefNannySetupContext("__repr__", 0);
 
   /* "pygame/_sprite.pyx":311
- * 
+ *
  *     def __repr__(self):
  *         return "<%s DirtySprite(in %d groups)>" % \             # <<<<<<<<<<<<<<
  *             (self.__class__.__name__, len(self.groups()))
- * 
+ *
  */
   __Pyx_XDECREF(__pyx_r);
 
@@ -8895,8 +8895,8 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_6__repr__(CYTHON_UNUSED
  *     def __repr__(self):
  *         return "<%s DirtySprite(in %d groups)>" % \
  *             (self.__class__.__name__, len(self.groups()))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_class); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8939,11 +8939,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_6__repr__(CYTHON_UNUSED
   __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":311
- * 
+ *
  *     def __repr__(self):
  *         return "<%s DirtySprite(in %d groups)>" % \             # <<<<<<<<<<<<<<
  *             (self.__class__.__name__, len(self.groups()))
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_s_DirtySprite_in_d_groups, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8954,7 +8954,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_6__repr__(CYTHON_UNUSED
 
   /* "pygame/_sprite.pyx":310
  *                            "assign 0 for invisible and 1 for visible")
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s DirtySprite(in %d groups)>" % \
  *             (self.__class__.__name__, len(self.groups()))
@@ -8976,7 +8976,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11DirtySprite_6__repr__(CYTHON_UNUSED
 
 /* "pygame/_sprite.pyx":333
  *     cdef public list lostsprites
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self.spritedict = {}
  *         self.lostsprites = []
@@ -9010,11 +9010,11 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup___cinit__(struct __pyx_obj_
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pygame/_sprite.pyx":334
- * 
+ *
  *     def __cinit__(self):
  *         self.spritedict = {}             # <<<<<<<<<<<<<<
  *         self.lostsprites = []
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 334, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -9028,7 +9028,7 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup___cinit__(struct __pyx_obj_
  *     def __cinit__(self):
  *         self.spritedict = {}
  *         self.lostsprites = []             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef list sprites(self):
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
@@ -9041,7 +9041,7 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup___cinit__(struct __pyx_obj_
 
   /* "pygame/_sprite.pyx":333
  *     cdef public list lostsprites
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self.spritedict = {}
  *         self.lostsprites = []
@@ -9061,13 +9061,13 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup___cinit__(struct __pyx_obj_
 
 /* "pygame/_sprite.pyx":337
  *         self.lostsprites = []
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """get a list of sprites in the group
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9145,10 +9145,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_13AbstractGroup_sprites(struct __pyx_o
   }
 
   /* "pygame/_sprite.pyx":348
- * 
+ *
  *         """
  *         return list(self.spritedict)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -9160,10 +9160,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_13AbstractGroup_sprites(struct __pyx_o
 
   /* "pygame/_sprite.pyx":337
  *         self.lostsprites = []
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """get a list of sprites in the group
- * 
+ *
  */
 
   /* function exit code */
@@ -9181,7 +9181,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_13AbstractGroup_sprites(struct __pyx_o
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9190,7 +9190,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_13AbstractGroup_2sprites, "get a list of sprites in the group\n\n        Group.sprite(): return list\n\n        Returns an object that can be looped over with a 'for' loop. (For now,\n        it is always a list, but this could change in a future version of\n        pygame.) Alternatively, you can get the same information by iterating\n        directly over the sprite group, e.g. 'for sprite in group'.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_3sprites = {"sprites", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_13AbstractGroup_2sprites};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9242,13 +9242,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_2sprites(struct __pyx
 
 /* "pygame/_sprite.pyx":350
  *         return list(self.spritedict)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         self.spritedict[sprite] = 0
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9322,10 +9322,10 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_add_internal(struct __pyx_o
   }
 
   /* "pygame/_sprite.pyx":351
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  *         self.spritedict[sprite] = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  */
   if (unlikely(__pyx_v_self->spritedict == Py_None)) {
@@ -9336,10 +9336,10 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_add_internal(struct __pyx_o
 
   /* "pygame/_sprite.pyx":350
  *         return list(self.spritedict)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         self.spritedict[sprite] = 0
- * 
+ *
  */
 
   /* function exit code */
@@ -9355,7 +9355,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_add_internal(struct __pyx_o
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9363,7 +9363,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_5add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9457,13 +9457,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_4add_internal(struct 
 
 /* "pygame/_sprite.pyx":353
  *         self.spritedict[sprite] = 0
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         r = self.spritedict[sprite]
  *         if r:
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9540,7 +9540,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(struct __py
   }
 
   /* "pygame/_sprite.pyx":354
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  *         r = self.spritedict[sprite]             # <<<<<<<<<<<<<<
  *         if r:
@@ -9570,7 +9570,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(struct __py
  *         if r:
  *             self.lostsprites.append(r)             # <<<<<<<<<<<<<<
  *         del self.spritedict[sprite]
- * 
+ *
  */
     if (unlikely(__pyx_v_self->lostsprites == Py_None)) {
       PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "append");
@@ -9591,7 +9591,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(struct __py
  *         if r:
  *             self.lostsprites.append(r)
  *         del self.spritedict[sprite]             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef bint has_internal(self, sprite):
  */
   if (unlikely(__pyx_v_self->spritedict == Py_None)) {
@@ -9602,7 +9602,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(struct __py
 
   /* "pygame/_sprite.pyx":353
  *         self.spritedict[sprite] = 0
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         r = self.spritedict[sprite]
  *         if r:
@@ -9622,7 +9622,7 @@ static void __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(struct __py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9630,7 +9630,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_7remove_internal = {"remove_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9724,13 +9724,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_6remove_internal(stru
 
 /* "pygame/_sprite.pyx":359
  *         del self.spritedict[sprite]
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return sprite in self.spritedict
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9808,10 +9808,10 @@ static int __pyx_f_6pygame_7_sprite_13AbstractGroup_has_internal(struct __pyx_ob
   }
 
   /* "pygame/_sprite.pyx":360
- * 
+ *
  *     cpdef bint has_internal(self, sprite):
  *         return sprite in self.spritedict             # <<<<<<<<<<<<<<
- * 
+ *
  *     def copy(self):
  */
   if (unlikely(__pyx_v_self->spritedict == Py_None)) {
@@ -9824,10 +9824,10 @@ static int __pyx_f_6pygame_7_sprite_13AbstractGroup_has_internal(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":359
  *         del self.spritedict[sprite]
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return sprite in self.spritedict
- * 
+ *
  */
 
   /* function exit code */
@@ -9844,7 +9844,7 @@ static int __pyx_f_6pygame_7_sprite_13AbstractGroup_has_internal(struct __pyx_ob
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9852,7 +9852,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_9has_internal = {"has_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_9has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9946,14 +9946,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_8has_internal(struct 
 
 /* "pygame/_sprite.pyx":362
  *         return sprite in self.spritedict
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         """copy a group with all the same sprites
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_11copy(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_11copy(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9962,7 +9962,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_13AbstractGroup_10copy, "copy a group with all the same sprites\n\n        Group.copy(): return Group\n\n        Returns a copy of the group that is an instance of the same class\n        and has the same sprites in it.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_11copy = {"copy", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_11copy, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_13AbstractGroup_10copy};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_11copy(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_11copy(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10000,10 +10000,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_10copy(struct __pyx_o
   __Pyx_RefNannySetupContext("copy", 0);
 
   /* "pygame/_sprite.pyx":371
- * 
+ *
  *         """
  *         return self.__class__(self.sprites())             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __iter__(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -10038,10 +10038,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_10copy(struct __pyx_o
 
   /* "pygame/_sprite.pyx":362
  *         return sprite in self.spritedict
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         """copy a group with all the same sprites
- * 
+ *
  */
 
   /* function exit code */
@@ -10060,10 +10060,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_10copy(struct __pyx_o
 
 /* "pygame/_sprite.pyx":373
  *         return self.__class__(self.sprites())
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return iter(self.sprites())
- * 
+ *
  */
 
 /* Python wrapper */
@@ -10091,10 +10091,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_12__iter__(struct __p
   __Pyx_RefNannySetupContext("__iter__", 0);
 
   /* "pygame/_sprite.pyx":374
- * 
+ *
  *     def __iter__(self):
  *         return iter(self.sprites())             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __contains__(self, sprite):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -10109,10 +10109,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_12__iter__(struct __p
 
   /* "pygame/_sprite.pyx":373
  *         return self.__class__(self.sprites())
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return iter(self.sprites())
- * 
+ *
  */
 
   /* function exit code */
@@ -10129,10 +10129,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_12__iter__(struct __p
 
 /* "pygame/_sprite.pyx":376
  *         return iter(self.sprites())
- * 
+ *
  *     def __contains__(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.has(sprite)
- * 
+ *
  */
 
 /* Python wrapper */
@@ -10162,10 +10162,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_14__contains__(struct __pyx
   __Pyx_RefNannySetupContext("__contains__", 0);
 
   /* "pygame/_sprite.pyx":377
- * 
+ *
  *     def __contains__(self, sprite):
  *         return self.has(sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def add(self, *sprites):
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_has); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 377, __pyx_L1_error)
@@ -10197,10 +10197,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_14__contains__(struct __pyx
 
   /* "pygame/_sprite.pyx":376
  *         return iter(self.sprites())
- * 
+ *
  *     def __contains__(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.has(sprite)
- * 
+ *
  */
 
   /* function exit code */
@@ -10217,10 +10217,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_14__contains__(struct __pyx
 
 /* "pygame/_sprite.pyx":379
  *         return self.has(sprite)
- * 
+ *
  *     def add(self, *sprites):             # <<<<<<<<<<<<<<
  *         """add sprite(s) to group
- * 
+ *
  */
 
 /* Python wrapper */
@@ -10273,7 +10273,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
   __Pyx_RefNannySetupContext("add", 0);
 
   /* "pygame/_sprite.pyx":387
- * 
+ *
  *         """
  *         for sprite in sprites:             # <<<<<<<<<<<<<<
  *             # It's possible that some sprite is also an iterator.
@@ -10298,7 +10298,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
  *                 if not self.has_internal(<Sprite>sprite):
  *                     self.add_internal(<Sprite>sprite)
  */
-    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite); 
+    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite);
     __pyx_t_5 = (__pyx_t_4 != 0);
     if (__pyx_t_5) {
 
@@ -10592,7 +10592,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
  *                     elif not self.has_internal(sprite):
  *                         self.add_internal(sprite)             # <<<<<<<<<<<<<<
  *                         sprite.add_internal(self)
- * 
+ *
  */
             ((struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *)__pyx_v_self->__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_sprite, 0);
 
@@ -10600,7 +10600,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
  *                     elif not self.has_internal(sprite):
  *                         self.add_internal(sprite)
  *                         sprite.add_internal(self)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def remove(self, *sprites):
  */
             __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_add_internal); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 412, __pyx_L9_except_error)
@@ -10667,7 +10667,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
     __pyx_L5:;
 
     /* "pygame/_sprite.pyx":387
- * 
+ *
  *         """
  *         for sprite in sprites:             # <<<<<<<<<<<<<<
  *             # It's possible that some sprite is also an iterator.
@@ -10678,10 +10678,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":379
  *         return self.has(sprite)
- * 
+ *
  *     def add(self, *sprites):             # <<<<<<<<<<<<<<
  *         """add sprite(s) to group
- * 
+ *
  */
 
   /* function exit code */
@@ -10708,10 +10708,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_16add(struct __pyx_ob
 
 /* "pygame/_sprite.pyx":414
  *                         sprite.add_internal(self)
- * 
+ *
  *     def remove(self, *sprites):             # <<<<<<<<<<<<<<
  *         """remove sprite(s) from group
- * 
+ *
  */
 
 /* Python wrapper */
@@ -10789,7 +10789,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_18remove(struct __pyx
  *                 if self.has_internal(<Sprite>sprite):
  *                     self.remove_internal(<Sprite>sprite)
  */
-    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite); 
+    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite);
     __pyx_t_5 = (__pyx_t_4 != 0);
     if (__pyx_t_5) {
 
@@ -11105,7 +11105,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_18remove(struct __pyx
  *                     elif self.has_internal(sprite):
  *                         self.remove_internal(sprite)             # <<<<<<<<<<<<<<
  *                         sprite.remove_internal(self)
- * 
+ *
  */
             ((struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *)__pyx_v_self->__pyx_vtab)->remove_internal(__pyx_v_self, __pyx_v_sprite, 0);
 
@@ -11113,7 +11113,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_18remove(struct __pyx
  *                     elif self.has_internal(sprite):
  *                         self.remove_internal(sprite)
  *                         sprite.remove_internal(self)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def has(self, *sprites):
  */
             __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_remove_internal); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 444, __pyx_L9_except_error)
@@ -11191,10 +11191,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_18remove(struct __pyx
 
   /* "pygame/_sprite.pyx":414
  *                         sprite.add_internal(self)
- * 
+ *
  *     def remove(self, *sprites):             # <<<<<<<<<<<<<<
  *         """remove sprite(s) from group
- * 
+ *
  */
 
   /* function exit code */
@@ -11221,10 +11221,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_18remove(struct __pyx
 
 /* "pygame/_sprite.pyx":446
  *                         sprite.remove_internal(self)
- * 
+ *
  *     def has(self, *sprites):             # <<<<<<<<<<<<<<
  *         """ask if group has a sprite or sprites
- * 
+ *
  */
 
 /* Python wrapper */
@@ -11277,17 +11277,17 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
   __Pyx_RefNannySetupContext("has", 0);
 
   /* "pygame/_sprite.pyx":456
- * 
+ *
  *         """
  *         return_value = False             # <<<<<<<<<<<<<<
- * 
+ *
  *         for sprite in sprites:
  */
   __pyx_v_return_value = 0;
 
   /* "pygame/_sprite.pyx":458
  *         return_value = False
- * 
+ *
  *         for sprite in sprites:             # <<<<<<<<<<<<<<
  *             if isinstance(sprite, Sprite):
  *                 # Check for Sprite instance's membership in this group
@@ -11305,13 +11305,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
     __pyx_t_3 = 0;
 
     /* "pygame/_sprite.pyx":459
- * 
+ *
  *         for sprite in sprites:
  *             if isinstance(sprite, Sprite):             # <<<<<<<<<<<<<<
  *                 # Check for Sprite instance's membership in this group
  *                 if self.has_internal(<Sprite>sprite):
  */
-    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite); 
+    __pyx_t_4 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite);
     __pyx_t_5 = (__pyx_t_4 != 0);
     if (__pyx_t_5) {
 
@@ -11361,7 +11361,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
       __pyx_L6:;
 
       /* "pygame/_sprite.pyx":459
- * 
+ *
  *         for sprite in sprites:
  *             if isinstance(sprite, Sprite):             # <<<<<<<<<<<<<<
  *                 # Check for Sprite instance's membership in this group
@@ -11659,7 +11659,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
  *                             return_value = True
  *                         else:
  *                             return False             # <<<<<<<<<<<<<<
- * 
+ *
  *         return return_value
  */
             /*else*/ {
@@ -11719,7 +11719,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
 
     /* "pygame/_sprite.pyx":458
  *         return_value = False
- * 
+ *
  *         for sprite in sprites:             # <<<<<<<<<<<<<<
  *             if isinstance(sprite, Sprite):
  *                 # Check for Sprite instance's membership in this group
@@ -11729,9 +11729,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":484
  *                             return False
- * 
+ *
  *         return return_value             # <<<<<<<<<<<<<<
- * 
+ *
  *     def update(self, *args, **kwargs):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -11743,10 +11743,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":446
  *                         sprite.remove_internal(self)
- * 
+ *
  *     def has(self, *sprites):             # <<<<<<<<<<<<<<
  *         """ask if group has a sprite or sprites
- * 
+ *
  */
 
   /* function exit code */
@@ -11770,10 +11770,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_20has(struct __pyx_ob
 
 /* "pygame/_sprite.pyx":486
  *         return return_value
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """call the update method of every member sprite
- * 
+ *
  */
 
 /* Python wrapper */
@@ -11824,11 +11824,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_22update(struct __pyx
   __Pyx_RefNannySetupContext("update", 0);
 
   /* "pygame/_sprite.pyx":495
- * 
+ *
  *         """
  *         for s in self.sprites():             # <<<<<<<<<<<<<<
  *             s.update(*args, **kwargs)
- * 
+ *
  */
   __pyx_t_1 = ((struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *)__pyx_v_self->__pyx_vtab)->sprites(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -11853,7 +11853,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_22update(struct __pyx
  *         """
  *         for s in self.sprites():
  *             s.update(*args, **kwargs)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def draw(self, surface):
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_update); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 496, __pyx_L1_error)
@@ -11867,21 +11867,21 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_22update(struct __pyx
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "pygame/_sprite.pyx":495
- * 
+ *
  *         """
  *         for s in self.sprites():             # <<<<<<<<<<<<<<
  *             s.update(*args, **kwargs)
- * 
+ *
  */
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pygame/_sprite.pyx":486
  *         return return_value
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """call the update method of every member sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -11903,14 +11903,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_22update(struct __pyx
 
 /* "pygame/_sprite.pyx":498
  *             s.update(*args, **kwargs)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites onto the surface
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_25draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_25draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11919,7 +11919,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_13AbstractGroup_24draw, "draw all sprites onto the surface\n\n        Group.draw(surface): return None\n\n        Draws all of the member sprites onto the given surface.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_25draw = {"draw", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_25draw, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_13AbstractGroup_24draw};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_25draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_25draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12008,7 +12008,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
   __Pyx_RefNannySetupContext("draw", 0);
 
   /* "pygame/_sprite.pyx":506
- * 
+ *
  *         """
  *         cdef list sprites = self.sprites()             # <<<<<<<<<<<<<<
  *         cdef object surface_blit
@@ -12024,7 +12024,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
  *         cdef object surface_blit
  *         cdef spritedict = self.spritedict             # <<<<<<<<<<<<<<
  *         cdef object ret
- * 
+ *
  */
   __pyx_t_1 = __pyx_v_self->spritedict;
   __Pyx_INCREF(__pyx_t_1);
@@ -12033,17 +12033,17 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
 
   /* "pygame/_sprite.pyx":511
  *         cdef object ret
- * 
+ *
  *         if isinstance(surface, Renderer):             # <<<<<<<<<<<<<<
  *             for spr in sprites:
  *                 ret = (<Renderer>surface).blit(spr.image, spr.rect)
  */
-  __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_surface, __pyx_ptype_6pygame_5_sdl2_5video_Renderer); 
+  __pyx_t_2 = __Pyx_TypeCheck(__pyx_v_surface, __pyx_ptype_6pygame_5_sdl2_5video_Renderer);
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
     /* "pygame/_sprite.pyx":512
- * 
+ *
  *         if isinstance(surface, Renderer):
  *             for spr in sprites:             # <<<<<<<<<<<<<<
  *                 ret = (<Renderer>surface).blit(spr.image, spr.rect)
@@ -12096,7 +12096,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
       __pyx_t_9 = PyDict_SetItem(__pyx_v_spritedict, __pyx_v_spr, __pyx_v_ret); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 514, __pyx_L1_error)
 
       /* "pygame/_sprite.pyx":512
- * 
+ *
  *         if isinstance(surface, Renderer):
  *             for spr in sprites:             # <<<<<<<<<<<<<<
  *                 ret = (<Renderer>surface).blit(spr.image, spr.rect)
@@ -12107,7 +12107,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
 
     /* "pygame/_sprite.pyx":511
  *         cdef object ret
- * 
+ *
  *         if isinstance(surface, Renderer):             # <<<<<<<<<<<<<<
  *             for spr in sprites:
  *                 ret = (<Renderer>surface).blit(spr.image, spr.rect)
@@ -12166,7 +12166,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
  *                                                    <PyObject*>spr.image,
  *                                                    <PyObject*>spr.rect, NULL)             # <<<<<<<<<<<<<<
  *                 PyDict_SetItem(spritedict, spr, ret)
- * 
+ *
  */
       __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_spr, __pyx_n_s_rect); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 520, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
@@ -12189,7 +12189,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
  *                                                    <PyObject*>spr.image,
  *                                                    <PyObject*>spr.rect, NULL)
  *                 PyDict_SetItem(spritedict, spr, ret)             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.lostsprites[:] = []
  */
       __pyx_t_9 = PyDict_SetItem(__pyx_v_spritedict, __pyx_v_spr, __pyx_v_ret); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 521, __pyx_L1_error)
@@ -12208,9 +12208,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
 
   /* "pygame/_sprite.pyx":523
  *                 PyDict_SetItem(spritedict, spr, ret)
- * 
+ *
  *         self.lostsprites[:] = []             # <<<<<<<<<<<<<<
- * 
+ *
  *     def clear(self, surface, bgd):
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 523, __pyx_L1_error)
@@ -12224,10 +12224,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
 
   /* "pygame/_sprite.pyx":498
  *             s.update(*args, **kwargs)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites onto the surface
- * 
+ *
  */
 
   /* function exit code */
@@ -12253,14 +12253,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_24draw(struct __pyx_o
 
 /* "pygame/_sprite.pyx":525
  *         self.lostsprites[:] = []
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """erase the previous position of all sprites
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_27clear(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_27clear(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12269,7 +12269,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_13AbstractGroup_26clear, "erase the previous position of all sprites\n\n        Group.clear(surface, bgd): return None\n\n        Clears the area under every drawn sprite in the group. The bgd\n        argument should be Surface which is the same dimensions as the\n        screen surface. The bgd could also be a function which accepts\n        the given surface and the area to be cleared as arguments.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_27clear = {"clear", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_27clear, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_13AbstractGroup_26clear};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_27clear(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_27clear(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12367,7 +12367,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
   __Pyx_RefNannySetupContext("clear", 0);
 
   /* "pygame/_sprite.pyx":536
- * 
+ *
  *         """
  *         if callable(bgd):             # <<<<<<<<<<<<<<
  *             for r in self.lostsprites:
@@ -12539,7 +12539,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "pygame/_sprite.pyx":536
- * 
+ *
  *         """
  *         if callable(bgd):             # <<<<<<<<<<<<<<
  *             for r in self.lostsprites:
@@ -12654,7 +12654,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
  *             for r in self.spritedict.values():
  *                 if r:             # <<<<<<<<<<<<<<
  *                     surface_blit(bgd, r, r)
- * 
+ *
  */
       __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_r); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 547, __pyx_L1_error)
       if (__pyx_t_5) {
@@ -12663,7 +12663,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
  *             for r in self.spritedict.values():
  *                 if r:
  *                     surface_blit(bgd, r, r)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def empty(self):
  */
         __Pyx_INCREF(__pyx_v_surface_blit);
@@ -12694,7 +12694,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
  *             for r in self.spritedict.values():
  *                 if r:             # <<<<<<<<<<<<<<
  *                     surface_blit(bgd, r, r)
- * 
+ *
  */
       }
     }
@@ -12704,10 +12704,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
 
   /* "pygame/_sprite.pyx":525
  *         self.lostsprites[:] = []
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """erase the previous position of all sprites
- * 
+ *
  */
 
   /* function exit code */
@@ -12730,14 +12730,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_26clear(struct __pyx_
 
 /* "pygame/_sprite.pyx":550
  *                     surface_blit(bgd, r, r)
- * 
+ *
  *     def empty(self):             # <<<<<<<<<<<<<<
  *         """remove all sprites
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_29empty(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_29empty(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12746,7 +12746,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_13AbstractGroup_28empty, "remove all sprites\n\n        Group.empty(): return None\n\n        Removes all the sprites from the group.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_29empty = {"empty", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_29empty, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_13AbstractGroup_28empty};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_29empty(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_29empty(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12786,7 +12786,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
   __Pyx_RefNannySetupContext("empty", 0);
 
   /* "pygame/_sprite.pyx":558
- * 
+ *
  *         """
  *         for s in self.sprites():             # <<<<<<<<<<<<<<
  *             self.remove_internal(<Sprite>s)
@@ -12816,7 +12816,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
  *         for s in self.sprites():
  *             self.remove_internal(<Sprite>s)             # <<<<<<<<<<<<<<
  *             s.remove_internal(self)
- * 
+ *
  */
     ((struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *)__pyx_v_self->__pyx_vtab)->remove_internal(__pyx_v_self, __pyx_v_s, 0);
 
@@ -12824,7 +12824,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
  *         for s in self.sprites():
  *             self.remove_internal(<Sprite>s)
  *             s.remove_internal(self)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __nonzero__(self):
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_remove_internal); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 560, __pyx_L1_error)
@@ -12852,7 +12852,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "pygame/_sprite.pyx":558
- * 
+ *
  *         """
  *         for s in self.sprites():             # <<<<<<<<<<<<<<
  *             self.remove_internal(<Sprite>s)
@@ -12863,10 +12863,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
 
   /* "pygame/_sprite.pyx":550
  *                     surface_blit(bgd, r, r)
- * 
+ *
  *     def empty(self):             # <<<<<<<<<<<<<<
  *         """remove all sprites
- * 
+ *
  */
 
   /* function exit code */
@@ -12888,10 +12888,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_28empty(struct __pyx_
 
 /* "pygame/_sprite.pyx":562
  *             s.remove_internal(self)
- * 
+ *
  *     def __nonzero__(self):             # <<<<<<<<<<<<<<
  *         return truth(self.sprites())
- * 
+ *
  */
 
 /* Python wrapper */
@@ -12922,10 +12922,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_30__nonzero__(struct __pyx_
   __Pyx_RefNannySetupContext("__nonzero__", 0);
 
   /* "pygame/_sprite.pyx":563
- * 
+ *
  *     def __nonzero__(self):
  *         return truth(self.sprites())             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __len__(self):
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_truth); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 563, __pyx_L1_error)
@@ -12960,10 +12960,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_30__nonzero__(struct __pyx_
 
   /* "pygame/_sprite.pyx":562
  *             s.remove_internal(self)
- * 
+ *
  *     def __nonzero__(self):             # <<<<<<<<<<<<<<
  *         return truth(self.sprites())
- * 
+ *
  */
 
   /* function exit code */
@@ -12981,10 +12981,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_30__nonzero__(struct __pyx_
 
 /* "pygame/_sprite.pyx":565
  *         return truth(self.sprites())
- * 
+ *
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         """return number of sprites in group
- * 
+ *
  */
 
 /* Python wrapper */
@@ -13016,10 +13016,10 @@ static Py_ssize_t __pyx_pf_6pygame_7_sprite_13AbstractGroup_32__len__(struct __p
   __Pyx_RefNannySetupContext("__len__", 0);
 
   /* "pygame/_sprite.pyx":573
- * 
+ *
  *         """
  *         return len(self.sprites())             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __repr__(self):
  */
   __pyx_t_1 = ((struct __pyx_vtabstruct_6pygame_7_sprite_AbstractGroup *)__pyx_v_self->__pyx_vtab)->sprites(__pyx_v_self, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 573, __pyx_L1_error)
@@ -13035,10 +13035,10 @@ static Py_ssize_t __pyx_pf_6pygame_7_sprite_13AbstractGroup_32__len__(struct __p
 
   /* "pygame/_sprite.pyx":565
  *         return truth(self.sprites())
- * 
+ *
  *     def __len__(self):             # <<<<<<<<<<<<<<
  *         """return number of sprites in group
- * 
+ *
  */
 
   /* function exit code */
@@ -13053,10 +13053,10 @@ static Py_ssize_t __pyx_pf_6pygame_7_sprite_13AbstractGroup_32__len__(struct __p
 
 /* "pygame/_sprite.pyx":575
  *         return len(self.sprites())
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s(%d sprites)>" % (self.__class__.__name__, len(self))
- * 
+ *
  */
 
 /* Python wrapper */
@@ -13086,10 +13086,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_34__repr__(struct __p
   __Pyx_RefNannySetupContext("__repr__", 0);
 
   /* "pygame/_sprite.pyx":576
- * 
+ *
  *     def __repr__(self):
  *         return "<%s(%d sprites)>" % (self.__class__.__name__, len(self))             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef class Group(AbstractGroup):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -13118,10 +13118,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_34__repr__(struct __p
 
   /* "pygame/_sprite.pyx":575
  *         return len(self.sprites())
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s(%d sprites)>" % (self.__class__.__name__, len(self))
- * 
+ *
  */
 
   /* function exit code */
@@ -13139,10 +13139,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_34__repr__(struct __p
 
 /* "pygame/_sprite.pyx":330
  *     _spritegroup = True
- * 
+ *
  *     cdef public dict spritedict             # <<<<<<<<<<<<<<
  *     cdef public list lostsprites
- * 
+ *
  */
 
 /* Python wrapper */
@@ -13249,10 +13249,10 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_10spritedict_4__del__(struc
 }
 
 /* "pygame/_sprite.pyx":331
- * 
+ *
  *     cdef public dict spritedict
  *     cdef public list lostsprites             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __cinit__(self):
  */
 
@@ -13366,7 +13366,7 @@ static int __pyx_pf_6pygame_7_sprite_13AbstractGroup_11lostsprites_4__del__(stru
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13374,7 +13374,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_37__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13438,7 +13438,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_36__reduce_cython__(C
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13446,7 +13446,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13AbstractGroup_39__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13545,7 +13545,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13AbstractGroup_38__setstate_cython__
 }
 
 /* "pygame/_sprite.pyx":597
- * 
+ *
  *     """
  *     def __init__(self, *sprites):             # <<<<<<<<<<<<<<
  *         AbstractGroup.__init__(self)
@@ -13589,7 +13589,7 @@ static int __pyx_pf_6pygame_7_sprite_5Group___init__(struct __pyx_obj_6pygame_7_
  *     def __init__(self, *sprites):
  *         AbstractGroup.__init__(self)             # <<<<<<<<<<<<<<
  *         self.add(*sprites)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6pygame_7_sprite_AbstractGroup), __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 598, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -13619,7 +13619,7 @@ static int __pyx_pf_6pygame_7_sprite_5Group___init__(struct __pyx_obj_6pygame_7_
  *     def __init__(self, *sprites):
  *         AbstractGroup.__init__(self)
  *         self.add(*sprites)             # <<<<<<<<<<<<<<
- * 
+ *
  * RenderPlain = Group
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 599, __pyx_L1_error)
@@ -13630,7 +13630,7 @@ static int __pyx_pf_6pygame_7_sprite_5Group___init__(struct __pyx_obj_6pygame_7_
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pygame/_sprite.pyx":597
- * 
+ *
  *     """
  *     def __init__(self, *sprites):             # <<<<<<<<<<<<<<
  *         AbstractGroup.__init__(self)
@@ -13658,7 +13658,7 @@ static int __pyx_pf_6pygame_7_sprite_5Group___init__(struct __pyx_obj_6pygame_7_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_5Group_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5Group_3__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13666,7 +13666,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_5Group_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_5Group_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_5Group_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5Group_3__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13730,7 +13730,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_5Group_2__reduce_cython__(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_5Group_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5Group_5__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13738,7 +13738,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_5Group_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_5Group_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_5Group_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5Group_5__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13837,7 +13837,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_5Group_4__setstate_cython__(CYTHON_UN
 }
 
 /* "pygame/_sprite.pyx":613
- * 
+ *
  *     """
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *        spritedict = self.spritedict
@@ -13845,7 +13845,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_5Group_4__setstate_cython__(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_1draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_1draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13853,7 +13853,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13RenderUpdates_1draw = {"draw", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13RenderUpdates_1draw, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_1draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_1draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14299,7 +14299,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_draw(struct __pyx_obj
  *                dirty_append(newrect)
  *            spritedict[s] = newrect             # <<<<<<<<<<<<<<
  *        return dirty
- * 
+ *
  */
     if (unlikely(__pyx_v_spritedict == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -14321,7 +14321,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_draw(struct __pyx_obj
  *                dirty_append(newrect)
  *            spritedict[s] = newrect
  *        return dirty             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef class OrderedUpdates(RenderUpdates):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -14330,7 +14330,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_draw(struct __pyx_obj
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":613
- * 
+ *
  *     """
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *        spritedict = self.spritedict
@@ -14367,7 +14367,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_draw(struct __pyx_obj
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14375,7 +14375,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_3__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14439,7 +14439,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_2__reduce_cython__(CY
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14447,7 +14447,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_13RenderUpdates_5__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14547,7 +14547,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_13RenderUpdates_4__setstate_cython__(
 
 /* "pygame/_sprite.pyx":647
  *     cdef public list _spritelist
- * 
+ *
  *     def __init__(self, *sprites):             # <<<<<<<<<<<<<<
  *         self._spritelist = []
  *         RenderUpdates.__init__(self, *sprites)
@@ -14585,11 +14585,11 @@ static int __pyx_pf_6pygame_7_sprite_14OrderedUpdates___init__(struct __pyx_obj_
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":648
- * 
+ *
  *     def __init__(self, *sprites):
  *         self._spritelist = []             # <<<<<<<<<<<<<<
  *         RenderUpdates.__init__(self, *sprites)
- * 
+ *
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 648, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -14603,7 +14603,7 @@ static int __pyx_pf_6pygame_7_sprite_14OrderedUpdates___init__(struct __pyx_obj_
  *     def __init__(self, *sprites):
  *         self._spritelist = []
  *         RenderUpdates.__init__(self, *sprites)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef list sprites(self):
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6pygame_7_sprite_RenderUpdates), __pyx_n_s_init); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 649, __pyx_L1_error)
@@ -14624,7 +14624,7 @@ static int __pyx_pf_6pygame_7_sprite_14OrderedUpdates___init__(struct __pyx_obj_
 
   /* "pygame/_sprite.pyx":647
  *     cdef public list _spritelist
- * 
+ *
  *     def __init__(self, *sprites):             # <<<<<<<<<<<<<<
  *         self._spritelist = []
  *         RenderUpdates.__init__(self, *sprites)
@@ -14646,13 +14646,13 @@ static int __pyx_pf_6pygame_7_sprite_14OrderedUpdates___init__(struct __pyx_obj_
 
 /* "pygame/_sprite.pyx":651
  *         RenderUpdates.__init__(self, *sprites)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         return list(self._spritelist)
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14730,10 +14730,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_14OrderedUpdates_sprites(struct __pyx_
   }
 
   /* "pygame/_sprite.pyx":652
- * 
+ *
  *     cpdef list sprites(self):
  *         return list(self._spritelist)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -14745,10 +14745,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_14OrderedUpdates_sprites(struct __pyx_
 
   /* "pygame/_sprite.pyx":651
  *         RenderUpdates.__init__(self, *sprites)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         return list(self._spritelist)
- * 
+ *
  */
 
   /* function exit code */
@@ -14766,7 +14766,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_14OrderedUpdates_sprites(struct __pyx_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14774,7 +14774,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14OrderedUpdates_3sprites = {"sprites", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_3sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14826,13 +14826,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14OrderedUpdates_2sprites(struct __py
 
 /* "pygame/_sprite.pyx":654
  *         return list(self._spritelist)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.add_internal(self, sprite)
  *         self._spritelist.append(sprite)
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14907,11 +14907,11 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_add_internal(struct __pyx_
   }
 
   /* "pygame/_sprite.pyx":655
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  *         RenderUpdates.add_internal(self, sprite)             # <<<<<<<<<<<<<<
  *         self._spritelist.append(sprite)
- * 
+ *
  */
   __pyx_vtabptr_6pygame_7_sprite_RenderUpdates->__pyx_base.__pyx_base.add_internal(((struct __pyx_obj_6pygame_7_sprite_AbstractGroup *)__pyx_v_self), __pyx_v_sprite, 1);
 
@@ -14919,7 +14919,7 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_add_internal(struct __pyx_
  *     cpdef void add_internal(self, sprite):
  *         RenderUpdates.add_internal(self, sprite)
  *         self._spritelist.append(sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  */
   if (unlikely(__pyx_v_self->_spritelist == Py_None)) {
@@ -14930,7 +14930,7 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_add_internal(struct __pyx_
 
   /* "pygame/_sprite.pyx":654
  *         return list(self._spritelist)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.add_internal(self, sprite)
  *         self._spritelist.append(sprite)
@@ -14949,7 +14949,7 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_add_internal(struct __pyx_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14957,7 +14957,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14OrderedUpdates_5add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15051,13 +15051,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14OrderedUpdates_4add_internal(struct
 
 /* "pygame/_sprite.pyx":658
  *         self._spritelist.append(sprite)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.remove_internal(self, sprite)
  *         self._spritelist.remove(sprite)
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15131,11 +15131,11 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_remove_internal(struct __p
   }
 
   /* "pygame/_sprite.pyx":659
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  *         RenderUpdates.remove_internal(self, sprite)             # <<<<<<<<<<<<<<
  *         self._spritelist.remove(sprite)
- * 
+ *
  */
   __pyx_vtabptr_6pygame_7_sprite_RenderUpdates->__pyx_base.__pyx_base.remove_internal(((struct __pyx_obj_6pygame_7_sprite_AbstractGroup *)__pyx_v_self), __pyx_v_sprite, 1);
 
@@ -15143,8 +15143,8 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_remove_internal(struct __p
  *     cpdef void remove_internal(self, sprite):
  *         RenderUpdates.remove_internal(self, sprite)
  *         self._spritelist.remove(sprite)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->_spritelist, __pyx_n_s_remove); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 660, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -15172,7 +15172,7 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_remove_internal(struct __p
 
   /* "pygame/_sprite.pyx":658
  *         self._spritelist.append(sprite)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.remove_internal(self, sprite)
  *         self._spritelist.remove(sprite)
@@ -15191,7 +15191,7 @@ static void __pyx_f_6pygame_7_sprite_14OrderedUpdates_remove_internal(struct __p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15199,7 +15199,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14OrderedUpdates_7remove_internal = {"remove_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_7remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15293,9 +15293,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14OrderedUpdates_6remove_internal(str
 
 /* "pygame/_sprite.pyx":645
  *     """
- * 
+ *
  *     cdef public list _spritelist             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, *sprites):
  */
 
@@ -15409,7 +15409,7 @@ static int __pyx_pf_6pygame_7_sprite_14OrderedUpdates_11_spritelist_4__del__(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15417,7 +15417,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_9__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15481,7 +15481,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14OrderedUpdates_8__reduce_cython__(C
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15489,7 +15489,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14OrderedUpdates_11__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15589,7 +15589,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14OrderedUpdates_10__setstate_cython_
 
 /* "pygame/_sprite.pyx":679
  *     cdef public int _default_layer
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self._spritelayers = {}
  *         self._spritelist = []
@@ -15623,11 +15623,11 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates___cinit__(struct __pyx_obj
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
   /* "pygame/_sprite.pyx":680
- * 
+ *
  *     def __cinit__(self):
  *         self._spritelayers = {}             # <<<<<<<<<<<<<<
  *         self._spritelist = []
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 680, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -15641,7 +15641,7 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates___cinit__(struct __pyx_obj
  *     def __cinit__(self):
  *         self._spritelayers = {}
  *         self._spritelist = []             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 681, __pyx_L1_error)
@@ -15654,7 +15654,7 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates___cinit__(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":679
  *     cdef public int _default_layer
- * 
+ *
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
  *         self._spritelayers = {}
  *         self._spritelist = []
@@ -15674,10 +15674,10 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates___cinit__(struct __pyx_obj
 
 /* "pygame/_sprite.pyx":683
  *         self._spritelist = []
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """initialize an instance of LayeredUpdates with the given attributes
- * 
+ *
  */
 
 /* Python wrapper */
@@ -15728,11 +15728,11 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_2__init__(struct __pyx_obj
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":696
- * 
+ *
  *         """
  *         AbstractGroup.__init__(self)             # <<<<<<<<<<<<<<
  *         self._default_layer = kwargs.get('default_layer', 0)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6pygame_7_sprite_AbstractGroup), __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 696, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -15762,7 +15762,7 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_2__init__(struct __pyx_obj
  *         """
  *         AbstractGroup.__init__(self)
  *         self._default_layer = kwargs.get('default_layer', 0)             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.add(*sprites, **kwargs)
  */
   __pyx_t_1 = __Pyx_PyDict_GetItemDefault(__pyx_v_kwargs, __pyx_n_s_default_layer, __pyx_int_0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 697, __pyx_L1_error)
@@ -15773,9 +15773,9 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_2__init__(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":699
  *         self._default_layer = kwargs.get('default_layer', 0)
- * 
+ *
  *         self.add(*sprites, **kwargs)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 699, __pyx_L1_error)
@@ -15790,10 +15790,10 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_2__init__(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":683
  *         self._spritelist = []
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """initialize an instance of LayeredUpdates with the given attributes
- * 
+ *
  */
 
   /* function exit code */
@@ -15812,13 +15812,13 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_2__init__(struct __pyx_obj
 
 /* "pygame/_sprite.pyx":701
  *         self.add(*sprites, **kwargs)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -15912,10 +15912,10 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
   }
 
   /* "pygame/_sprite.pyx":707
- * 
+ *
  *         """
  *         self.spritedict[sprite] = self._init_rect             # <<<<<<<<<<<<<<
- * 
+ *
  *         if layer is None:
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_init_rect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 707, __pyx_L1_error)
@@ -15929,7 +15929,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
 
   /* "pygame/_sprite.pyx":709
  *         self.spritedict[sprite] = self._init_rect
- * 
+ *
  *         if layer is None:             # <<<<<<<<<<<<<<
  *             try:
  *                 layer = sprite._layer
@@ -15939,7 +15939,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
   if (__pyx_t_7) {
 
     /* "pygame/_sprite.pyx":710
- * 
+ *
  *         if layer is None:
  *             try:             # <<<<<<<<<<<<<<
  *                 layer = sprite._layer
@@ -15967,7 +15967,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
         __pyx_t_1 = 0;
 
         /* "pygame/_sprite.pyx":710
- * 
+ *
  *         if layer is None:
  *             try:             # <<<<<<<<<<<<<<
  *                 layer = sprite._layer
@@ -16021,7 +16021,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
       __pyx_L6_except_error:;
 
       /* "pygame/_sprite.pyx":710
- * 
+ *
  *         if layer is None:
  *             try:             # <<<<<<<<<<<<<<
  *                 layer = sprite._layer
@@ -16042,7 +16042,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
 
     /* "pygame/_sprite.pyx":709
  *         self.spritedict[sprite] = self._init_rect
- * 
+ *
  *         if layer is None:             # <<<<<<<<<<<<<<
  *             try:
  *                 layer = sprite._layer
@@ -16055,7 +16055,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *                 layer = sprite._layer = self._default_layer
  *         elif hasattr(sprite, '_layer'):             # <<<<<<<<<<<<<<
  *             sprite._layer = layer
- * 
+ *
  */
   __pyx_t_7 = __Pyx_HasAttr(__pyx_v_sprite, __pyx_n_s_layer); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 714, __pyx_L1_error)
   __pyx_t_6 = (__pyx_t_7 != 0);
@@ -16065,7 +16065,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *                 layer = sprite._layer = self._default_layer
  *         elif hasattr(sprite, '_layer'):
  *             sprite._layer = layer             # <<<<<<<<<<<<<<
- * 
+ *
  *         sprites = self._spritelist # speedup
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sprite, __pyx_n_s_layer, __pyx_v_layer) < 0) __PYX_ERR(0, 715, __pyx_L1_error)
@@ -16075,14 +16075,14 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *                 layer = sprite._layer = self._default_layer
  *         elif hasattr(sprite, '_layer'):             # <<<<<<<<<<<<<<
  *             sprite._layer = layer
- * 
+ *
  */
   }
   __pyx_L3:;
 
   /* "pygame/_sprite.pyx":717
  *             sprite._layer = layer
- * 
+ *
  *         sprites = self._spritelist # speedup             # <<<<<<<<<<<<<<
  *         sprites_layers = self._spritelayers
  *         sprites_layers[sprite] = layer
@@ -16093,11 +16093,11 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
   __pyx_t_3 = 0;
 
   /* "pygame/_sprite.pyx":718
- * 
+ *
  *         sprites = self._spritelist # speedup
  *         sprites_layers = self._spritelayers             # <<<<<<<<<<<<<<
  *         sprites_layers[sprite] = layer
- * 
+ *
  */
   __pyx_t_3 = __pyx_v_self->_spritelayers;
   __Pyx_INCREF(__pyx_t_3);
@@ -16108,7 +16108,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *         sprites = self._spritelist # speedup
  *         sprites_layers = self._spritelayers
  *         sprites_layers[sprite] = layer             # <<<<<<<<<<<<<<
- * 
+ *
  *         # add the sprite at the right position
  */
   if (unlikely(__pyx_v_sprites_layers == Py_None)) {
@@ -16295,7 +16295,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *         while mid < leng and sprites_layers[sprites[mid]] <= layer:
  *             mid += 1             # <<<<<<<<<<<<<<
  *         sprites.insert(mid, sprite)
- * 
+ *
  */
     __pyx_t_3 = __Pyx_PyInt_AddObjC(__pyx_v_mid, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 734, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -16307,7 +16307,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
  *         while mid < leng and sprites_layers[sprites[mid]] <= layer:
  *             mid += 1
  *         sprites.insert(mid, sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def add(self, *sprites, **kwargs):
  */
   if (unlikely(__pyx_v_sprites == Py_None)) {
@@ -16319,10 +16319,10 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
 
   /* "pygame/_sprite.pyx":701
  *         self.add(*sprites, **kwargs)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
   /* function exit code */
@@ -16345,7 +16345,7 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal(struct __pyx_obj_6py
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16354,7 +16354,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_4add_internal, "Do not use this method directly.\n\n        It is used by the group to add a sprite internally.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_5add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_4add_internal};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_5add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16448,7 +16448,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_4add_internal(struct
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.layer = __pyx_v_layer;
-  __pyx_vtabptr_6pygame_7_sprite_LayeredUpdates->add_internal(__pyx_v_self, __pyx_v_sprite, 1, &__pyx_t_1); 
+  __pyx_vtabptr_6pygame_7_sprite_LayeredUpdates->add_internal(__pyx_v_self, __pyx_v_sprite, 1, &__pyx_t_1);
   __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
@@ -16472,10 +16472,10 @@ void __pyx_f_6pygame_7_sprite_14LayeredUpdates_add_internal__pyx_wrap_1(struct _
 
 /* "pygame/_sprite.pyx":737
  *         sprites.insert(mid, sprite)
- * 
+ *
  *     def add(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """add a sprite or sequence of sprites to a group
- * 
+ *
  */
 
 /* Python wrapper */
@@ -16542,7 +16542,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":750
  *         """
- * 
+ *
  *         if not sprites:             # <<<<<<<<<<<<<<
  *             return
  *         if 'layer' in kwargs:
@@ -16552,7 +16552,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
   if (__pyx_t_2) {
 
     /* "pygame/_sprite.pyx":751
- * 
+ *
  *         if not sprites:
  *             return             # <<<<<<<<<<<<<<
  *         if 'layer' in kwargs:
@@ -16564,7 +16564,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
 
     /* "pygame/_sprite.pyx":750
  *         """
- * 
+ *
  *         if not sprites:             # <<<<<<<<<<<<<<
  *             return
  *         if 'layer' in kwargs:
@@ -16643,7 +16643,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
  *                 if not self.has_internal(<Sprite>sprite):
  *                     self.add_internal(<Sprite>sprite, layer)
  */
-    __pyx_t_1 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite); 
+    __pyx_t_1 = __Pyx_TypeCheck(__pyx_v_sprite, __pyx_ptype_6pygame_7_sprite_Sprite);
     __pyx_t_2 = (__pyx_t_1 != 0);
     if (__pyx_t_2) {
 
@@ -16666,7 +16666,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
  */
         __pyx_t_6.__pyx_n = 1;
         __pyx_t_6.layer = __pyx_v_layer;
-        ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_sprite, 0, &__pyx_t_6); 
+        ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_sprite, 0, &__pyx_t_6);
 
         /* "pygame/_sprite.pyx":763
  *                 if not self.has_internal(<Sprite>sprite):
@@ -16868,7 +16868,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
  */
                 __pyx_t_6.__pyx_n = 1;
                 __pyx_t_6.layer = __pyx_v_layer;
-                ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_spr, 0, &__pyx_t_6); 
+                ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_spr, 0, &__pyx_t_6);
 
                 /* "pygame/_sprite.pyx":778
  *                             if not self.has_internal(spr):
@@ -16945,17 +16945,17 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
  *                     elif not self.has_internal(sprite):
  *                         self.add_internal(sprite, layer)             # <<<<<<<<<<<<<<
  *                         sprite.add_internal(self)
- * 
+ *
  */
             __pyx_t_6.__pyx_n = 1;
             __pyx_t_6.layer = __pyx_v_layer;
-            ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_sprite, 0, &__pyx_t_6); 
+            ((struct __pyx_vtabstruct_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self->__pyx_base.__pyx_vtab)->add_internal(__pyx_v_self, __pyx_v_sprite, 0, &__pyx_t_6);
 
             /* "pygame/_sprite.pyx":781
  *                     elif not self.has_internal(sprite):
  *                         self.add_internal(sprite, layer)
  *                         sprite.add_internal(self)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  */
             __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_add_internal); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 781, __pyx_L11_except_error)
@@ -17033,10 +17033,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":737
  *         sprites.insert(mid, sprite)
- * 
+ *
  *     def add(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """add a sprite or sequence of sprites to a group
- * 
+ *
  */
 
   /* function exit code */
@@ -17064,13 +17064,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_6add(struct __pyx_ob
 
 /* "pygame/_sprite.pyx":783
  *                         sprite.add_internal(self)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17148,7 +17148,7 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
   }
 
   /* "pygame/_sprite.pyx":789
- * 
+ *
  *         """
  *         self._spritelist.remove(sprite)             # <<<<<<<<<<<<<<
  *         # these dirty rects are suboptimal for one frame
@@ -17235,7 +17235,7 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
  *             self.lostsprites.append(r) # dirty rect
  *         if hasattr(sprite, 'rect'):             # <<<<<<<<<<<<<<
  *             self.lostsprites.append(sprite.rect) # dirty rect
- * 
+ *
  */
   __pyx_t_7 = __Pyx_HasAttr(__pyx_v_sprite, __pyx_n_s_rect); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 794, __pyx_L1_error)
   __pyx_t_6 = (__pyx_t_7 != 0);
@@ -17245,7 +17245,7 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
  *             self.lostsprites.append(r) # dirty rect
  *         if hasattr(sprite, 'rect'):
  *             self.lostsprites.append(sprite.rect) # dirty rect             # <<<<<<<<<<<<<<
- * 
+ *
  *         del self.spritedict[sprite]
  */
     if (unlikely(__pyx_v_self->__pyx_base.lostsprites == Py_None)) {
@@ -17262,16 +17262,16 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
  *             self.lostsprites.append(r) # dirty rect
  *         if hasattr(sprite, 'rect'):             # <<<<<<<<<<<<<<
  *             self.lostsprites.append(sprite.rect) # dirty rect
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":797
  *             self.lostsprites.append(sprite.rect) # dirty rect
- * 
+ *
  *         del self.spritedict[sprite]             # <<<<<<<<<<<<<<
  *         del self._spritelayers[sprite]
- * 
+ *
  */
   if (unlikely(__pyx_v_self->__pyx_base.spritedict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -17280,10 +17280,10 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
   if (unlikely((PyDict_DelItem(__pyx_v_self->__pyx_base.spritedict, __pyx_v_sprite) < 0))) __PYX_ERR(0, 797, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":798
- * 
+ *
  *         del self.spritedict[sprite]
  *         del self._spritelayers[sprite]             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef list sprites(self):
  */
   if (unlikely(__pyx_v_self->_spritelayers == Py_None)) {
@@ -17294,10 +17294,10 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
 
   /* "pygame/_sprite.pyx":783
  *                         sprite.add_internal(self)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
   /* function exit code */
@@ -17314,7 +17314,7 @@ static void __pyx_f_6pygame_7_sprite_14LayeredUpdates_remove_internal(struct __p
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17323,7 +17323,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_8remove_internal, "Do not use this method directly.\n\n        The group uses it to add a sprite.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_9remove_internal = {"remove_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_8remove_internal};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_9remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17417,13 +17417,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_8remove_internal(str
 
 /* "pygame/_sprite.pyx":800
  *         del self._spritelayers[sprite]
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """return a ordered list of sprites (first back, last top).
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17501,10 +17501,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_14LayeredUpdates_sprites(struct __pyx_
   }
 
   /* "pygame/_sprite.pyx":806
- * 
+ *
  *         """
  *         return list(self._spritelist)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def draw(self, surface):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -17516,10 +17516,10 @@ static PyObject *__pyx_f_6pygame_7_sprite_14LayeredUpdates_sprites(struct __pyx_
 
   /* "pygame/_sprite.pyx":800
  *         del self._spritelayers[sprite]
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """return a ordered list of sprites (first back, last top).
- * 
+ *
  */
 
   /* function exit code */
@@ -17537,7 +17537,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_14LayeredUpdates_sprites(struct __pyx_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17546,7 +17546,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_10sprites, "return a ordered list of sprites (first back, last top).\n\n        LayeredUpdates.sprites(): return sprites\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_11sprites = {"sprites", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_10sprites};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_11sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17598,14 +17598,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_10sprites(struct __p
 
 /* "pygame/_sprite.pyx":808
  *         return list(self._spritelist)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the passed surface
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_13draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_13draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17614,7 +17614,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_12draw, "draw all sprites in the right order onto the passed surface\n\n        LayeredUpdates.draw(surface): return Rect_list\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_13draw = {"draw", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_13draw, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_12draw};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_13draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_13draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17708,7 +17708,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_12draw(struct __pyx_
   __Pyx_RefNannySetupContext("draw", 0);
 
   /* "pygame/_sprite.pyx":814
- * 
+ *
  *         """
  *         spritedict = self.spritedict             # <<<<<<<<<<<<<<
  *         surface_blit = surface.blit
@@ -18067,7 +18067,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_12draw(struct __pyx_
  *                     dirty_append(rec)
  *             spritedict[spr] = newrect             # <<<<<<<<<<<<<<
  *         return dirty
- * 
+ *
  */
     if (unlikely(__pyx_v_spritedict == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -18089,7 +18089,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_12draw(struct __pyx_
  *                     dirty_append(rec)
  *             spritedict[spr] = newrect
  *         return dirty             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_sprites_at(self, pos):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -18099,10 +18099,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_12draw(struct __pyx_
 
   /* "pygame/_sprite.pyx":808
  *         return list(self._spritelist)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the passed surface
- * 
+ *
  */
 
   /* function exit code */
@@ -18131,14 +18131,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_12draw(struct __pyx_
 
 /* "pygame/_sprite.pyx":834
  *         return dirty
- * 
+ *
  *     def get_sprites_at(self, pos):             # <<<<<<<<<<<<<<
  *         """return a list with all sprites at that position
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18147,7 +18147,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at, "return a list with all sprites at that position\n\n        LayeredUpdates.get_sprites_at(pos): return colliding_sprites\n\n        Bottom sprites are listed first; the top ones are listed last.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at = {"get_sprites_at", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18233,7 +18233,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at(str
   __Pyx_RefNannySetupContext("get_sprites_at", 0);
 
   /* "pygame/_sprite.pyx":842
- * 
+ *
  *         """
  *         _sprites = self._spritelist             # <<<<<<<<<<<<<<
  *         rect = Rect(pos, (0, 0))
@@ -18302,7 +18302,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at(str
  *         colliding_idx = rect.collidelistall(_sprites)
  *         colliding = [_sprites[i] for i in colliding_idx]             # <<<<<<<<<<<<<<
  *         return colliding
- * 
+ *
  */
   __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 845, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -18364,7 +18364,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at(str
  *         colliding_idx = rect.collidelistall(_sprites)
  *         colliding = [_sprites[i] for i in colliding_idx]
  *         return colliding             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_sprite(self, idx):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -18374,10 +18374,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at(str
 
   /* "pygame/_sprite.pyx":834
  *         return dirty
- * 
+ *
  *     def get_sprites_at(self, pos):             # <<<<<<<<<<<<<<
  *         """return a list with all sprites at that position
- * 
+ *
  */
 
   /* function exit code */
@@ -18400,14 +18400,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_14get_sprites_at(str
 
 /* "pygame/_sprite.pyx":848
  *         return colliding
- * 
+ *
  *     def get_sprite(self, idx):             # <<<<<<<<<<<<<<
  *         """return the sprite at the index idx from the groups sprites
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_17get_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_17get_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18416,7 +18416,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_16get_sprite, "return the sprite at the index idx from the groups sprites\n\n        LayeredUpdates.get_sprite(idx): return sprite\n\n        Raises IndexOutOfBounds if the idx is not within range.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_17get_sprite = {"get_sprite", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_17get_sprite, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_16get_sprite};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_17get_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_17get_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18492,10 +18492,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_16get_sprite(struct 
   __Pyx_RefNannySetupContext("get_sprite", 0);
 
   /* "pygame/_sprite.pyx":856
- * 
+ *
  *         """
  *         return self._spritelist[idx]             # <<<<<<<<<<<<<<
- * 
+ *
  *     def remove_sprites_of_layer(self, layer_nr):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -18511,10 +18511,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_16get_sprite(struct 
 
   /* "pygame/_sprite.pyx":848
  *         return colliding
- * 
+ *
  *     def get_sprite(self, idx):             # <<<<<<<<<<<<<<
  *         """return the sprite at the index idx from the groups sprites
- * 
+ *
  */
 
   /* function exit code */
@@ -18530,14 +18530,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_16get_sprite(struct 
 
 /* "pygame/_sprite.pyx":858
  *         return self._spritelist[idx]
- * 
+ *
  *     def remove_sprites_of_layer(self, layer_nr):             # <<<<<<<<<<<<<<
  *         """remove all sprites from a layer and return them as a list
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18546,7 +18546,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_layer, "remove all sprites from a layer and return them as a list\n\n        LayeredUpdates.remove_sprites_of_layer(layer_nr): return sprites\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer = {"remove_sprites_of_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18626,7 +18626,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_
   __Pyx_RefNannySetupContext("remove_sprites_of_layer", 0);
 
   /* "pygame/_sprite.pyx":864
- * 
+ *
  *         """
  *         sprites = self.get_sprites_from_layer(layer_nr)             # <<<<<<<<<<<<<<
  *         self.remove(*sprites)
@@ -18662,7 +18662,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_
  *         sprites = self.get_sprites_from_layer(layer_nr)
  *         self.remove(*sprites)             # <<<<<<<<<<<<<<
  *         return sprites
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_remove); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 865, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -18678,7 +18678,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_
  *         sprites = self.get_sprites_from_layer(layer_nr)
  *         self.remove(*sprites)
  *         return sprites             # <<<<<<<<<<<<<<
- * 
+ *
  *     #---# layer methods
  */
   __Pyx_XDECREF(__pyx_r);
@@ -18688,10 +18688,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_
 
   /* "pygame/_sprite.pyx":858
  *         return self._spritelist[idx]
- * 
+ *
  *     def remove_sprites_of_layer(self, layer_nr):             # <<<<<<<<<<<<<<
  *         """remove all sprites from a layer and return them as a list
- * 
+ *
  */
 
   /* function exit code */
@@ -18709,15 +18709,15 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_18remove_sprites_of_
 }
 
 /* "pygame/_sprite.pyx":869
- * 
+ *
  *     #---# layer methods
  *     def layers(self):             # <<<<<<<<<<<<<<
  *         """return a list of unique defined layers defined.
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_21layers(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_21layers(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18726,7 +18726,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_20layers, "return a list of unique defined layers defined.\n\n        LayeredUpdates.layers(): return layers\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_21layers = {"layers", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_21layers, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_20layers};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_21layers(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_21layers(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18763,10 +18763,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_20layers(struct __py
   __Pyx_RefNannySetupContext("layers", 0);
 
   /* "pygame/_sprite.pyx":875
- * 
+ *
  *         """
  *         return sorted(set(self._spritelayers.values()))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def change_layer(self, sprite, new_layer):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -18790,11 +18790,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_20layers(struct __py
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":869
- * 
+ *
  *     #---# layer methods
  *     def layers(self):             # <<<<<<<<<<<<<<
  *         """return a list of unique defined layers defined.
- * 
+ *
  */
 
   /* function exit code */
@@ -18812,14 +18812,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_20layers(struct __py
 
 /* "pygame/_sprite.pyx":877
  *         return sorted(set(self._spritelayers.values()))
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_23change_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_23change_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18828,7 +18828,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_22change_layer, "change the layer of the sprite\n\n        LayeredUpdates.change_layer(sprite, new_layer): return None\n\n        The sprite must have been added to the renderer already. This is not\n        checked.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_23change_layer = {"change_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_23change_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_22change_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_23change_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_23change_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18927,11 +18927,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
   __Pyx_RefNannySetupContext("change_layer", 0);
 
   /* "pygame/_sprite.pyx":886
- * 
+ *
  *         """
  *         sprites = self._spritelist # speedup             # <<<<<<<<<<<<<<
  *         sprites_layers = self._spritelayers # speedup
- * 
+ *
  */
   __pyx_t_1 = __pyx_v_self->_spritelist;
   __Pyx_INCREF(__pyx_t_1);
@@ -18942,7 +18942,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
  *         """
  *         sprites = self._spritelist # speedup
  *         sprites_layers = self._spritelayers # speedup             # <<<<<<<<<<<<<<
- * 
+ *
  *         sprites.remove(sprite)
  */
   __pyx_t_1 = __pyx_v_self->_spritelayers;
@@ -18952,20 +18952,20 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
 
   /* "pygame/_sprite.pyx":889
  *         sprites_layers = self._spritelayers # speedup
- * 
+ *
  *         sprites.remove(sprite)             # <<<<<<<<<<<<<<
  *         sprites_layers.pop(sprite)
- * 
+ *
  */
   __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyList_Type_remove, __pyx_v_sprites, __pyx_v_sprite); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 889, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":890
- * 
+ *
  *         sprites.remove(sprite)
  *         sprites_layers.pop(sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *         # add the sprite at the right position
  */
   if (unlikely(__pyx_v_sprites_layers == Py_None)) {
@@ -19181,7 +19181,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
  *         sprites.insert(mid, sprite)
  *         if hasattr(sprite, 'layer'):             # <<<<<<<<<<<<<<
  *             sprite.layer = new_layer
- * 
+ *
  */
   __pyx_t_3 = __Pyx_HasAttr(__pyx_v_sprite, __pyx_n_s_layer_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 907, __pyx_L1_error)
   __pyx_t_5 = (__pyx_t_3 != 0);
@@ -19191,7 +19191,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
  *         sprites.insert(mid, sprite)
  *         if hasattr(sprite, 'layer'):
  *             sprite.layer = new_layer             # <<<<<<<<<<<<<<
- * 
+ *
  *         # add layer info
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sprite, __pyx_n_s_layer_2, __pyx_v_new_layer) < 0) __PYX_ERR(0, 908, __pyx_L1_error)
@@ -19201,15 +19201,15 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
  *         sprites.insert(mid, sprite)
  *         if hasattr(sprite, 'layer'):             # <<<<<<<<<<<<<<
  *             sprite.layer = new_layer
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":911
- * 
+ *
  *         # add layer info
  *         sprites_layers[sprite] = new_layer             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_layer_of_sprite(self, sprite):
  */
   if (unlikely(__pyx_v_sprites_layers == Py_None)) {
@@ -19220,10 +19220,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
 
   /* "pygame/_sprite.pyx":877
  *         return sorted(set(self._spritelayers.values()))
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -19248,14 +19248,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_22change_layer(struc
 
 /* "pygame/_sprite.pyx":913
  *         sprites_layers[sprite] = new_layer
- * 
+ *
  *     def get_layer_of_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         """return the layer that sprite is currently in
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19264,7 +19264,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_24get_layer_of_sprite, "return the layer that sprite is currently in\n\n        If the sprite is not found, then it will return the default layer.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite = {"get_layer_of_sprite", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_24get_layer_of_sprite};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19341,10 +19341,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_24get_layer_of_sprit
   __Pyx_RefNannySetupContext("get_layer_of_sprite", 0);
 
   /* "pygame/_sprite.pyx":919
- * 
+ *
  *         """
  *         return self._spritelayers.get(sprite, self._default_layer)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_top_layer(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -19363,10 +19363,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_24get_layer_of_sprit
 
   /* "pygame/_sprite.pyx":913
  *         sprites_layers[sprite] = new_layer
- * 
+ *
  *     def get_layer_of_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         """return the layer that sprite is currently in
- * 
+ *
  */
 
   /* function exit code */
@@ -19383,14 +19383,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_24get_layer_of_sprit
 
 /* "pygame/_sprite.pyx":921
  *         return self._spritelayers.get(sprite, self._default_layer)
- * 
+ *
  *     def get_top_layer(self):             # <<<<<<<<<<<<<<
  *         """return the top layer
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_27get_top_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_27get_top_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19399,7 +19399,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_26get_top_layer, "return the top layer\n\n        LayeredUpdates.get_top_layer(): return layer\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_27get_top_layer = {"get_top_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_27get_top_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_26get_top_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_27get_top_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_27get_top_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19434,10 +19434,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_26get_top_layer(stru
   __Pyx_RefNannySetupContext("get_top_layer", 0);
 
   /* "pygame/_sprite.pyx":927
- * 
+ *
  *         """
  *         return self._spritelayers[self._spritelist[-1]]             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_bottom_layer(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -19460,10 +19460,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_26get_top_layer(stru
 
   /* "pygame/_sprite.pyx":921
  *         return self._spritelayers.get(sprite, self._default_layer)
- * 
+ *
  *     def get_top_layer(self):             # <<<<<<<<<<<<<<
  *         """return the top layer
- * 
+ *
  */
 
   /* function exit code */
@@ -19480,14 +19480,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_26get_top_layer(stru
 
 /* "pygame/_sprite.pyx":929
  *         return self._spritelayers[self._spritelist[-1]]
- * 
+ *
  *     def get_bottom_layer(self):             # <<<<<<<<<<<<<<
  *         """return the bottom layer
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19496,7 +19496,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_28get_bottom_layer, "return the bottom layer\n\n        LayeredUpdates.get_bottom_layer(): return layer\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer = {"get_bottom_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_28get_bottom_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19531,10 +19531,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_28get_bottom_layer(s
   __Pyx_RefNannySetupContext("get_bottom_layer", 0);
 
   /* "pygame/_sprite.pyx":935
- * 
+ *
  *         """
  *         return self._spritelayers[self._spritelist[0]]             # <<<<<<<<<<<<<<
- * 
+ *
  *     def move_to_front(self, sprite):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -19557,10 +19557,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_28get_bottom_layer(s
 
   /* "pygame/_sprite.pyx":929
  *         return self._spritelayers[self._spritelist[-1]]
- * 
+ *
  *     def get_bottom_layer(self):             # <<<<<<<<<<<<<<
  *         """return the bottom layer
- * 
+ *
  */
 
   /* function exit code */
@@ -19577,14 +19577,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_28get_bottom_layer(s
 
 /* "pygame/_sprite.pyx":937
  *         return self._spritelayers[self._spritelist[0]]
- * 
+ *
  *     def move_to_front(self, sprite):             # <<<<<<<<<<<<<<
  *         """bring the sprite to front layer
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_31move_to_front(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_31move_to_front(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19593,7 +19593,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_30move_to_front, "bring the sprite to front layer\n\n        LayeredUpdates.move_to_front(sprite): return None\n\n        Brings the sprite to front by changing the sprite layer to the top-most\n        layer. The sprite is added at the end of the list of sprites in that\n        top-most layer.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_31move_to_front = {"move_to_front", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_31move_to_front, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_30move_to_front};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_31move_to_front(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_31move_to_front(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19674,10 +19674,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_30move_to_front(stru
   __Pyx_RefNannySetupContext("move_to_front", 0);
 
   /* "pygame/_sprite.pyx":947
- * 
+ *
  *         """
  *         self.change_layer(sprite, self.get_top_layer())             # <<<<<<<<<<<<<<
- * 
+ *
  *     def move_to_back(self, sprite):
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_change_layer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 947, __pyx_L1_error)
@@ -19729,10 +19729,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_30move_to_front(stru
 
   /* "pygame/_sprite.pyx":937
  *         return self._spritelayers[self._spritelist[0]]
- * 
+ *
  *     def move_to_front(self, sprite):             # <<<<<<<<<<<<<<
  *         """bring the sprite to front layer
- * 
+ *
  */
 
   /* function exit code */
@@ -19754,14 +19754,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_30move_to_front(stru
 
 /* "pygame/_sprite.pyx":949
  *         self.change_layer(sprite, self.get_top_layer())
- * 
+ *
  *     def move_to_back(self, sprite):             # <<<<<<<<<<<<<<
  *         """move the sprite to the bottom layer
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_33move_to_back(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_33move_to_back(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19770,7 +19770,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_32move_to_back, "move the sprite to the bottom layer\n\n        LayeredUpdates.move_to_back(sprite): return None\n\n        Moves the sprite to the bottom layer by moving it to a new layer below\n        the current bottom layer.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_33move_to_back = {"move_to_back", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_33move_to_back, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_32move_to_back};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_33move_to_back(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_33move_to_back(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19851,10 +19851,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_32move_to_back(struc
   __Pyx_RefNannySetupContext("move_to_back", 0);
 
   /* "pygame/_sprite.pyx":958
- * 
+ *
  *         """
  *         self.change_layer(sprite, self.get_bottom_layer() - 1)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_top_sprite(self):
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_change_layer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 958, __pyx_L1_error)
@@ -19909,10 +19909,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_32move_to_back(struc
 
   /* "pygame/_sprite.pyx":949
  *         self.change_layer(sprite, self.get_top_layer())
- * 
+ *
  *     def move_to_back(self, sprite):             # <<<<<<<<<<<<<<
  *         """move the sprite to the bottom layer
- * 
+ *
  */
 
   /* function exit code */
@@ -19934,14 +19934,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_32move_to_back(struc
 
 /* "pygame/_sprite.pyx":960
  *         self.change_layer(sprite, self.get_bottom_layer() - 1)
- * 
+ *
  *     def get_top_sprite(self):             # <<<<<<<<<<<<<<
  *         """return the topmost sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19950,7 +19950,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_34get_top_sprite, "return the topmost sprite\n\n        LayeredUpdates.get_top_sprite(): return Sprite\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite = {"get_top_sprite", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_34get_top_sprite};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19984,10 +19984,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_34get_top_sprite(str
   __Pyx_RefNannySetupContext("get_top_sprite", 0);
 
   /* "pygame/_sprite.pyx":966
- * 
+ *
  *         """
  *         return self._spritelist[-1]             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_sprites_from_layer(self, layer):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -20003,10 +20003,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_34get_top_sprite(str
 
   /* "pygame/_sprite.pyx":960
  *         self.change_layer(sprite, self.get_bottom_layer() - 1)
- * 
+ *
  *     def get_top_sprite(self):             # <<<<<<<<<<<<<<
  *         """return the topmost sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -20022,14 +20022,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_34get_top_sprite(str
 
 /* "pygame/_sprite.pyx":968
  *         return self._spritelist[-1]
- * 
+ *
  *     def get_sprites_from_layer(self, layer):             # <<<<<<<<<<<<<<
  *         """return all sprites from a layer ordered as they where added
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20038,7 +20038,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_layer, "return all sprites from a layer ordered as they where added\n\n        LayeredUpdates.get_sprites_from_layer(layer): return sprites\n\n        Returns all sprites from a layer. The sprites are ordered in the\n        sequence that they where added. (The sprites are not removed from the\n        layer.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer = {"get_sprites_from_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20123,7 +20123,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_l
   __Pyx_RefNannySetupContext("get_sprites_from_layer", 0);
 
   /* "pygame/_sprite.pyx":978
- * 
+ *
  *         """
  *         sprites = []             # <<<<<<<<<<<<<<
  *         sprites_append = sprites.append
@@ -20243,7 +20243,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_l
  *                                             # follow with same layer
  *                 break             # <<<<<<<<<<<<<<
  *         return sprites
- * 
+ *
  */
       goto __pyx_L4_break;
 
@@ -20272,7 +20272,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_l
  *                                             # follow with same layer
  *                 break
  *         return sprites             # <<<<<<<<<<<<<<
- * 
+ *
  *     def switch_layer(self, layer1_nr, layer2_nr):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -20282,10 +20282,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_l
 
   /* "pygame/_sprite.pyx":968
  *         return self._spritelist[-1]
- * 
+ *
  *     def get_sprites_from_layer(self, layer):             # <<<<<<<<<<<<<<
  *         """return all sprites from a layer ordered as they where added
- * 
+ *
  */
 
   /* function exit code */
@@ -20307,14 +20307,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_36get_sprites_from_l
 
 /* "pygame/_sprite.pyx":989
  *         return sprites
- * 
+ *
  *     def switch_layer(self, layer1_nr, layer2_nr):             # <<<<<<<<<<<<<<
  *         """switch the sprites from layer1_nr to layer2_nr
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_39switch_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_39switch_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20323,7 +20323,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_14LayeredUpdates_38switch_layer, "switch the sprites from layer1_nr to layer2_nr\n\n        LayeredUpdates.switch_layer(layer1_nr, layer2_nr): return None\n\n        The layers number must exist. This method does not check for the\n        existence of the given layers.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_39switch_layer = {"switch_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_39switch_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_14LayeredUpdates_38switch_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_39switch_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_39switch_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20419,7 +20419,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_38switch_layer(struc
   __Pyx_RefNannySetupContext("switch_layer", 0);
 
   /* "pygame/_sprite.pyx":998
- * 
+ *
  *         """
  *         sprites1 = self.remove_sprites_of_layer(layer1_nr)             # <<<<<<<<<<<<<<
  *         for spr in self.get_sprites_from_layer(layer2_nr):
@@ -20527,7 +20527,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_38switch_layer(struc
  *         for spr in self.get_sprites_from_layer(layer2_nr):
  *             self.change_layer(spr, layer1_nr)             # <<<<<<<<<<<<<<
  *         self.add(layer=layer2_nr, *sprites1)
- * 
+ *
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_change_layer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1000, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -20567,8 +20567,8 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_38switch_layer(struc
  *         for spr in self.get_sprites_from_layer(layer2_nr):
  *             self.change_layer(spr, layer1_nr)
  *         self.add(layer=layer2_nr, *sprites1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1001, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -20586,10 +20586,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_38switch_layer(struc
 
   /* "pygame/_sprite.pyx":989
  *         return sprites
- * 
+ *
  *     def switch_layer(self, layer1_nr, layer2_nr):             # <<<<<<<<<<<<<<
  *         """switch the sprites from layer1_nr to layer2_nr
- * 
+ *
  */
 
   /* function exit code */
@@ -20612,7 +20612,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_38switch_layer(struc
 
 /* "pygame/_sprite.pyx":675
  *     _init_rect = Rect(0, 0, 0, 0)
- * 
+ *
  *     cdef public dict _spritelayers             # <<<<<<<<<<<<<<
  *     cdef public list _spritelist
  *     cdef public int _default_layer
@@ -20722,11 +20722,11 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_13_spritelayers_4__del__(s
 }
 
 /* "pygame/_sprite.pyx":676
- * 
+ *
  *     cdef public dict _spritelayers
  *     cdef public list _spritelist             # <<<<<<<<<<<<<<
  *     cdef public int _default_layer
- * 
+ *
  */
 
 /* Python wrapper */
@@ -20836,7 +20836,7 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_11_spritelist_4__del__(str
  *     cdef public dict _spritelayers
  *     cdef public list _spritelist
  *     cdef public int _default_layer             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __cinit__(self):
  */
 
@@ -20923,7 +20923,7 @@ static int __pyx_pf_6pygame_7_sprite_14LayeredUpdates_14_default_layer_2__set__(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20931,7 +20931,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_41__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20995,7 +20995,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_40__reduce_cython__(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21003,7 +21003,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_14LayeredUpdates_43__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21103,10 +21103,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_14LayeredUpdates_42__setstate_cython_
 
 /* "pygame/_sprite.pyx":1036
  *     cdef public object _bgd
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """initialize group.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -21166,11 +21166,11 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":1050
- * 
+ *
  *         """
  *         LayeredUpdates.__init__(self, *sprites, **kwargs)             # <<<<<<<<<<<<<<
  *         self._clip = None
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6pygame_7_sprite_LayeredUpdates), __pyx_n_s_init); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -21195,7 +21195,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
  *         """
  *         LayeredUpdates.__init__(self, *sprites, **kwargs)
  *         self._clip = None             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._use_update = False
  */
   __Pyx_INCREF(Py_None);
@@ -21206,25 +21206,25 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
 
   /* "pygame/_sprite.pyx":1053
  *         self._clip = None
- * 
+ *
  *         self._use_update = False             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._time_threshold = 1000.0 / 80.0 # 1000.0 / fps
  */
   __pyx_v_self->_use_update = 0;
 
   /* "pygame/_sprite.pyx":1055
  *         self._use_update = False
- * 
+ *
  *         self._time_threshold = 1000.0 / 80.0 # 1000.0 / fps             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._bgd = None
  */
   __pyx_v_self->_time_threshold = (1000.0 / 80.0);
 
   /* "pygame/_sprite.pyx":1057
  *         self._time_threshold = 1000.0 / 80.0 # 1000.0 / fps
- * 
+ *
  *         self._bgd = None             # <<<<<<<<<<<<<<
  *         for key, val in kwargs.items():
  *             if key in ['_use_update', '_time_threshold', '_default_layer']:
@@ -21236,7 +21236,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
   __pyx_v_self->_bgd = Py_None;
 
   /* "pygame/_sprite.pyx":1058
- * 
+ *
  *         self._bgd = None
  *         for key, val in kwargs.items():             # <<<<<<<<<<<<<<
  *             if key in ['_use_update', '_time_threshold', '_default_layer']:
@@ -21292,7 +21292,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
  *             if key in ['_use_update', '_time_threshold', '_default_layer']:
  *                 if hasattr(self, key):             # <<<<<<<<<<<<<<
  *                     setattr(self, key, val)
- * 
+ *
  */
       __pyx_t_10 = __Pyx_HasAttr(((PyObject *)__pyx_v_self), __pyx_v_key); if (unlikely(__pyx_t_10 == ((int)-1))) __PYX_ERR(0, 1060, __pyx_L1_error)
       __pyx_t_9 = (__pyx_t_10 != 0);
@@ -21302,7 +21302,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
  *             if key in ['_use_update', '_time_threshold', '_default_layer']:
  *                 if hasattr(self, key):
  *                     setattr(self, key, val)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):
  */
         __pyx_t_11 = PyObject_SetAttr(((PyObject *)__pyx_v_self), __pyx_v_key, __pyx_v_val); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 1061, __pyx_L1_error)
@@ -21312,7 +21312,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
  *             if key in ['_use_update', '_time_threshold', '_default_layer']:
  *                 if hasattr(self, key):             # <<<<<<<<<<<<<<
  *                     setattr(self, key, val)
- * 
+ *
  */
       }
 
@@ -21329,10 +21329,10 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
 
   /* "pygame/_sprite.pyx":1036
  *     cdef public object _bgd
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """initialize group.
- * 
+ *
  */
 
   /* function exit code */
@@ -21354,13 +21354,13 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty___init__(struct __pyx_obj_6p
 
 /* "pygame/_sprite.pyx":1063
  *                     setattr(self, key, val)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21513,7 +21513,7 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
  *             raise AttributeError()
  *         if not hasattr(sprite, 'blendmode'):             # <<<<<<<<<<<<<<
  *             raise AttributeError()
- * 
+ *
  */
   __pyx_t_6 = __Pyx_HasAttr(__pyx_v_sprite, __pyx_n_s_blendmode); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 1074, __pyx_L1_error)
   __pyx_t_7 = ((!(__pyx_t_6 != 0)) != 0);
@@ -21523,7 +21523,7 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
  *             raise AttributeError()
  *         if not hasattr(sprite, 'blendmode'):
  *             raise AttributeError()             # <<<<<<<<<<<<<<
- * 
+ *
  *         if not isinstance(sprite, DirtySprite):
  */
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_AttributeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1075, __pyx_L1_error)
@@ -21537,16 +21537,16 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
  *             raise AttributeError()
  *         if not hasattr(sprite, 'blendmode'):             # <<<<<<<<<<<<<<
  *             raise AttributeError()
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1077
  *             raise AttributeError()
- * 
+ *
  *         if not isinstance(sprite, DirtySprite):             # <<<<<<<<<<<<<<
  *             raise TypeError()
- * 
+ *
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_DirtySprite); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1077, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -21556,10 +21556,10 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
   if (unlikely(__pyx_t_6)) {
 
     /* "pygame/_sprite.pyx":1078
- * 
+ *
  *         if not isinstance(sprite, DirtySprite):
  *             raise TypeError()             # <<<<<<<<<<<<<<
- * 
+ *
  *         if sprite.dirty == 0: # set it dirty if it is not
  */
     __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_TypeError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1078, __pyx_L1_error)
@@ -21570,19 +21570,19 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
 
     /* "pygame/_sprite.pyx":1077
  *             raise AttributeError()
- * 
+ *
  *         if not isinstance(sprite, DirtySprite):             # <<<<<<<<<<<<<<
  *             raise TypeError()
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1080
  *             raise TypeError()
- * 
+ *
  *         if sprite.dirty == 0: # set it dirty if it is not             # <<<<<<<<<<<<<<
  *             sprite.dirty = 1
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_dirty); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1080, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -21594,40 +21594,40 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
   if (__pyx_t_6) {
 
     /* "pygame/_sprite.pyx":1081
- * 
+ *
  *         if sprite.dirty == 0: # set it dirty if it is not
  *             sprite.dirty = 1             # <<<<<<<<<<<<<<
- * 
+ *
  *         LayeredUpdates.add_internal(self, sprite, layer)
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sprite, __pyx_n_s_dirty, __pyx_int_1) < 0) __PYX_ERR(0, 1081, __pyx_L1_error)
 
     /* "pygame/_sprite.pyx":1080
  *             raise TypeError()
- * 
+ *
  *         if sprite.dirty == 0: # set it dirty if it is not             # <<<<<<<<<<<<<<
  *             sprite.dirty = 1
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1083
  *             sprite.dirty = 1
- * 
+ *
  *         LayeredUpdates.add_internal(self, sprite, layer)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def draw(self, surface, bgd=None):
  */
   __pyx_t_8.__pyx_n = 1;
   __pyx_t_8.layer = __pyx_v_layer;
-  __pyx_vtabptr_6pygame_7_sprite_LayeredUpdates->add_internal(((struct __pyx_obj_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self), __pyx_v_sprite, 1, &__pyx_t_8); 
+  __pyx_vtabptr_6pygame_7_sprite_LayeredUpdates->add_internal(((struct __pyx_obj_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self), __pyx_v_sprite, 1, &__pyx_t_8);
 
   /* "pygame/_sprite.pyx":1063
  *                     setattr(self, key, val)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
 
   /* function exit code */
@@ -21643,7 +21643,7 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal(struct __pyx_obj_6pyga
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21652,7 +21652,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_2add_internal, "Do not use this method directly.\n\n        It is used by the group to add a sprite internally.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_3add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_2add_internal};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_3add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21746,7 +21746,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_2add_internal(struct _
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1.__pyx_n = 1;
   __pyx_t_1.layer = __pyx_v_layer;
-  __pyx_vtabptr_6pygame_7_sprite_LayeredDirty->__pyx_base.add_internal(((struct __pyx_obj_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self), __pyx_v_sprite, 1, &__pyx_t_1); 
+  __pyx_vtabptr_6pygame_7_sprite_LayeredDirty->__pyx_base.add_internal(((struct __pyx_obj_6pygame_7_sprite_LayeredUpdates *)__pyx_v_self), __pyx_v_sprite, 1, &__pyx_t_1);
   __pyx_t_2 = __Pyx_void_to_None(NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1063, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
@@ -21770,14 +21770,14 @@ void __pyx_f_6pygame_7_sprite_12LayeredDirty_add_internal__pyx_wrap_1(struct __p
 
 /* "pygame/_sprite.pyx":1085
  *         LayeredUpdates.add_internal(self, sprite, layer)
- * 
+ *
  *     def draw(self, surface, bgd=None):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the given surface
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_5draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_5draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21786,7 +21786,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_4draw, "draw all sprites in the right order onto the given surface\n\n        LayeredDirty.draw(surface, bgd=None): return Rect_list\n\n        You can pass the background too. If a self.bgd is already set to some\n        value that is not None, then the bgd argument has no effect.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_5draw = {"draw", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_5draw, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_4draw};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_5draw(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_5draw(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21967,7 +21967,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *         _clip = self._clip
  *         if _clip is None:             # <<<<<<<<<<<<<<
  *             _clip = _orig_clip
- * 
+ *
  */
   __pyx_t_5 = (__pyx_v__clip == Py_None);
   __pyx_t_6 = (__pyx_t_5 != 0);
@@ -21977,7 +21977,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *         _clip = self._clip
  *         if _clip is None:
  *             _clip = _orig_clip             # <<<<<<<<<<<<<<
- * 
+ *
  *         _surf = surface
  */
     __Pyx_INCREF(__pyx_v__orig_clip);
@@ -21988,13 +21988,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *         _clip = self._clip
  *         if _clip is None:             # <<<<<<<<<<<<<<
  *             _clip = _orig_clip
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1100
  *             _clip = _orig_clip
- * 
+ *
  *         _surf = surface             # <<<<<<<<<<<<<<
  *         _sprites = self._spritelist
  *         _old_rect = self.spritedict
@@ -22003,7 +22003,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
   __pyx_v__surf = __pyx_v_surface;
 
   /* "pygame/_sprite.pyx":1101
- * 
+ *
  *         _surf = surface
  *         _sprites = self._spritelist             # <<<<<<<<<<<<<<
  *         _old_rect = self.spritedict
@@ -22120,7 +22120,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             self._bgd = bgd
  *         _bgd = self._bgd             # <<<<<<<<<<<<<<
  *         init_rect = self._init_rect
- * 
+ *
  */
   __pyx_t_1 = __pyx_v_self->_bgd;
   __Pyx_INCREF(__pyx_t_1);
@@ -22131,7 +22131,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             self._bgd = bgd
  *         _bgd = self._bgd
  *         init_rect = self._init_rect             # <<<<<<<<<<<<<<
- * 
+ *
  *         _surf.set_clip(_clip)
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_init_rect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1111, __pyx_L1_error)
@@ -22141,7 +22141,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":1113
  *         init_rect = self._init_rect
- * 
+ *
  *         _surf.set_clip(_clip)             # <<<<<<<<<<<<<<
  *         # -------
  *         # 0. decide whether to render with update or flip
@@ -22324,7 +22324,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                                             spr.source_rect.size)
  *                     else:
  *                         _union_rect = _rect(spr.rect)             # <<<<<<<<<<<<<<
- * 
+ *
  *                     _union_rect_collidelist = _union_rect.collidelist
  */
         /*else*/ {
@@ -22340,7 +22340,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
         /* "pygame/_sprite.pyx":1129
  *                         _union_rect = _rect(spr.rect)
- * 
+ *
  *                     _union_rect_collidelist = _union_rect.collidelist             # <<<<<<<<<<<<<<
  *                     _union_rect_union_ip = _union_rect.union_ip
  *                     i = _union_rect_collidelist(_update)
@@ -22351,7 +22351,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
         __pyx_t_3 = 0;
 
         /* "pygame/_sprite.pyx":1130
- * 
+ *
  *                     _union_rect_collidelist = _union_rect.collidelist
  *                     _union_rect_union_ip = _union_rect.union_ip             # <<<<<<<<<<<<<<
  *                     i = _union_rect_collidelist(_update)
@@ -22461,7 +22461,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                         del _update[i]
  *                         i = _union_rect_collidelist(_update)             # <<<<<<<<<<<<<<
  *                     _update_append(_union_rect.clip(_clip))
- * 
+ *
  */
           __Pyx_INCREF(__pyx_v__union_rect_collidelist);
           __pyx_t_2 = __pyx_v__union_rect_collidelist; __pyx_t_8 = NULL;
@@ -22504,7 +22504,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                         del _update[i]
  *                         i = _union_rect_collidelist(_update)
  *                     _update_append(_union_rect.clip(_clip))             # <<<<<<<<<<<<<<
- * 
+ *
  *                     if _old_rect[spr] is not init_rect:
  */
         __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v__union_rect, __pyx_n_s_clip); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1136, __pyx_L1_error)
@@ -22534,7 +22534,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
         /* "pygame/_sprite.pyx":1138
  *                     _update_append(_union_rect.clip(_clip))
- * 
+ *
  *                     if _old_rect[spr] is not init_rect:             # <<<<<<<<<<<<<<
  *                         _union_rect = _rect(_old_rect[spr])
  *                         _union_rect_collidelist = _union_rect.collidelist
@@ -22551,7 +22551,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
         if (__pyx_t_6) {
 
           /* "pygame/_sprite.pyx":1139
- * 
+ *
  *                     if _old_rect[spr] is not init_rect:
  *                         _union_rect = _rect(_old_rect[spr])             # <<<<<<<<<<<<<<
  *                         _union_rect_collidelist = _union_rect.collidelist
@@ -22765,7 +22765,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
           /* "pygame/_sprite.pyx":1138
  *                     _update_append(_union_rect.clip(_clip))
- * 
+ *
  *                     if _old_rect[spr] is not init_rect:             # <<<<<<<<<<<<<<
  *                         _union_rect = _rect(_old_rect[spr])
  *                         _union_rect_collidelist = _union_rect.collidelist
@@ -22792,7 +22792,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "pygame/_sprite.pyx":1152
- * 
+ *
  *             # clear using background
  *             if _bgd is not None:             # <<<<<<<<<<<<<<
  *                 for rec in _update:
@@ -22807,7 +22807,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             if _bgd is not None:
  *                 for rec in _update:             # <<<<<<<<<<<<<<
  *                     _surf_blit(_bgd, rec, rec)
- * 
+ *
  */
       if (unlikely(__pyx_v__update == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
@@ -22829,7 +22829,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             if _bgd is not None:
  *                 for rec in _update:
  *                     _surf_blit(_bgd, rec, rec)             # <<<<<<<<<<<<<<
- * 
+ *
  *             # 2. draw
  */
         __Pyx_INCREF(__pyx_v__surf_blit);
@@ -22860,13 +22860,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             if _bgd is not None:
  *                 for rec in _update:             # <<<<<<<<<<<<<<
  *                     _surf_blit(_bgd, rec, rec)
- * 
+ *
  */
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
       /* "pygame/_sprite.pyx":1152
- * 
+ *
  *             # clear using background
  *             if _bgd is not None:             # <<<<<<<<<<<<<<
  *                 for rec in _update:
@@ -22875,7 +22875,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
     }
 
     /* "pygame/_sprite.pyx":1157
- * 
+ *
  *             # 2. draw
  *             for spr in _sprites:             # <<<<<<<<<<<<<<
  *                 if 1 > spr.dirty:
@@ -23056,7 +23056,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                             _spr_rect = spr.rect
  *                             rect_offset_x = -_spr_rect[0]             # <<<<<<<<<<<<<<
  *                             rect_offset_y = -_spr_rect[1]
- * 
+ *
  */
             __pyx_t_8 = __Pyx_GetItemInt(__pyx_v__spr_rect, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1170, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
@@ -23070,7 +23070,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                             _spr_rect = spr.rect
  *                             rect_offset_x = -_spr_rect[0]
  *                             rect_offset_y = -_spr_rect[1]             # <<<<<<<<<<<<<<
- * 
+ *
  *                         _spr_rect_clip = _spr_rect.clip
  */
             __pyx_t_2 = __Pyx_GetItemInt(__pyx_v__spr_rect, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1171, __pyx_L1_error)
@@ -23085,9 +23085,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
           /* "pygame/_sprite.pyx":1173
  *                             rect_offset_y = -_spr_rect[1]
- * 
+ *
  *                         _spr_rect_clip = _spr_rect.clip             # <<<<<<<<<<<<<<
- * 
+ *
  *                         for idx in _spr_rect.collidelistall(_update):
  */
           __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v__spr_rect, __pyx_n_s_clip); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1173, __pyx_L1_error)
@@ -23097,7 +23097,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
           /* "pygame/_sprite.pyx":1175
  *                         _spr_rect_clip = _spr_rect.clip
- * 
+ *
  *                         for idx in _spr_rect.collidelistall(_update):             # <<<<<<<<<<<<<<
  *                             # clip
  *                             clip = _spr_rect_clip(_update[idx])
@@ -23320,7 +23320,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
             /* "pygame/_sprite.pyx":1175
  *                         _spr_rect_clip = _spr_rect.clip
- * 
+ *
  *                         for idx in _spr_rect.collidelistall(_update):             # <<<<<<<<<<<<<<
  *                             # clip
  *                             clip = _spr_rect_clip(_update[idx])
@@ -23486,7 +23486,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
       __pyx_L20:;
 
       /* "pygame/_sprite.pyx":1157
- * 
+ *
  *             # 2. draw
  *             for spr in _sprites:             # <<<<<<<<<<<<<<
  *                 if 1 > spr.dirty:
@@ -23639,7 +23639,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                                                 spr.source_rect,
  *                                                 spr.blendmode)             # <<<<<<<<<<<<<<
  *             _ret = [_rect(_clip)] # return only the part of the screen changed
- * 
+ *
  */
         __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_spr, __pyx_n_s_blendmode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1202, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
@@ -23706,8 +23706,8 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *                                                 spr.source_rect,
  *                                                 spr.blendmode)
  *             _ret = [_rect(_clip)] # return only the part of the screen changed             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
     __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)__pyx_v__rect), __pyx_v__clip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1203, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -23794,7 +23794,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *             self._use_update = False
  *         else:
  *             self._use_update = True             # <<<<<<<<<<<<<<
- * 
+ *
  * ##        # debug
  */
   /*else*/ {
@@ -23803,10 +23803,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
   __pyx_L31:;
 
   /* "pygame/_sprite.pyx":1218
- * 
+ *
  *         # emtpy dirty rects list
  *         _update[:] = []             # <<<<<<<<<<<<<<
- * 
+ *
  *         # -------
  */
   __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1218, __pyx_L1_error)
@@ -23823,7 +23823,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *         # restore original clip
  *         _surf.set_clip(_orig_clip)             # <<<<<<<<<<<<<<
  *         return _ret
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v__surf, __pyx_n_s_set_clip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -23853,7 +23853,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
  *         # restore original clip
  *         _surf.set_clip(_orig_clip)
  *         return _ret             # <<<<<<<<<<<<<<
- * 
+ *
  *     def clear(self, surface, bgd):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -23863,10 +23863,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":1085
  *         LayeredUpdates.add_internal(self, sprite, layer)
- * 
+ *
  *     def draw(self, surface, bgd=None):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the given surface
- * 
+ *
  */
 
   /* function exit code */
@@ -23916,14 +23916,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_4draw(struct __pyx_obj
 
 /* "pygame/_sprite.pyx":1225
  *         return _ret
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """use to set background
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_7clear(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_7clear(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23932,7 +23932,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_6clear, "use to set background\n\n        Group.clear(surface, bgd): return None\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_7clear = {"clear", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_7clear, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_6clear};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_7clear(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_7clear(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24016,10 +24016,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_6clear(struct __pyx_ob
   __Pyx_RefNannySetupContext("clear", 0);
 
   /* "pygame/_sprite.pyx":1231
- * 
+ *
  *         """
  *         self._bgd = bgd             # <<<<<<<<<<<<<<
- * 
+ *
  *     def repaint_rect(self, screen_rect):
  */
   __Pyx_INCREF(__pyx_v_bgd);
@@ -24030,10 +24030,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_6clear(struct __pyx_ob
 
   /* "pygame/_sprite.pyx":1225
  *         return _ret
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """use to set background
- * 
+ *
  */
 
   /* function exit code */
@@ -24045,14 +24045,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_6clear(struct __pyx_ob
 
 /* "pygame/_sprite.pyx":1233
  *         self._bgd = bgd
- * 
+ *
  *     def repaint_rect(self, screen_rect):             # <<<<<<<<<<<<<<
  *         """repaint the given area
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_9repaint_rect(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_9repaint_rect(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24061,7 +24061,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_8repaint_rect, "repaint the given area\n\n        LayeredDirty.repaint_rect(screen_rect): return None\n\n        screen_rect is in screen coordinates.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_9repaint_rect = {"repaint_rect", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_9repaint_rect, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_8repaint_rect};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_9repaint_rect(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_9repaint_rect(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24142,7 +24142,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_8repaint_rect(struct _
   __Pyx_RefNannySetupContext("repaint_rect", 0);
 
   /* "pygame/_sprite.pyx":1241
- * 
+ *
  *         """
  *         if self._clip:             # <<<<<<<<<<<<<<
  *             self.lostsprites.append(screen_rect.clip(self._clip))
@@ -24188,7 +24188,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_8repaint_rect(struct _
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "pygame/_sprite.pyx":1241
- * 
+ *
  *         """
  *         if self._clip:             # <<<<<<<<<<<<<<
  *             self.lostsprites.append(screen_rect.clip(self._clip))
@@ -24201,7 +24201,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_8repaint_rect(struct _
  *             self.lostsprites.append(screen_rect.clip(self._clip))
  *         else:
  *             self.lostsprites.append(Rect(screen_rect))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def set_clip(self, screen_rect=None):
  */
   /*else*/ {
@@ -24218,10 +24218,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_8repaint_rect(struct _
 
   /* "pygame/_sprite.pyx":1233
  *         self._bgd = bgd
- * 
+ *
  *     def repaint_rect(self, screen_rect):             # <<<<<<<<<<<<<<
  *         """repaint the given area
- * 
+ *
  */
 
   /* function exit code */
@@ -24241,14 +24241,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_8repaint_rect(struct _
 
 /* "pygame/_sprite.pyx":1246
  *             self.lostsprites.append(Rect(screen_rect))
- * 
+ *
  *     def set_clip(self, screen_rect=None):             # <<<<<<<<<<<<<<
  *         """clip the area where to draw; pass None (default) to reset the clip
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_11set_clip(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_11set_clip(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24257,7 +24257,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_10set_clip, "clip the area where to draw; pass None (default) to reset the clip\n\n        LayeredDirty.set_clip(screen_rect=None): return None\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_11set_clip = {"set_clip", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_11set_clip, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_10set_clip};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_11set_clip(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_11set_clip(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24345,7 +24345,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_10set_clip(struct __py
   __Pyx_RefNannySetupContext("set_clip", 0);
 
   /* "pygame/_sprite.pyx":1252
- * 
+ *
  *         """
  *         if screen_rect is None:             # <<<<<<<<<<<<<<
  *             self._clip = pygame.display.get_surface().get_rect()
@@ -24421,7 +24421,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_10set_clip(struct __py
     __pyx_t_3 = 0;
 
     /* "pygame/_sprite.pyx":1252
- * 
+ *
  *         """
  *         if screen_rect is None:             # <<<<<<<<<<<<<<
  *             self._clip = pygame.display.get_surface().get_rect()
@@ -24435,7 +24435,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_10set_clip(struct __py
  *         else:
  *             self._clip = screen_rect             # <<<<<<<<<<<<<<
  *         self._use_update = False
- * 
+ *
  */
   /*else*/ {
     if (!(likely(((__pyx_v_screen_rect) == Py_None) || likely(__Pyx_TypeTest(__pyx_v_screen_rect, __pyx_ptype_6pygame_5_sdl2_5video_Rect))))) __PYX_ERR(0, 1255, __pyx_L1_error)
@@ -24453,17 +24453,17 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_10set_clip(struct __py
  *         else:
  *             self._clip = screen_rect
  *         self._use_update = False             # <<<<<<<<<<<<<<
- * 
+ *
  *     def get_clip(self):
  */
   __pyx_v_self->_use_update = 0;
 
   /* "pygame/_sprite.pyx":1246
  *             self.lostsprites.append(Rect(screen_rect))
- * 
+ *
  *     def set_clip(self, screen_rect=None):             # <<<<<<<<<<<<<<
  *         """clip the area where to draw; pass None (default) to reset the clip
- * 
+ *
  */
 
   /* function exit code */
@@ -24484,14 +24484,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_10set_clip(struct __py
 
 /* "pygame/_sprite.pyx":1258
  *         self._use_update = False
- * 
+ *
  *     def get_clip(self):             # <<<<<<<<<<<<<<
  *         """get the area where drawing will occur
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_13get_clip(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_13get_clip(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24500,7 +24500,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_12get_clip, "get the area where drawing will occur\n\n        LayeredDirty.get_clip(): return Rect\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_13get_clip = {"get_clip", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_13get_clip, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_12get_clip};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_13get_clip(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_13get_clip(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24530,10 +24530,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_12get_clip(struct __py
   __Pyx_RefNannySetupContext("get_clip", 0);
 
   /* "pygame/_sprite.pyx":1264
- * 
+ *
  *         """
  *         return self._clip             # <<<<<<<<<<<<<<
- * 
+ *
  *     def change_layer(self, sprite, new_layer):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -24543,10 +24543,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_12get_clip(struct __py
 
   /* "pygame/_sprite.pyx":1258
  *         self._use_update = False
- * 
+ *
  *     def get_clip(self):             # <<<<<<<<<<<<<<
  *         """get the area where drawing will occur
- * 
+ *
  */
 
   /* function exit code */
@@ -24558,14 +24558,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_12get_clip(struct __py
 
 /* "pygame/_sprite.pyx":1266
  *         return self._clip
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_15change_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_15change_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24574,7 +24574,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_14change_layer, "change the layer of the sprite\n\n        LayeredUpdates.change_layer(sprite, new_layer): return None\n\n        The sprite must have been added to the renderer already. This is not\n        checked.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_15change_layer = {"change_layer", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_15change_layer, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_14change_layer};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_15change_layer(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_15change_layer(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24666,7 +24666,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_14change_layer(struct 
   __Pyx_RefNannySetupContext("change_layer", 0);
 
   /* "pygame/_sprite.pyx":1275
- * 
+ *
  *         """
  *         LayeredUpdates.change_layer(self, sprite, new_layer)             # <<<<<<<<<<<<<<
  *         if sprite.dirty == 0:
@@ -24701,7 +24701,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_14change_layer(struct 
  *         LayeredUpdates.change_layer(self, sprite, new_layer)
  *         if sprite.dirty == 0:             # <<<<<<<<<<<<<<
  *             sprite.dirty = 1
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_dirty); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -24716,7 +24716,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_14change_layer(struct 
  *         LayeredUpdates.change_layer(self, sprite, new_layer)
  *         if sprite.dirty == 0:
  *             sprite.dirty = 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     def set_timing_treshold(self, time_ms):
  */
     if (__Pyx_PyObject_SetAttrStr(__pyx_v_sprite, __pyx_n_s_dirty, __pyx_int_1) < 0) __PYX_ERR(0, 1277, __pyx_L1_error)
@@ -24726,16 +24726,16 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_14change_layer(struct 
  *         LayeredUpdates.change_layer(self, sprite, new_layer)
  *         if sprite.dirty == 0:             # <<<<<<<<<<<<<<
  *             sprite.dirty = 1
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1266
  *         return self._clip
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -24755,14 +24755,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_14change_layer(struct 
 
 /* "pygame/_sprite.pyx":1279
  *             sprite.dirty = 1
- * 
+ *
  *     def set_timing_treshold(self, time_ms):             # <<<<<<<<<<<<<<
  *         """set the treshold in milliseconds
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24771,7 +24771,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_12LayeredDirty_16set_timing_treshold, "set the treshold in milliseconds\n\n        set_timing_treshold(time_ms): return None\n\n        Defaults to 1000.0 / 80.0. This means that the screen will be painted\n        using the flip method rather than the update method if the update\n        method is taking so long to update the screen that the frame rate falls\n        below 80 frames per second.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold = {"set_timing_treshold", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_12LayeredDirty_16set_timing_treshold};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24847,21 +24847,21 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_16set_timing_treshold(
   __Pyx_RefNannySetupContext("set_timing_treshold", 0);
 
   /* "pygame/_sprite.pyx":1290
- * 
+ *
  *         """
  *         self._time_threshold = time_ms             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_time_ms); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1290, __pyx_L1_error)
   __pyx_v_self->_time_threshold = __pyx_t_1;
 
   /* "pygame/_sprite.pyx":1279
  *             sprite.dirty = 1
- * 
+ *
  *     def set_timing_treshold(self, time_ms):             # <<<<<<<<<<<<<<
  *         """set the treshold in milliseconds
- * 
+ *
  */
 
   /* function exit code */
@@ -24878,7 +24878,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_16set_timing_treshold(
 
 /* "pygame/_sprite.pyx":1031
  *     """
- * 
+ *
  *     cdef public Rect _clip             # <<<<<<<<<<<<<<
  *     cdef public bint _use_update
  *     cdef public float _time_threshold
@@ -24988,7 +24988,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty_5_clip_4__del__(struct __pyx
 }
 
 /* "pygame/_sprite.pyx":1032
- * 
+ *
  *     cdef public Rect _clip
  *     cdef public bint _use_update             # <<<<<<<<<<<<<<
  *     cdef public float _time_threshold
@@ -25076,7 +25076,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty_11_use_update_2__set__(struc
  *     cdef public bint _use_update
  *     cdef public float _time_threshold             # <<<<<<<<<<<<<<
  *     cdef public object _bgd
- * 
+ *
  */
 
 /* Python wrapper */
@@ -25159,7 +25159,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty_15_time_threshold_2__set__(s
  *     cdef public bint _use_update
  *     cdef public float _time_threshold
  *     cdef public object _bgd             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, *sprites, **kwargs):
  */
 
@@ -25260,7 +25260,7 @@ static int __pyx_pf_6pygame_7_sprite_12LayeredDirty_4_bgd_4__del__(struct __pyx_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25268,7 +25268,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_19__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25332,7 +25332,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_18__reduce_cython__(CY
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25340,7 +25340,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_12LayeredDirty_21__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25440,7 +25440,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_12LayeredDirty_20__setstate_cython__(
 
 /* "pygame/_sprite.pyx":1307
  *     cdef public object __sprite
- * 
+ *
  *     def __init__(self, sprite=None):             # <<<<<<<<<<<<<<
  *         AbstractGroup.__init__(self)
  *         self.__sprite = None
@@ -25527,7 +25527,7 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle___init__(struct __pyx_obj_6py
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":1308
- * 
+ *
  *     def __init__(self, sprite=None):
  *         AbstractGroup.__init__(self)             # <<<<<<<<<<<<<<
  *         self.__sprite = None
@@ -25575,7 +25575,7 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle___init__(struct __pyx_obj_6py
  *         self.__sprite = None
  *         if sprite is not None:             # <<<<<<<<<<<<<<
  *             self.add(sprite)
- * 
+ *
  */
   __pyx_t_5 = (__pyx_v_sprite != Py_None);
   __pyx_t_6 = (__pyx_t_5 != 0);
@@ -25585,7 +25585,7 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle___init__(struct __pyx_obj_6py
  *         self.__sprite = None
  *         if sprite is not None:
  *             self.add(sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def copy(self):
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_add); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1311, __pyx_L1_error)
@@ -25617,13 +25617,13 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle___init__(struct __pyx_obj_6py
  *         self.__sprite = None
  *         if sprite is not None:             # <<<<<<<<<<<<<<
  *             self.add(sprite)
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1307
  *     cdef public object __sprite
- * 
+ *
  *     def __init__(self, sprite=None):             # <<<<<<<<<<<<<<
  *         AbstractGroup.__init__(self)
  *         self.__sprite = None
@@ -25645,14 +25645,14 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle___init__(struct __pyx_obj_6py
 
 /* "pygame/_sprite.pyx":1313
  *             self.add(sprite)
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         return GroupSingle(self.__sprite)
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_3copy(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_3copy(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25660,7 +25660,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_3copy = {"copy", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_3copy, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_3copy(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_3copy(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25694,10 +25694,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_2copy(struct __pyx_obj_
   __Pyx_RefNannySetupContext("copy", 0);
 
   /* "pygame/_sprite.pyx":1314
- * 
+ *
  *     def copy(self):
  *         return GroupSingle(self.__sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef list sprites(self):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -25709,10 +25709,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_2copy(struct __pyx_obj_
 
   /* "pygame/_sprite.pyx":1313
  *             self.add(sprite)
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         return GroupSingle(self.__sprite)
- * 
+ *
  */
 
   /* function exit code */
@@ -25728,13 +25728,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_2copy(struct __pyx_obj_
 
 /* "pygame/_sprite.pyx":1316
  *         return GroupSingle(self.__sprite)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             return [self.__sprite]
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25814,7 +25814,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_11GroupSingle_sprites(struct __pyx_obj
   }
 
   /* "pygame/_sprite.pyx":1317
- * 
+ *
  *     cpdef list sprites(self):
  *         if self.__sprite is not None:             # <<<<<<<<<<<<<<
  *             return [self.__sprite]
@@ -25842,7 +25842,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_11GroupSingle_sprites(struct __pyx_obj
     goto __pyx_L0;
 
     /* "pygame/_sprite.pyx":1317
- * 
+ *
  *     cpdef list sprites(self):
  *         if self.__sprite is not None:             # <<<<<<<<<<<<<<
  *             return [self.__sprite]
@@ -25854,7 +25854,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_11GroupSingle_sprites(struct __pyx_obj
  *             return [self.__sprite]
  *         else:
  *             return []             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  */
   /*else*/ {
@@ -25868,7 +25868,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_11GroupSingle_sprites(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":1316
  *         return GroupSingle(self.__sprite)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             return [self.__sprite]
@@ -25889,7 +25889,7 @@ static PyObject *__pyx_f_6pygame_7_sprite_11GroupSingle_sprites(struct __pyx_obj
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25897,7 +25897,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_5sprites = {"sprites", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_5sprites(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25949,13 +25949,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_4sprites(struct __pyx_o
 
 /* "pygame/_sprite.pyx":1322
  *             return []
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             self.__sprite.remove_internal(self)
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26031,7 +26031,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
   }
 
   /* "pygame/_sprite.pyx":1323
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  *         if self.__sprite is not None:             # <<<<<<<<<<<<<<
  *             self.__sprite.remove_internal(self)
@@ -26077,7 +26077,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
  *             self.__sprite.remove_internal(self)
  *             self.remove_internal(<Sprite>self.__sprite)             # <<<<<<<<<<<<<<
  *         self.__sprite = sprite
- * 
+ *
  */
     __pyx_t_1 = __pyx_v_self->_GroupSingle__sprite;
     __Pyx_INCREF(__pyx_t_1);
@@ -26085,7 +26085,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "pygame/_sprite.pyx":1323
- * 
+ *
  *     cpdef void add_internal(self, sprite):
  *         if self.__sprite is not None:             # <<<<<<<<<<<<<<
  *             self.__sprite.remove_internal(self)
@@ -26097,7 +26097,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
  *             self.__sprite.remove_internal(self)
  *             self.remove_internal(<Sprite>self.__sprite)
  *         self.__sprite = sprite             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __nonzero__(self):
  */
   __Pyx_INCREF(__pyx_v_sprite);
@@ -26108,7 +26108,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":1322
  *             return []
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             self.__sprite.remove_internal(self)
@@ -26127,7 +26127,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_add_internal(struct __pyx_obj
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26135,7 +26135,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_7add_internal = {"add_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_7add_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26229,10 +26229,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_6add_internal(struct __
 
 /* "pygame/_sprite.pyx":1328
  *         self.__sprite = sprite
- * 
+ *
  *     def __nonzero__(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite is not None
- * 
+ *
  */
 
 /* Python wrapper */
@@ -26256,10 +26256,10 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_8__nonzero__(struct __pyx_obj
   __Pyx_RefNannySetupContext("__nonzero__", 0);
 
   /* "pygame/_sprite.pyx":1329
- * 
+ *
  *     def __nonzero__(self):
  *         return self.__sprite is not None             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _get_sprite(self):
  */
   __pyx_t_1 = (__pyx_v_self->_GroupSingle__sprite != Py_None);
@@ -26268,10 +26268,10 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_8__nonzero__(struct __pyx_obj
 
   /* "pygame/_sprite.pyx":1328
  *         self.__sprite = sprite
- * 
+ *
  *     def __nonzero__(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite is not None
- * 
+ *
  */
 
   /* function exit code */
@@ -26282,14 +26282,14 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_8__nonzero__(struct __pyx_obj
 
 /* "pygame/_sprite.pyx":1331
  *         return self.__sprite is not None
- * 
+ *
  *     def _get_sprite(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_11_get_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_11_get_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26297,7 +26297,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_11_get_sprite = {"_get_sprite", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_11_get_sprite, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_11_get_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_11_get_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26327,10 +26327,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_10_get_sprite(struct __
   __Pyx_RefNannySetupContext("_get_sprite", 0);
 
   /* "pygame/_sprite.pyx":1332
- * 
+ *
  *     def _get_sprite(self):
  *         return self.__sprite             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _set_sprite(self, sprite):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -26340,10 +26340,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_10_get_sprite(struct __
 
   /* "pygame/_sprite.pyx":1331
  *         return self.__sprite is not None
- * 
+ *
  *     def _get_sprite(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -26355,14 +26355,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_10_get_sprite(struct __
 
 /* "pygame/_sprite.pyx":1334
  *         return self.__sprite
- * 
+ *
  *     def _set_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_13_set_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_13_set_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26370,7 +26370,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_13_set_sprite = {"_set_sprite", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_13_set_sprite, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_13_set_sprite(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_13_set_sprite(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26449,7 +26449,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_12_set_sprite(struct __
   __Pyx_RefNannySetupContext("_set_sprite", 0);
 
   /* "pygame/_sprite.pyx":1335
- * 
+ *
  *     def _set_sprite(self, sprite):
  *         self.add_internal(sprite)             # <<<<<<<<<<<<<<
  *         sprite.add_internal(self)
@@ -26462,7 +26462,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_12_set_sprite(struct __
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)             # <<<<<<<<<<<<<<
  *         return sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_add_internal); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -26492,7 +26492,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_12_set_sprite(struct __
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)
  *         return sprite             # <<<<<<<<<<<<<<
- * 
+ *
  *     sprite = property(_get_sprite,
  */
   __Pyx_XDECREF(__pyx_r);
@@ -26502,7 +26502,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_12_set_sprite(struct __
 
   /* "pygame/_sprite.pyx":1334
  *         return self.__sprite
- * 
+ *
  *     def _set_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)
@@ -26523,13 +26523,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_12_set_sprite(struct __
 
 /* "pygame/_sprite.pyx":1344
  *                       "The sprite contained in this group")
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if sprite is self.__sprite:
  *             self.__sprite = None
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26605,7 +26605,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
   }
 
   /* "pygame/_sprite.pyx":1345
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  *         if sprite is self.__sprite:             # <<<<<<<<<<<<<<
  *             self.__sprite = None
@@ -26629,7 +26629,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
     __pyx_v_self->_GroupSingle__sprite = Py_None;
 
     /* "pygame/_sprite.pyx":1345
- * 
+ *
  *     cpdef void remove_internal(self, sprite):
  *         if sprite is self.__sprite:             # <<<<<<<<<<<<<<
  *             self.__sprite = None
@@ -26642,7 +26642,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
  *             self.__sprite = None
  *         if sprite in self.spritedict:             # <<<<<<<<<<<<<<
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  */
   if (unlikely(__pyx_v_self->__pyx_base.spritedict == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
@@ -26656,7 +26656,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
  *             self.__sprite = None
  *         if sprite in self.spritedict:
  *             AbstractGroup.remove_internal(self, sprite)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cpdef bint has_internal(self, sprite):
  */
     __pyx_f_6pygame_7_sprite_13AbstractGroup_remove_internal(((struct __pyx_obj_6pygame_7_sprite_AbstractGroup *)__pyx_v_self), __pyx_v_sprite, 1);
@@ -26666,13 +26666,13 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
  *             self.__sprite = None
  *         if sprite in self.spritedict:             # <<<<<<<<<<<<<<
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":1344
  *                       "The sprite contained in this group")
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if sprite is self.__sprite:
  *             self.__sprite = None
@@ -26691,7 +26691,7 @@ static void __pyx_f_6pygame_7_sprite_11GroupSingle_remove_internal(struct __pyx_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26699,7 +26699,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_15remove_internal = {"remove_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_15remove_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26793,13 +26793,13 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_14remove_internal(struc
 
 /* "pygame/_sprite.pyx":1350
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
 
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26877,10 +26877,10 @@ static int __pyx_f_6pygame_7_sprite_11GroupSingle_has_internal(struct __pyx_obj_
   }
 
   /* "pygame/_sprite.pyx":1351
- * 
+ *
  *     cpdef bint has_internal(self, sprite):
  *         return self.__sprite is sprite             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Optimizations...
  */
   __pyx_t_6 = (__pyx_v_self->_GroupSingle__sprite == __pyx_v_sprite);
@@ -26889,10 +26889,10 @@ static int __pyx_f_6pygame_7_sprite_11GroupSingle_has_internal(struct __pyx_obj_
 
   /* "pygame/_sprite.pyx":1350
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -26909,7 +26909,7 @@ static int __pyx_f_6pygame_7_sprite_11GroupSingle_has_internal(struct __pyx_obj_
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26917,7 +26917,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_17has_internal = {"has_internal", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_17has_internal(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27010,11 +27010,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_16has_internal(struct _
 }
 
 /* "pygame/_sprite.pyx":1354
- * 
+ *
  *     # Optimizations...
  *     def __contains__(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
 
 /* Python wrapper */
@@ -27041,19 +27041,19 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_18__contains__(struct __pyx_o
  *     # Optimizations...
  *     def __contains__(self, sprite):
  *         return self.__sprite is sprite             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_t_1 = (__pyx_v_self->_GroupSingle__sprite == __pyx_v_sprite);
   __pyx_r = __pyx_t_1;
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":1354
- * 
+ *
  *     # Optimizations...
  *     def __contains__(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -27064,9 +27064,9 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_18__contains__(struct __pyx_o
 
 /* "pygame/_sprite.pyx":1305
  *     """
- * 
+ *
  *     cdef public object __sprite             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, sprite=None):
  */
 
@@ -27167,7 +27167,7 @@ static int __pyx_pf_6pygame_7_sprite_11GroupSingle_20_GroupSingle__sprite_4__del
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_21__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_21__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27175,7 +27175,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_21__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_21__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_21__reduce_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_21__reduce_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27239,7 +27239,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_20__reduce_cython__(CYT
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_23__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_23__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27247,7 +27247,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11GroupSingle_23__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11GroupSingle_23__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_23__setstate_cython__(PyObject *__pyx_v_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11GroupSingle_23__setstate_cython__(PyObject *__pyx_v_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27346,15 +27346,15 @@ static PyObject *__pyx_pf_6pygame_7_sprite_11GroupSingle_22__setstate_cython__(C
 }
 
 /* "pygame/_sprite.pyx":1359
- * 
+ *
  * # Some different collision detection functions that could be used.
  * def collide_rect(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using rects.
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_1collide_rect(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_1collide_rect(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27363,7 +27363,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_collide_rect, "collision detection between two sprites, using rects.\n\n    pygame.sprite.collide_rect(left, right): return bool\n\n    Tests for collision between two sprites. Uses the pygame.Rect colliderect\n    function to calculate the collision. It is intended to be passed as a\n    collided callback function to the *collide functions. Sprites must have\n    \"rect\" attributes.\n\n    New in pygame 1.8.0\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_1collide_rect = {"collide_rect", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_1collide_rect, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_collide_rect};
-static PyObject *__pyx_pw_6pygame_7_sprite_1collide_rect(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_1collide_rect(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27455,10 +27455,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_collide_rect(CYTHON_UNUSED PyObject *
   __Pyx_RefNannySetupContext("collide_rect", 0);
 
   /* "pygame/_sprite.pyx":1372
- * 
+ *
  *     """
  *     return left.rect.colliderect(right.rect)             # <<<<<<<<<<<<<<
- * 
+ *
  * class collide_rect_ratio:
  */
   __Pyx_XDECREF(__pyx_r);
@@ -27495,11 +27495,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_collide_rect(CYTHON_UNUSED PyObject *
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":1359
- * 
+ *
  * # Some different collision detection functions that could be used.
  * def collide_rect(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using rects.
- * 
+ *
  */
 
   /* function exit code */
@@ -27518,14 +27518,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_collide_rect(CYTHON_UNUSED PyObject *
 
 /* "pygame/_sprite.pyx":1386
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """create a new collide_rect_ratio callable
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27534,7 +27534,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_18collide_rect_ratio___init__, "create a new collide_rect_ratio callable\n\n        Ratio is expected to be a floating point value used to scale\n        the underlying sprite rect before checking for collisions.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_18collide_rect_ratio_1__init__ = {"__init__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_18collide_rect_ratio___init__};
-static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27621,20 +27621,20 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio___init__(CYTHON_
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":1393
- * 
+ *
  *         """
  *         self.ratio = ratio             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __call__(self, left, right):
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_ratio, __pyx_v_ratio) < 0) __PYX_ERR(0, 1393, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1386
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """create a new collide_rect_ratio callable
- * 
+ *
  */
 
   /* function exit code */
@@ -27651,14 +27651,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio___init__(CYTHON_
 
 /* "pygame/_sprite.pyx":1395
  *         self.ratio = ratio
- * 
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled rects
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_3__call__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_3__call__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27667,7 +27667,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_18collide_rect_ratio_2__call__, "detect collision between two sprites using scaled rects\n\n        pygame.sprite.collide_rect_ratio(ratio)(left, right): return bool\n\n        Tests for collision between two sprites. Uses the pygame.Rect\n        colliderect function to calculate the collision after scaling the rects\n        by the stored ratio. Sprites must have \"rect\" attributes.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_18collide_rect_ratio_3__call__ = {"__call__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_3__call__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_18collide_rect_ratio_2__call__};
-static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_3__call__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_18collide_rect_ratio_3__call__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27778,9 +27778,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
   /* "pygame/_sprite.pyx":1406
  *         """
- * 
+ *
  *         ratio = self.ratio             # <<<<<<<<<<<<<<
- * 
+ *
  *         leftrect = left.rect
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_ratio); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1406, __pyx_L1_error)
@@ -27790,7 +27790,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
   /* "pygame/_sprite.pyx":1408
  *         ratio = self.ratio
- * 
+ *
  *         leftrect = left.rect             # <<<<<<<<<<<<<<
  *         width = leftrect.width
  *         height = leftrect.height
@@ -27801,7 +27801,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
   __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":1409
- * 
+ *
  *         leftrect = left.rect
  *         width = leftrect.width             # <<<<<<<<<<<<<<
  *         height = leftrect.height
@@ -27829,7 +27829,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
  *         height = leftrect.height
  *         leftrect = leftrect.inflate(width * ratio - width,             # <<<<<<<<<<<<<<
  *                                     height * ratio - height)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_leftrect, __pyx_n_s_inflate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1411, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -27843,7 +27843,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
  *         height = leftrect.height
  *         leftrect = leftrect.inflate(width * ratio - width,
  *                                     height * ratio - height)             # <<<<<<<<<<<<<<
- * 
+ *
  *         rightrect = right.rect
  */
   __pyx_t_3 = PyNumber_Multiply(__pyx_v_height, __pyx_v_ratio); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1412, __pyx_L1_error)
@@ -27878,7 +27878,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
   /* "pygame/_sprite.pyx":1414
  *                                     height * ratio - height)
- * 
+ *
  *         rightrect = right.rect             # <<<<<<<<<<<<<<
  *         width = rightrect.width
  *         height = rightrect.height
@@ -27889,7 +27889,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
   __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":1415
- * 
+ *
  *         rightrect = right.rect
  *         width = rightrect.width             # <<<<<<<<<<<<<<
  *         height = rightrect.height
@@ -27917,7 +27917,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
  *         height = rightrect.height
  *         rightrect = rightrect.inflate(width * ratio - width,             # <<<<<<<<<<<<<<
  *                                       height * ratio - height)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_rightrect, __pyx_n_s_inflate); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1417, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -27931,7 +27931,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
  *         height = rightrect.height
  *         rightrect = rightrect.inflate(width * ratio - width,
  *                                       height * ratio - height)             # <<<<<<<<<<<<<<
- * 
+ *
  *         return leftrect.colliderect(rightrect)
  */
   __pyx_t_5 = PyNumber_Multiply(__pyx_v_height, __pyx_v_ratio); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1418, __pyx_L1_error)
@@ -27966,9 +27966,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
   /* "pygame/_sprite.pyx":1420
  *                                       height * ratio - height)
- * 
+ *
  *         return leftrect.colliderect(rightrect)             # <<<<<<<<<<<<<<
- * 
+ *
  * def collide_circle(left, right):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -28000,10 +28000,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
   /* "pygame/_sprite.pyx":1395
  *         self.ratio = ratio
- * 
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled rects
- * 
+ *
  */
 
   /* function exit code */
@@ -28028,14 +28028,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_18collide_rect_ratio_2__call__(CYTHON
 
 /* "pygame/_sprite.pyx":1422
  *         return leftrect.colliderect(rightrect)
- * 
+ *
  * def collide_circle(left, right):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using circles
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_3collide_circle(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_3collide_circle(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28044,7 +28044,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_2collide_circle, "detect collision between two sprites using circles\n\n    pygame.sprite.collide_circle(left, right): return bool\n\n    Tests for collision between two sprites by testing whether two circles\n    centered on the sprites overlap. If the sprites have a \"radius\" attribute,\n    then that radius is used to create the circle; otherwise, a circle is\n    created that is big enough to completely enclose the sprite's rect as\n    given by the \"rect\" attribute. This function is intended to be passed as\n    a collided callback function to the *collide functions. Sprites must have a\n    \"rect\" and an optional \"radius\" attribute.\n\n    New in pygame 1.8.0\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_3collide_circle = {"collide_circle", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_3collide_circle, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_2collide_circle};
-static PyObject *__pyx_pw_6pygame_7_sprite_3collide_circle(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_3collide_circle(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28145,7 +28145,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
   /* "pygame/_sprite.pyx":1439
  *     """
- * 
+ *
  *     xdistance = left.rect.centerx - right.rect.centerx             # <<<<<<<<<<<<<<
  *     ydistance = left.rect.centery - right.rect.centery
  *     distancesquared = xdistance ** 2 + ydistance ** 2
@@ -28168,11 +28168,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
   __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":1440
- * 
+ *
  *     xdistance = left.rect.centerx - right.rect.centerx
  *     ydistance = left.rect.centery - right.rect.centery             # <<<<<<<<<<<<<<
  *     distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_left, __pyx_n_s_rect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -28195,7 +28195,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
  *     xdistance = left.rect.centerx - right.rect.centerx
  *     ydistance = left.rect.centery - right.rect.centery
  *     distancesquared = xdistance ** 2 + ydistance ** 2             # <<<<<<<<<<<<<<
- * 
+ *
  *     if hasattr(left, 'radius'):
  */
   __pyx_t_1 = PyNumber_Power(__pyx_v_xdistance, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1441, __pyx_L1_error)
@@ -28211,7 +28211,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
   /* "pygame/_sprite.pyx":1443
  *     distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  *     if hasattr(left, 'radius'):             # <<<<<<<<<<<<<<
  *         leftradius = left.radius
  *     else:
@@ -28221,7 +28221,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
   if (__pyx_t_5) {
 
     /* "pygame/_sprite.pyx":1444
- * 
+ *
  *     if hasattr(left, 'radius'):
  *         leftradius = left.radius             # <<<<<<<<<<<<<<
  *     else:
@@ -28234,7 +28234,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
     /* "pygame/_sprite.pyx":1443
  *     distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  *     if hasattr(left, 'radius'):             # <<<<<<<<<<<<<<
  *         leftradius = left.radius
  *     else:
@@ -28289,7 +28289,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
  *         leftradius = 0.5 * ((leftrect.width ** 2 + leftrect.height ** 2) ** 0.5)
  *         # store the radius on the sprite for next time
  *         setattr(left, 'radius', leftradius)             # <<<<<<<<<<<<<<
- * 
+ *
  *     if hasattr(right, 'radius'):
  */
     __pyx_t_6 = PyObject_SetAttr(__pyx_v_left, __pyx_n_s_radius, __pyx_v_leftradius); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 1451, __pyx_L1_error)
@@ -28298,7 +28298,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
   /* "pygame/_sprite.pyx":1453
  *         setattr(left, 'radius', leftradius)
- * 
+ *
  *     if hasattr(right, 'radius'):             # <<<<<<<<<<<<<<
  *         rightradius = right.radius
  *     else:
@@ -28308,7 +28308,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
   if (__pyx_t_4) {
 
     /* "pygame/_sprite.pyx":1454
- * 
+ *
  *     if hasattr(right, 'radius'):
  *         rightradius = right.radius             # <<<<<<<<<<<<<<
  *     else:
@@ -28321,7 +28321,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
     /* "pygame/_sprite.pyx":1453
  *         setattr(left, 'radius', leftradius)
- * 
+ *
  *     if hasattr(right, 'radius'):             # <<<<<<<<<<<<<<
  *         rightradius = right.radius
  *     else:
@@ -28377,7 +28377,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
  *         # store the radius on the sprite for next time
  *         setattr(right, 'radius', rightradius)             # <<<<<<<<<<<<<<
  *     return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  */
     __pyx_t_6 = PyObject_SetAttr(__pyx_v_right, __pyx_n_s_radius, __pyx_v_rightradius); if (unlikely(__pyx_t_6 == ((int)-1))) __PYX_ERR(0, 1461, __pyx_L1_error)
   }
@@ -28387,7 +28387,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
  *         # store the radius on the sprite for next time
  *         setattr(right, 'radius', rightradius)
  *     return distancesquared <= (leftradius + rightradius) ** 2             # <<<<<<<<<<<<<<
- * 
+ *
  * class collide_circle_ratio(object):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -28404,10 +28404,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
   /* "pygame/_sprite.pyx":1422
  *         return leftrect.colliderect(rightrect)
- * 
+ *
  * def collide_circle(left, right):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using circles
- * 
+ *
  */
 
   /* function exit code */
@@ -28432,14 +28432,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_2collide_circle(CYTHON_UNUSED PyObjec
 
 /* "pygame/_sprite.pyx":1476
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """creates a new collide_circle_ratio callable instance
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28448,7 +28448,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_20collide_circle_ratio___init__, "creates a new collide_circle_ratio callable instance\n\n        The given ratio is expected to be a floating point value used to scale\n        the underlying sprite radius before checking for collisions.\n\n        When the ratio is ratio=1.0, then it behaves exactly like the \n        collide_circle method.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_20collide_circle_ratio_1__init__ = {"__init__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_20collide_circle_ratio___init__};
-static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28535,20 +28535,20 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio___init__(CYTHO
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/_sprite.pyx":1486
- * 
+ *
  *         """
  *         self.ratio = ratio             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_ratio, __pyx_v_ratio) < 0) __PYX_ERR(0, 1486, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1476
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """creates a new collide_circle_ratio callable instance
- * 
+ *
  */
 
   /* function exit code */
@@ -28564,15 +28564,15 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio___init__(CYTHO
 }
 
 /* "pygame/_sprite.pyx":1489
- * 
- * 
+ *
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled circles
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_3__call__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_3__call__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28581,7 +28581,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_20collide_circle_ratio_2__call__, "detect collision between two sprites using scaled circles\n\n        pygame.sprite.collide_circle_radio(ratio)(left, right): return bool\n\n        Tests for collision between two sprites by testing whether two circles\n        centered on the sprites overlap after scaling the circle's radius by\n        the stored ratio. If the sprites have a \"radius\" attribute, that is\n        used to create the circle; otherwise, a circle is created that is big\n        enough to completely enclose the sprite's rect as given by the \"rect\"\n        attribute. Intended to be passed as a collided callback function to the\n        *collide functions. Sprites must have a \"rect\" and an optional \"radius\"\n        attribute.\n\n        ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_20collide_circle_ratio_3__call__ = {"__call__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_3__call__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_20collide_circle_ratio_2__call__};
-static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_3__call__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_20collide_circle_ratio_3__call__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28696,7 +28696,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
   /* "pygame/_sprite.pyx":1505
  *         """
- * 
+ *
  *         ratio = self.ratio             # <<<<<<<<<<<<<<
  *         xdistance = left.rect.centerx - right.rect.centerx
  *         ydistance = left.rect.centery - right.rect.centery
@@ -28707,7 +28707,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
   __pyx_t_1 = 0;
 
   /* "pygame/_sprite.pyx":1506
- * 
+ *
  *         ratio = self.ratio
  *         xdistance = left.rect.centerx - right.rect.centerx             # <<<<<<<<<<<<<<
  *         ydistance = left.rect.centery - right.rect.centery
@@ -28735,7 +28735,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
  *         xdistance = left.rect.centerx - right.rect.centerx
  *         ydistance = left.rect.centery - right.rect.centery             # <<<<<<<<<<<<<<
  *         distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_left, __pyx_n_s_rect); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1507, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -28758,7 +28758,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
  *         xdistance = left.rect.centerx - right.rect.centerx
  *         ydistance = left.rect.centery - right.rect.centery
  *         distancesquared = xdistance ** 2 + ydistance ** 2             # <<<<<<<<<<<<<<
- * 
+ *
  *         if hasattr(left, "radius"):
  */
   __pyx_t_1 = PyNumber_Power(__pyx_v_xdistance, __pyx_int_2, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1508, __pyx_L1_error)
@@ -28774,7 +28774,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
   /* "pygame/_sprite.pyx":1510
  *         distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  *         if hasattr(left, "radius"):             # <<<<<<<<<<<<<<
  *             leftradius = left.radius * ratio
  *         else:
@@ -28784,7 +28784,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
   if (__pyx_t_5) {
 
     /* "pygame/_sprite.pyx":1511
- * 
+ *
  *         if hasattr(left, "radius"):
  *             leftradius = left.radius * ratio             # <<<<<<<<<<<<<<
  *         else:
@@ -28800,7 +28800,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
     /* "pygame/_sprite.pyx":1510
  *         distancesquared = xdistance ** 2 + ydistance ** 2
- * 
+ *
  *         if hasattr(left, "radius"):             # <<<<<<<<<<<<<<
  *             leftradius = left.radius * ratio
  *         else:
@@ -28858,7 +28858,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
  *             leftradius = ratio * 0.5 * ((leftrect.width ** 2 + leftrect.height ** 2) ** 0.5)
  *             # store the radius on the sprite for next time
  *             setattr(left, 'radius', leftradius)             # <<<<<<<<<<<<<<
- * 
+ *
  *         if hasattr(right, "radius"):
  */
     __pyx_t_7 = PyObject_SetAttr(__pyx_v_left, __pyx_n_s_radius, __pyx_v_leftradius); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1516, __pyx_L1_error)
@@ -28867,7 +28867,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
   /* "pygame/_sprite.pyx":1518
  *             setattr(left, 'radius', leftradius)
- * 
+ *
  *         if hasattr(right, "radius"):             # <<<<<<<<<<<<<<
  *             rightradius = right.radius * ratio
  *         else:
@@ -28877,7 +28877,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
   if (__pyx_t_4) {
 
     /* "pygame/_sprite.pyx":1519
- * 
+ *
  *         if hasattr(right, "radius"):
  *             rightradius = right.radius * ratio             # <<<<<<<<<<<<<<
  *         else:
@@ -28893,7 +28893,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
     /* "pygame/_sprite.pyx":1518
  *             setattr(left, 'radius', leftradius)
- * 
+ *
  *         if hasattr(right, "radius"):             # <<<<<<<<<<<<<<
  *             rightradius = right.radius * ratio
  *         else:
@@ -28951,7 +28951,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
  *             rightradius = ratio * 0.5 * ((rightrect.width ** 2 + rightrect.height ** 2) ** 0.5)
  *             # store the radius on the sprite for next time
  *             setattr(right, 'radius', rightradius)             # <<<<<<<<<<<<<<
- * 
+ *
  *         return distancesquared <= (leftradius + rightradius) ** 2
  */
     __pyx_t_7 = PyObject_SetAttr(__pyx_v_right, __pyx_n_s_radius, __pyx_v_rightradius); if (unlikely(__pyx_t_7 == ((int)-1))) __PYX_ERR(0, 1524, __pyx_L1_error)
@@ -28960,9 +28960,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
   /* "pygame/_sprite.pyx":1526
  *             setattr(right, 'radius', rightradius)
- * 
+ *
  *         return distancesquared <= (leftradius + rightradius) ** 2             # <<<<<<<<<<<<<<
- * 
+ *
  * def collide_mask(left, right):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -28978,11 +28978,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":1489
- * 
- * 
+ *
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled circles
- * 
+ *
  */
 
   /* function exit code */
@@ -29009,14 +29009,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_20collide_circle_ratio_2__call__(CYTH
 
 /* "pygame/_sprite.pyx":1528
  *         return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * def collide_mask(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using masks.
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_5collide_mask(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5collide_mask(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -29025,7 +29025,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_4collide_mask, "collision detection between two sprites, using masks.\n\n    pygame.sprite.collide_mask(SpriteLeft, SpriteRight): bool\n\n    Tests for collision between two sprites by testing if their bitmasks\n    overlap. If the sprites have a \"mask\" attribute, that is used as the mask;\n    otherwise, a mask is created from the sprite image. Intended to be passed\n    as a collided callback function to the *collide functions. Sprites must\n    have a \"rect\" and an optional \"mask\" attribute.\n\n    New in pygame 1.8.0\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_5collide_mask = {"collide_mask", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_5collide_mask, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_4collide_mask};
-static PyObject *__pyx_pw_6pygame_7_sprite_5collide_mask(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_5collide_mask(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -29127,7 +29127,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_4collide_mask(CYTHON_UNUSED PyObject 
   __Pyx_RefNannySetupContext("collide_mask", 0);
 
   /* "pygame/_sprite.pyx":1542
- * 
+ *
  *     """
  *     xoffset = right.rect[0] - left.rect[0]             # <<<<<<<<<<<<<<
  *     yoffset = right.rect[1] - left.rect[1]
@@ -29365,7 +29365,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_4collide_mask(CYTHON_UNUSED PyObject 
  *     except AttributeError:
  *         rightmask = from_surface(right.image)             # <<<<<<<<<<<<<<
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))
- * 
+ *
  */
       __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_from_surface); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1551, __pyx_L13_except_error)
       __Pyx_GOTREF(__pyx_t_9);
@@ -29426,7 +29426,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_4collide_mask(CYTHON_UNUSED PyObject 
  *     except AttributeError:
  *         rightmask = from_surface(right.image)
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))             # <<<<<<<<<<<<<<
- * 
+ *
  * def spritecollide(sprite, group, dokill, collided=None):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -29467,10 +29467,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_4collide_mask(CYTHON_UNUSED PyObject 
 
   /* "pygame/_sprite.pyx":1528
  *         return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * def collide_mask(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using masks.
- * 
+ *
  */
 
   /* function exit code */
@@ -29496,14 +29496,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_4collide_mask(CYTHON_UNUSED PyObject 
 
 /* "pygame/_sprite.pyx":1554
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))
- * 
+ *
  * def spritecollide(sprite, group, dokill, collided=None):             # <<<<<<<<<<<<<<
  *     """find Sprites in a Group that intersect another Sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_7spritecollide(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_7spritecollide(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -29512,7 +29512,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_6spritecollide, "find Sprites in a Group that intersect another Sprite\n\n    pygame.sprite.spritecollide(sprite, group, dokill, collided=None):\n        return Sprite_list\n\n    Return a list containing all Sprites in a Group that intersect with another\n    Sprite. Intersection is determined by comparing the Sprite.rect attribute\n    of each Sprite.\n\n    The dokill argument is a bool. If set to True, all Sprites that collide\n    will be removed from the Group.\n\n    The collided argument is a callback function used to calculate if two\n    sprites are colliding. it should take two sprites as values, and return a\n    bool value indicating if they are colliding. If collided is not passed, all\n    sprites must have a \"rect\" value, which is a rectangle of the sprite area,\n    which will be used to calculate the collision.\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_7spritecollide = {"spritecollide", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_7spritecollide, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_6spritecollide};
-static PyObject *__pyx_pw_6pygame_7_sprite_7spritecollide(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_7spritecollide(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -29642,10 +29642,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
   __Pyx_RefNannySetupContext("spritecollide", 0);
 
   /* "pygame/_sprite.pyx":1574
- * 
+ *
  *     """
  *     if dokill:             # <<<<<<<<<<<<<<
- * 
+ *
  *         crashed = []
  */
   __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_dokill); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 1574, __pyx_L1_error)
@@ -29653,10 +29653,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
     /* "pygame/_sprite.pyx":1576
  *     if dokill:
- * 
+ *
  *         crashed = []             # <<<<<<<<<<<<<<
  *         append = crashed.append
- * 
+ *
  */
     __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1576, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -29664,10 +29664,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
     __pyx_t_2 = 0;
 
     /* "pygame/_sprite.pyx":1577
- * 
+ *
  *         crashed = []
  *         append = crashed.append             # <<<<<<<<<<<<<<
- * 
+ *
  *         if collided:
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_crashed, __pyx_n_s_append); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1577, __pyx_L1_error)
@@ -29677,7 +29677,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
     /* "pygame/_sprite.pyx":1579
  *         append = crashed.append
- * 
+ *
  *         if collided:             # <<<<<<<<<<<<<<
  *             for s in group.sprites():
  *                 if collided(sprite, s):
@@ -29686,7 +29686,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
     if (__pyx_t_1) {
 
       /* "pygame/_sprite.pyx":1580
- * 
+ *
  *         if collided:
  *             for s in group.sprites():             # <<<<<<<<<<<<<<
  *                 if collided(sprite, s):
@@ -29839,7 +29839,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
         }
 
         /* "pygame/_sprite.pyx":1580
- * 
+ *
  *         if collided:
  *             for s in group.sprites():             # <<<<<<<<<<<<<<
  *                 if collided(sprite, s):
@@ -29850,7 +29850,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
       /* "pygame/_sprite.pyx":1579
  *         append = crashed.append
- * 
+ *
  *         if collided:             # <<<<<<<<<<<<<<
  *             for s in group.sprites():
  *                 if collided(sprite, s):
@@ -29986,7 +29986,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
  *                 if spritecollide(s.rect):
  *                     s.kill()             # <<<<<<<<<<<<<<
  *                     append(s)
- * 
+ *
  */
           __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_kill); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1588, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
@@ -30016,7 +30016,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
  *                 if spritecollide(s.rect):
  *                     s.kill()
  *                     append(s)             # <<<<<<<<<<<<<<
- * 
+ *
  *         return crashed
  */
           __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_crashed, __pyx_v_s); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1589, __pyx_L1_error)
@@ -30044,9 +30044,9 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
     /* "pygame/_sprite.pyx":1591
  *                     append(s)
- * 
+ *
  *         return crashed             # <<<<<<<<<<<<<<
- * 
+ *
  *     elif collided:
  */
     __Pyx_XDECREF(__pyx_r);
@@ -30055,17 +30055,17 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
     goto __pyx_L0;
 
     /* "pygame/_sprite.pyx":1574
- * 
+ *
  *     """
  *     if dokill:             # <<<<<<<<<<<<<<
- * 
+ *
  *         crashed = []
  */
   }
 
   /* "pygame/_sprite.pyx":1593
  *         return crashed
- * 
+ *
  *     elif collided:             # <<<<<<<<<<<<<<
  *         return [s for s in group if collided(sprite, s)]
  *     else:
@@ -30074,7 +30074,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
   if (__pyx_t_1) {
 
     /* "pygame/_sprite.pyx":1594
- * 
+ *
  *     elif collided:
  *         return [s for s in group if collided(sprite, s)]             # <<<<<<<<<<<<<<
  *     else:
@@ -30158,7 +30158,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
     /* "pygame/_sprite.pyx":1593
  *         return crashed
- * 
+ *
  *     elif collided:             # <<<<<<<<<<<<<<
  *         return [s for s in group if collided(sprite, s)]
  *     else:
@@ -30170,7 +30170,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
  *     else:
  *         spritecollide = sprite.rect.colliderect             # <<<<<<<<<<<<<<
  *         return [s for s in group if spritecollide(s.rect)]
- * 
+ *
  */
   /*else*/ {
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_sprite, __pyx_n_s_rect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1596, __pyx_L1_error)
@@ -30185,8 +30185,8 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
  *     else:
  *         spritecollide = sprite.rect.colliderect
  *         return [s for s in group if spritecollide(s.rect)]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1597, __pyx_L1_error)
@@ -30270,10 +30270,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 
   /* "pygame/_sprite.pyx":1554
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))
- * 
+ *
  * def spritecollide(sprite, group, dokill, collided=None):             # <<<<<<<<<<<<<<
  *     """find Sprites in a Group that intersect another Sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -30297,15 +30297,15 @@ static PyObject *__pyx_pf_6pygame_7_sprite_6spritecollide(CYTHON_UNUSED PyObject
 }
 
 /* "pygame/_sprite.pyx":1600
- * 
- * 
+ *
+ *
  * def groupcollide(groupa, groupb, dokilla, dokillb, collided=None):             # <<<<<<<<<<<<<<
  *     """detect collision between a group and another group
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_9groupcollide(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_9groupcollide(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30314,7 +30314,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_8groupcollide, "detect collision between a group and another group\n\n    pygame.sprite.groupcollide(groupa, groupb, dokilla, dokillb):\n        return dict\n\n    Given two groups, this will find the intersections between all sprites in\n    each group. It returns a dictionary of all sprites in the first group that\n    collide. The value for each item in the dictionary is a list of the sprites\n    in the second group it collides with. The two dokill arguments control if\n    the sprites from either group will be automatically removed from all\n    groups. Collided is a callback function used to calculate if two sprites\n    are colliding. it should take two sprites as values, and return a bool\n    value indicating if they are colliding. If collided is not passed, all\n    sprites must have a \"rect\" value, which is a rectangle of the sprite area\n    that will be used to calculate the collision.\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_9groupcollide = {"groupcollide", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_9groupcollide, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_8groupcollide};
-static PyObject *__pyx_pw_6pygame_7_sprite_9groupcollide(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_9groupcollide(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30453,7 +30453,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_8groupcollide(CYTHON_UNUSED PyObject 
   __Pyx_RefNannySetupContext("groupcollide", 0);
 
   /* "pygame/_sprite.pyx":1618
- * 
+ *
  *     """
  *     crashed = {}             # <<<<<<<<<<<<<<
  *     SC = spritecollide
@@ -30764,7 +30764,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_8groupcollide(CYTHON_UNUSED PyObject 
  *             if c:
  *                 crashed[s] = c             # <<<<<<<<<<<<<<
  *     return crashed
- * 
+ *
  */
         if (unlikely((PyDict_SetItem(__pyx_v_crashed, __pyx_v_s, __pyx_v_c) < 0))) __PYX_ERR(0, 1630, __pyx_L1_error)
 
@@ -30793,7 +30793,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_8groupcollide(CYTHON_UNUSED PyObject 
  *             if c:
  *                 crashed[s] = c
  *     return crashed             # <<<<<<<<<<<<<<
- * 
+ *
  * def spritecollideany(sprite, group, collided=None):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -30802,11 +30802,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_8groupcollide(CYTHON_UNUSED PyObject 
   goto __pyx_L0;
 
   /* "pygame/_sprite.pyx":1600
- * 
- * 
+ *
+ *
  * def groupcollide(groupa, groupb, dokilla, dokillb, collided=None):             # <<<<<<<<<<<<<<
  *     """detect collision between a group and another group
- * 
+ *
  */
 
   /* function exit code */
@@ -30829,14 +30829,14 @@ static PyObject *__pyx_pf_6pygame_7_sprite_8groupcollide(CYTHON_UNUSED PyObject 
 
 /* "pygame/_sprite.pyx":1633
  *     return crashed
- * 
+ *
  * def spritecollideany(sprite, group, collided=None):             # <<<<<<<<<<<<<<
  *     """finds any sprites in a group that collide with the given sprite
- * 
+ *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6pygame_7_sprite_11spritecollideany(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11spritecollideany(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30845,7 +30845,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_6pygame_7_sprite_10spritecollideany, "finds any sprites in a group that collide with the given sprite\n\n    pygame.sprite.spritecollideany(sprite, group): return sprite\n\n    Given a sprite and a group of sprites, this will return return any single\n    sprite that collides with with the given sprite. If there are no\n    collisions, then this returns None.\n\n    If you don't need all the features of the spritecollide function, this\n    function will be a bit quicker.\n\n    Collided is a callback function used to calculate if two sprites are\n    colliding. It should take two sprites as values and return a bool value\n    indicating if they are colliding. If collided is not passed, then all\n    sprites must have a \"rect\" value, which is a rectangle of the sprite area,\n    which will be used to calculate the collision.\n\n\n    ");
 static PyMethodDef __pyx_mdef_6pygame_7_sprite_11spritecollideany = {"spritecollideany", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_7_sprite_11spritecollideany, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_7_sprite_10spritecollideany};
-static PyObject *__pyx_pw_6pygame_7_sprite_11spritecollideany(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_6pygame_7_sprite_11spritecollideany(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -30959,7 +30959,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_10spritecollideany(CYTHON_UNUSED PyOb
   __Pyx_RefNannySetupContext("spritecollideany", 0);
 
   /* "pygame/_sprite.pyx":1653
- * 
+ *
  *     """
  *     if collided:             # <<<<<<<<<<<<<<
  *         for s in group:
@@ -31082,7 +31082,7 @@ static PyObject *__pyx_pf_6pygame_7_sprite_10spritecollideany(CYTHON_UNUSED PyOb
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "pygame/_sprite.pyx":1653
- * 
+ *
  *     """
  *     if collided:             # <<<<<<<<<<<<<<
  *         for s in group:
@@ -31235,10 +31235,10 @@ static PyObject *__pyx_pf_6pygame_7_sprite_10spritecollideany(CYTHON_UNUSED PyOb
 
   /* "pygame/_sprite.pyx":1633
  *     return crashed
- * 
+ *
  * def spritecollideany(sprite, group, collided=None):             # <<<<<<<<<<<<<<
  *     """finds any sprites in a group that collide with the given sprite
- * 
+ *
  */
 
   /* function exit code */
@@ -31259,11 +31259,11 @@ static PyObject *__pyx_pf_6pygame_7_sprite_10spritecollideany(CYTHON_UNUSED PyOb
 }
 
 /* "cpython/complex.pxd":19
- * 
+ *
  *         @property
  *         cdef inline double real(self):             # <<<<<<<<<<<<<<
  *             return self.cval.real
- * 
+ *
  */
 
 static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4real_real(PyComplexObject *__pyx_v_self) {
@@ -31275,18 +31275,18 @@ static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4real_real(PyComp
  *         @property
  *         cdef inline double real(self):
  *             return self.cval.real             # <<<<<<<<<<<<<<
- * 
+ *
  *         @property
  */
   __pyx_r = __pyx_v_self->cval.real;
   goto __pyx_L0;
 
   /* "cpython/complex.pxd":19
- * 
+ *
  *         @property
  *         cdef inline double real(self):             # <<<<<<<<<<<<<<
  *             return self.cval.real
- * 
+ *
  */
 
   /* function exit code */
@@ -31296,11 +31296,11 @@ static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4real_real(PyComp
 }
 
 /* "cpython/complex.pxd":23
- * 
+ *
  *         @property
  *         cdef inline double imag(self):             # <<<<<<<<<<<<<<
  *             return self.cval.imag
- * 
+ *
  */
 
 static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4imag_imag(PyComplexObject *__pyx_v_self) {
@@ -31312,18 +31312,18 @@ static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4imag_imag(PyComp
  *         @property
  *         cdef inline double imag(self):
  *             return self.cval.imag             # <<<<<<<<<<<<<<
- * 
+ *
  *     # PyTypeObject PyComplex_Type
  */
   __pyx_r = __pyx_v_self->cval.imag;
   goto __pyx_L0;
 
   /* "cpython/complex.pxd":23
- * 
+ *
  *         @property
  *         cdef inline double imag(self):             # <<<<<<<<<<<<<<
  *             return self.cval.imag
- * 
+ *
  */
 
   /* function exit code */
@@ -31333,8 +31333,8 @@ static CYTHON_INLINE double __pyx_f_7cpython_7complex_7complex_4imag_imag(PyComp
 }
 
 /* "cpython/contextvars.pxd":112
- * 
- * 
+ *
+ *
  * cdef inline object get_value(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the default value of the context variable,
@@ -31425,7 +31425,7 @@ static CYTHON_INLINE PyObject *__pyx_f_7cpython_11contextvars_get_value(PyObject
  *         pyvalue = <object>value
  *         Py_XDECREF(value)  # PyContextVar_Get() returned an owned reference as 'PyObject*'             # <<<<<<<<<<<<<<
  *     return pyvalue
- * 
+ *
  */
     Py_XDECREF(__pyx_v_value);
   }
@@ -31435,8 +31435,8 @@ static CYTHON_INLINE PyObject *__pyx_f_7cpython_11contextvars_get_value(PyObject
  *         pyvalue = <object>value
  *         Py_XDECREF(value)  # PyContextVar_Get() returned an owned reference as 'PyObject*'
  *     return pyvalue             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_pyvalue);
@@ -31444,8 +31444,8 @@ static CYTHON_INLINE PyObject *__pyx_f_7cpython_11contextvars_get_value(PyObject
   goto __pyx_L0;
 
   /* "cpython/contextvars.pxd":112
- * 
- * 
+ *
+ *
  * cdef inline object get_value(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the default value of the context variable,
@@ -31464,8 +31464,8 @@ static CYTHON_INLINE PyObject *__pyx_f_7cpython_11contextvars_get_value(PyObject
 }
 
 /* "cpython/contextvars.pxd":129
- * 
- * 
+ *
+ *
  * cdef inline object get_value_no_default(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the provided default value if no such value was found.
@@ -31538,8 +31538,8 @@ static CYTHON_INLINE PyObject *__pyx_f_7cpython_11contextvars_get_value_no_defau
   goto __pyx_L0;
 
   /* "cpython/contextvars.pxd":129
- * 
- * 
+ *
+ *
  * cdef inline object get_value_no_default(var, default_value=None):             # <<<<<<<<<<<<<<
  *     """Return a new reference to the value of the context variable,
  *     or the provided default value if no such value was found.
@@ -33968,10 +33968,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":156
  *             self.add(*groups)
- * 
+ *
  *     def add(self, *groups):             # <<<<<<<<<<<<<<
  *         """add the sprite to groups
- * 
+ *
  */
   __pyx_tuple__4 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_groups, __pyx_n_s_has, __pyx_n_s_group); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
@@ -33980,19 +33980,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":174
  *                 self.add(*group)
- * 
+ *
  *     def remove(self, *groups):             # <<<<<<<<<<<<<<
  *         """remove the sprite from groups
- * 
+ *
  */
   __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_remove, 174, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 174, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":192
  *                 self.remove(*group)
- * 
+ *
  *     cpdef void add_internal(self, group):             # <<<<<<<<<<<<<<
  *         self.__g[group] = 0
- * 
+ *
  */
   __pyx_tuple__7 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_group); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
@@ -34001,19 +34001,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":195
  *         self.__g[group] = 0
- * 
+ *
  *     cpdef void remove_internal(self, group):             # <<<<<<<<<<<<<<
  *         del self.__g[group]
- * 
+ *
  */
   __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_remove_internal, 195, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 195, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":198
  *         del self.__g[group]
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """method to control sprite behavior
- * 
+ *
  */
   __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
@@ -34022,10 +34022,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":213
  *         pass
- * 
+ *
  *     def kill(self):             # <<<<<<<<<<<<<<
  *         """remove the Sprite from all Groups
- * 
+ *
  */
   __pyx_tuple__12 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_c); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
@@ -34034,10 +34034,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":228
  *         self.__g.clear()
- * 
+ *
  *     def groups(self):             # <<<<<<<<<<<<<<
  *         """list of Groups that contain this Sprite
- * 
+ *
  */
   __pyx_tuple__14 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
@@ -34046,10 +34046,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":238
  *         return list(self.__g)
- * 
+ *
  *     def alive(self):             # <<<<<<<<<<<<<<
  *         """does the sprite belong to any groups
- * 
+ *
  */
   __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_alive, 238, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 238, __pyx_L1_error)
 
@@ -34073,9 +34073,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":283
  *     """
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.dirty = 1
  */
   __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_groups); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 283, __pyx_L1_error)
@@ -34085,7 +34085,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":294
  *         Sprite.__init__(self, *groups)
- * 
+ *
  *     def _set_visible(self, val):             # <<<<<<<<<<<<<<
  *         """set the visible value (0 or 1) and makes the sprite dirty"""
  *         self._visible = val
@@ -34097,7 +34097,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":300
  *             self.dirty = 1
- * 
+ *
  *     def _get_visible(self):             # <<<<<<<<<<<<<<
  *         """return the visible value of that sprite"""
  *         return self._visible
@@ -34106,7 +34106,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":310
  *                            "assign 0 for invisible and 1 for visible")
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s DirtySprite(in %d groups)>" % \
  *             (self.__class__.__name__, len(self.groups()))
@@ -34115,19 +34115,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":337
  *         self.lostsprites = []
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """get a list of sprites in the group
- * 
+ *
  */
   __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_sprites, 337, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 337, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":350
  *         return list(self.spritedict)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         self.spritedict[sprite] = 0
- * 
+ *
  */
   __pyx_tuple__27 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_sprite); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__27);
@@ -34136,7 +34136,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":353
  *         self.spritedict[sprite] = 0
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         r = self.spritedict[sprite]
  *         if r:
@@ -34145,28 +34145,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":359
  *         del self.spritedict[sprite]
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return sprite in self.spritedict
- * 
+ *
  */
   __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_has_internal, 359, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 359, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":362
  *         return sprite in self.spritedict
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         """copy a group with all the same sprites
- * 
+ *
  */
   __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_copy, 362, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 362, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":379
  *         return self.has(sprite)
- * 
+ *
  *     def add(self, *sprites):             # <<<<<<<<<<<<<<
  *         """add sprite(s) to group
- * 
+ *
  */
   __pyx_tuple__32 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_sprites, __pyx_n_s_sprite, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__32);
@@ -34175,19 +34175,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":414
  *                         sprite.add_internal(self)
- * 
+ *
  *     def remove(self, *sprites):             # <<<<<<<<<<<<<<
  *         """remove sprite(s) from group
- * 
+ *
  */
   __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__32, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_remove, 414, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 414, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":446
  *                         sprite.remove_internal(self)
- * 
+ *
  *     def has(self, *sprites):             # <<<<<<<<<<<<<<
  *         """ask if group has a sprite or sprites
- * 
+ *
  */
   __pyx_tuple__35 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_sprites, __pyx_n_s_return_value, __pyx_n_s_sprite, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__35);
@@ -34196,10 +34196,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":486
  *         return return_value
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """call the update method of every member sprite
- * 
+ *
  */
   __pyx_tuple__37 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_kwargs, __pyx_n_s_s); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__37);
@@ -34208,10 +34208,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":498
  *             s.update(*args, **kwargs)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites onto the surface
- * 
+ *
  */
   __pyx_tuple__39 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_surface, __pyx_n_s_sprites, __pyx_n_s_surface_blit, __pyx_n_s_spritedict, __pyx_n_s_ret, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__39)) __PYX_ERR(0, 498, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__39);
@@ -34220,10 +34220,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":525
  *         self.lostsprites[:] = []
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """erase the previous position of all sprites
- * 
+ *
  */
   __pyx_tuple__41 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_surface, __pyx_n_s_bgd, __pyx_n_s_r, __pyx_n_s_surface_blit); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__41);
@@ -34232,10 +34232,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":550
  *                     surface_blit(bgd, r, r)
- * 
+ *
  *     def empty(self):             # <<<<<<<<<<<<<<
  *         """remove all sprites
- * 
+ *
  */
   __pyx_tuple__43 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_s); if (unlikely(!__pyx_tuple__43)) __PYX_ERR(0, 550, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__43);
@@ -34273,7 +34273,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(1, 3, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":613
- * 
+ *
  *     """
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *        spritedict = self.spritedict
@@ -34301,16 +34301,16 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":651
  *         RenderUpdates.__init__(self, *sprites)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         return list(self._spritelist)
- * 
+ *
  */
   __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_sprites, 651, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(0, 651, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":654
  *         return list(self._spritelist)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.add_internal(self, sprite)
  *         self._spritelist.append(sprite)
@@ -34319,7 +34319,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":658
  *         self._spritelist.append(sprite)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.remove_internal(self, sprite)
  *         self._spritelist.remove(sprite)
@@ -34343,9 +34343,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":673
  *     """
- * 
+ *
  *     _init_rect = Rect(0, 0, 0, 0)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef public dict _spritelayers
  */
   __pyx_tuple__58 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__58)) __PYX_ERR(0, 673, __pyx_L1_error)
@@ -34354,10 +34354,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":701
  *         self.add(*sprites, **kwargs)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_tuple__59 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_sprite, __pyx_n_s_layer_2); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__59);
@@ -34369,10 +34369,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":737
  *         sprites.insert(mid, sprite)
- * 
+ *
  *     def add(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """add a sprite or sequence of sprites to a group
- * 
+ *
  */
   __pyx_tuple__62 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_sprites, __pyx_n_s_kwargs, __pyx_n_s_layer_2, __pyx_n_s_sprite, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 737, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__62);
@@ -34381,28 +34381,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":783
  *                         sprite.add_internal(self)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_remove_internal, 783, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 783, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":800
  *         del self._spritelayers[sprite]
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """return a ordered list of sprites (first back, last top).
- * 
+ *
  */
   __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_sprites, 800, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 800, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":808
  *         return list(self._spritelist)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the passed surface
- * 
+ *
  */
   __pyx_tuple__66 = PyTuple_Pack(10, __pyx_n_s_self, __pyx_n_s_surface, __pyx_n_s_spritedict, __pyx_n_s_surface_blit, __pyx_n_s_dirty, __pyx_n_s_dirty_append, __pyx_n_s_init_rect_2, __pyx_n_s_spr, __pyx_n_s_rec, __pyx_n_s_newrect); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 808, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__66);
@@ -34411,10 +34411,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":834
  *         return dirty
- * 
+ *
  *     def get_sprites_at(self, pos):             # <<<<<<<<<<<<<<
  *         """return a list with all sprites at that position
- * 
+ *
  */
   __pyx_tuple__68 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_pos, __pyx_n_s_sprites_2, __pyx_n_s_rect, __pyx_n_s_colliding_idx, __pyx_n_s_colliding, __pyx_n_s_i); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__68);
@@ -34423,10 +34423,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":848
  *         return colliding
- * 
+ *
  *     def get_sprite(self, idx):             # <<<<<<<<<<<<<<
  *         """return the sprite at the index idx from the groups sprites
- * 
+ *
  */
   __pyx_tuple__70 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_idx); if (unlikely(!__pyx_tuple__70)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__70);
@@ -34435,10 +34435,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":858
  *         return self._spritelist[idx]
- * 
+ *
  *     def remove_sprites_of_layer(self, layer_nr):             # <<<<<<<<<<<<<<
  *         """remove all sprites from a layer and return them as a list
- * 
+ *
  */
   __pyx_tuple__72 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_layer_nr, __pyx_n_s_sprites); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(0, 858, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__72);
@@ -34446,20 +34446,20 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__73 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__72, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_remove_sprites_of_layer, 858, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__73)) __PYX_ERR(0, 858, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":869
- * 
+ *
  *     #---# layer methods
  *     def layers(self):             # <<<<<<<<<<<<<<
  *         """return a list of unique defined layers defined.
- * 
+ *
  */
   __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_layers, 869, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 869, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":877
  *         return sorted(set(self._spritelayers.values()))
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
   __pyx_tuple__75 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_sprite, __pyx_n_s_new_layer, __pyx_n_s_sprites, __pyx_n_s_sprites_layers, __pyx_n_s_leng, __pyx_n_s_low, __pyx_n_s_mid, __pyx_n_s_high); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(0, 877, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__75);
@@ -34468,64 +34468,64 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":913
  *         sprites_layers[sprite] = new_layer
- * 
+ *
  *     def get_layer_of_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         """return the layer that sprite is currently in
- * 
+ *
  */
   __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_layer_of_sprite, 913, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 913, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":921
  *         return self._spritelayers.get(sprite, self._default_layer)
- * 
+ *
  *     def get_top_layer(self):             # <<<<<<<<<<<<<<
  *         """return the top layer
- * 
+ *
  */
   __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_top_layer, 921, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(0, 921, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":929
  *         return self._spritelayers[self._spritelist[-1]]
- * 
+ *
  *     def get_bottom_layer(self):             # <<<<<<<<<<<<<<
  *         """return the bottom layer
- * 
+ *
  */
   __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_bottom_layer, 929, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 929, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":937
  *         return self._spritelayers[self._spritelist[0]]
- * 
+ *
  *     def move_to_front(self, sprite):             # <<<<<<<<<<<<<<
  *         """bring the sprite to front layer
- * 
+ *
  */
   __pyx_codeobj__80 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_move_to_front, 937, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__80)) __PYX_ERR(0, 937, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":949
  *         self.change_layer(sprite, self.get_top_layer())
- * 
+ *
  *     def move_to_back(self, sprite):             # <<<<<<<<<<<<<<
  *         """move the sprite to the bottom layer
- * 
+ *
  */
   __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_move_to_back, 949, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 949, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":960
  *         self.change_layer(sprite, self.get_bottom_layer() - 1)
- * 
+ *
  *     def get_top_sprite(self):             # <<<<<<<<<<<<<<
  *         """return the topmost sprite
- * 
+ *
  */
   __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_top_sprite, 960, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(0, 960, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":968
  *         return self._spritelist[-1]
- * 
+ *
  *     def get_sprites_from_layer(self, layer):             # <<<<<<<<<<<<<<
  *         """return all sprites from a layer ordered as they where added
- * 
+ *
  */
   __pyx_tuple__83 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_layer_2, __pyx_n_s_sprites, __pyx_n_s_sprites_append, __pyx_n_s_sprite_layers, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__83)) __PYX_ERR(0, 968, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__83);
@@ -34534,10 +34534,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":989
  *         return sprites
- * 
+ *
  *     def switch_layer(self, layer1_nr, layer2_nr):             # <<<<<<<<<<<<<<
  *         """switch the sprites from layer1_nr to layer2_nr
- * 
+ *
  */
   __pyx_tuple__85 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_layer1_nr, __pyx_n_s_layer2_nr, __pyx_n_s_sprites1, __pyx_n_s_spr); if (unlikely(!__pyx_tuple__85)) __PYX_ERR(0, 989, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__85);
@@ -34561,19 +34561,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1063
  *                     setattr(self, key, val)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_codeobj__89 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_add_internal, 1063, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__89)) __PYX_ERR(0, 1063, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1085
  *         LayeredUpdates.add_internal(self, sprite, layer)
- * 
+ *
  *     def draw(self, surface, bgd=None):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the given surface
- * 
+ *
  */
   __pyx_tuple__90 = PyTuple_Pack(29, __pyx_n_s_self, __pyx_n_s_surface, __pyx_n_s_bgd, __pyx_n_s_orig_clip, __pyx_n_s_clip_2, __pyx_n_s_surf, __pyx_n_s_sprites_2, __pyx_n_s_old_rect, __pyx_n_s_update_2, __pyx_n_s_update_append, __pyx_n_s_ret_2, __pyx_n_s_surf_blit, __pyx_n_s_rect_2, __pyx_n_s_bgd_2, __pyx_n_s_init_rect_2, __pyx_n_s_start_time, __pyx_n_s_spr, __pyx_n_s_union_rect, __pyx_n_s_union_rect_collidelist, __pyx_n_s_union_rect_union_ip, __pyx_n_s_i, __pyx_n_s_rec, __pyx_n_s_spr_rect, __pyx_n_s_rect_offset_x, __pyx_n_s_rect_offset_y, __pyx_n_s_spr_rect_clip, __pyx_n_s_idx, __pyx_n_s_clip, __pyx_n_s_end_time); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(0, 1085, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__90);
@@ -34582,10 +34582,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1225
  *         return _ret
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """use to set background
- * 
+ *
  */
   __pyx_tuple__92 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_surface, __pyx_n_s_bgd); if (unlikely(!__pyx_tuple__92)) __PYX_ERR(0, 1225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__92);
@@ -34594,10 +34594,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1233
  *         self._bgd = bgd
- * 
+ *
  *     def repaint_rect(self, screen_rect):             # <<<<<<<<<<<<<<
  *         """repaint the given area
- * 
+ *
  */
   __pyx_tuple__94 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_screen_rect); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(0, 1233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__94);
@@ -34606,28 +34606,28 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1246
  *             self.lostsprites.append(Rect(screen_rect))
- * 
+ *
  *     def set_clip(self, screen_rect=None):             # <<<<<<<<<<<<<<
  *         """clip the area where to draw; pass None (default) to reset the clip
- * 
+ *
  */
   __pyx_codeobj__96 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__94, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_set_clip, 1246, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__96)) __PYX_ERR(0, 1246, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1258
  *         self._use_update = False
- * 
+ *
  *     def get_clip(self):             # <<<<<<<<<<<<<<
  *         """get the area where drawing will occur
- * 
+ *
  */
   __pyx_codeobj__97 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_clip, 1258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__97)) __PYX_ERR(0, 1258, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1266
  *         return self._clip
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
   __pyx_tuple__98 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_sprite, __pyx_n_s_new_layer); if (unlikely(!__pyx_tuple__98)) __PYX_ERR(0, 1266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__98);
@@ -34636,10 +34636,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1279
  *             sprite.dirty = 1
- * 
+ *
  *     def set_timing_treshold(self, time_ms):             # <<<<<<<<<<<<<<
  *         """set the treshold in milliseconds
- * 
+ *
  */
   __pyx_tuple__100 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_time_ms); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(0, 1279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__100);
@@ -34663,16 +34663,16 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1313
  *             self.add(sprite)
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         return GroupSingle(self.__sprite)
- * 
+ *
  */
   __pyx_codeobj__104 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_copy, 1313, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__104)) __PYX_ERR(0, 1313, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1316
  *         return GroupSingle(self.__sprite)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             return [self.__sprite]
@@ -34681,7 +34681,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1322
  *             return []
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             self.__sprite.remove_internal(self)
@@ -34690,16 +34690,16 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1331
  *         return self.__sprite is not None
- * 
+ *
  *     def _get_sprite(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite
- * 
+ *
  */
   __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_get_sprite_2, 1331, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 1331, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1334
  *         return self.__sprite
- * 
+ *
  *     def _set_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)
@@ -34708,7 +34708,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1344
  *                       "The sprite contained in this group")
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if sprite is self.__sprite:
  *             self.__sprite = None
@@ -34717,10 +34717,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1350
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
   __pyx_codeobj__110 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_has_internal, 1350, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__110)) __PYX_ERR(0, 1350, __pyx_L1_error)
 
@@ -34740,11 +34740,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__112 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__112)) __PYX_ERR(1, 3, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1359
- * 
+ *
  * # Some different collision detection functions that could be used.
  * def collide_rect(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using rects.
- * 
+ *
  */
   __pyx_tuple__113 = PyTuple_Pack(2, __pyx_n_s_left, __pyx_n_s_right); if (unlikely(!__pyx_tuple__113)) __PYX_ERR(0, 1359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__113);
@@ -34753,10 +34753,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1386
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """create a new collide_rect_ratio callable
- * 
+ *
  */
   __pyx_tuple__115 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_ratio); if (unlikely(!__pyx_tuple__115)) __PYX_ERR(0, 1386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__115);
@@ -34765,10 +34765,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1395
  *         self.ratio = ratio
- * 
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled rects
- * 
+ *
  */
   __pyx_tuple__117 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_left, __pyx_n_s_right, __pyx_n_s_ratio, __pyx_n_s_leftrect, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_rightrect); if (unlikely(!__pyx_tuple__117)) __PYX_ERR(0, 1395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__117);
@@ -34777,10 +34777,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1422
  *         return leftrect.colliderect(rightrect)
- * 
+ *
  * def collide_circle(left, right):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using circles
- * 
+ *
  */
   __pyx_tuple__119 = PyTuple_Pack(9, __pyx_n_s_left, __pyx_n_s_right, __pyx_n_s_xdistance, __pyx_n_s_ydistance, __pyx_n_s_distancesquared, __pyx_n_s_leftradius, __pyx_n_s_leftrect, __pyx_n_s_rightradius, __pyx_n_s_rightrect); if (unlikely(!__pyx_tuple__119)) __PYX_ERR(0, 1422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__119);
@@ -34789,10 +34789,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1464
  *     return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * class collide_circle_ratio(object):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using scaled circles
- * 
+ *
  */
   __pyx_tuple__121 = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_tuple__121)) __PYX_ERR(0, 1464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__121);
@@ -34803,19 +34803,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1476
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """creates a new collide_circle_ratio callable instance
- * 
+ *
  */
   __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__115, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame__sprite_pyx, __pyx_n_s_init, 1476, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 1476, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":1489
- * 
- * 
+ *
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled circles
- * 
+ *
  */
   __pyx_tuple__124 = PyTuple_Pack(11, __pyx_n_s_self, __pyx_n_s_left, __pyx_n_s_right, __pyx_n_s_ratio, __pyx_n_s_xdistance, __pyx_n_s_ydistance, __pyx_n_s_distancesquared, __pyx_n_s_leftradius, __pyx_n_s_leftrect, __pyx_n_s_rightradius, __pyx_n_s_rightrect); if (unlikely(!__pyx_tuple__124)) __PYX_ERR(0, 1489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__124);
@@ -34824,10 +34824,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1528
  *         return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * def collide_mask(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using masks.
- * 
+ *
  */
   __pyx_tuple__126 = PyTuple_Pack(6, __pyx_n_s_left, __pyx_n_s_right, __pyx_n_s_xoffset, __pyx_n_s_yoffset, __pyx_n_s_leftmask, __pyx_n_s_rightmask); if (unlikely(!__pyx_tuple__126)) __PYX_ERR(0, 1528, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__126);
@@ -34836,10 +34836,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1554
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))
- * 
+ *
  * def spritecollide(sprite, group, dokill, collided=None):             # <<<<<<<<<<<<<<
  *     """find Sprites in a Group that intersect another Sprite
- * 
+ *
  */
   __pyx_tuple__128 = PyTuple_Pack(8, __pyx_n_s_sprite, __pyx_n_s_group, __pyx_n_s_dokill, __pyx_n_s_collided, __pyx_n_s_crashed, __pyx_n_s_append, __pyx_n_s_s, __pyx_n_s_spritecollide); if (unlikely(!__pyx_tuple__128)) __PYX_ERR(0, 1554, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__128);
@@ -34850,11 +34850,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__130);
 
   /* "pygame/_sprite.pyx":1600
- * 
- * 
+ *
+ *
  * def groupcollide(groupa, groupb, dokilla, dokillb, collided=None):             # <<<<<<<<<<<<<<
  *     """detect collision between a group and another group
- * 
+ *
  */
   __pyx_tuple__131 = PyTuple_Pack(9, __pyx_n_s_groupa, __pyx_n_s_groupb, __pyx_n_s_dokilla, __pyx_n_s_dokillb, __pyx_n_s_collided, __pyx_n_s_crashed, __pyx_n_s_SC, __pyx_n_s_s, __pyx_n_s_c); if (unlikely(!__pyx_tuple__131)) __PYX_ERR(0, 1600, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__131);
@@ -34866,10 +34866,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/_sprite.pyx":1633
  *     return crashed
- * 
+ *
  * def spritecollideany(sprite, group, collided=None):             # <<<<<<<<<<<<<<
  *     """finds any sprites in a group that collide with the given sprite
- * 
+ *
  */
   __pyx_tuple__134 = PyTuple_Pack(5, __pyx_n_s_sprite, __pyx_n_s_group, __pyx_n_s_collided, __pyx_n_s_s, __pyx_n_s_spritecollide); if (unlikely(!__pyx_tuple__134)) __PYX_ERR(0, 1633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__134);
@@ -35614,7 +35614,7 @@ static int __Pyx_modinit_type_import_code(void) {
   /*--- Type import code ---*/
   __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_ptype_7cpython_4type_type = __Pyx_ImportType(__pyx_t_1, __Pyx_BUILTIN_MODULE_NAME, "type", 
+  __pyx_ptype_7cpython_4type_type = __Pyx_ImportType(__pyx_t_1, __Pyx_BUILTIN_MODULE_NAME, "type",
   #if defined(PYPY_VERSION_NUM) && PYPY_VERSION_NUM < 0x050B0000
   sizeof(PyTypeObject),
   #elif CYTHON_COMPILING_IN_LIMITED_API
@@ -35968,7 +35968,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":91
  * ## specialized cases.
- * 
+ *
  * import pygame             # <<<<<<<<<<<<<<
  * from pygame import Rect
  * from pygame.time import get_ticks
@@ -35979,7 +35979,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pygame/_sprite.pyx":92
- * 
+ *
  * import pygame
  * from pygame import Rect             # <<<<<<<<<<<<<<
  * from pygame.time import get_ticks
@@ -36000,7 +36000,7 @@ if (!__Pyx_RefNanny) {
  * from pygame import Rect
  * from pygame.time import get_ticks             # <<<<<<<<<<<<<<
  * from operator import truth
- * 
+ *
  */
   __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36020,7 +36020,7 @@ if (!__Pyx_RefNanny) {
  * from pygame import Rect
  * from pygame.time import get_ticks
  * from operator import truth             # <<<<<<<<<<<<<<
- * 
+ *
  * from cpython cimport PyObject_CallFunctionObjArgs, PyDict_SetItem, \
  */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
@@ -36042,7 +36042,7 @@ if (!__Pyx_RefNanny) {
  * # with the hasattr function.
  * if 'callable' not in dir(__builtins__):             # <<<<<<<<<<<<<<
  *     callable = lambda obj: hasattr(obj, '__call__')
- * 
+ *
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_builtins); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36058,7 +36058,7 @@ if (!__Pyx_RefNanny) {
  * # with the hasattr function.
  * if 'callable' not in dir(__builtins__):
  *     callable = lambda obj: hasattr(obj, '__call__')             # <<<<<<<<<<<<<<
- * 
+ *
  * # Don't depend on pygame.mask if it's not there...
  */
     __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12lambda, 0, __pyx_n_s_lambda, NULL, __pyx_n_s_pygame__sprite, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
@@ -36071,12 +36071,12 @@ if (!__Pyx_RefNanny) {
  * # with the hasattr function.
  * if 'callable' not in dir(__builtins__):             # <<<<<<<<<<<<<<
  *     callable = lambda obj: hasattr(obj, '__call__')
- * 
+ *
  */
   }
 
   /* "pygame/_sprite.pyx":105
- * 
+ *
  * # Don't depend on pygame.mask if it's not there...
  * try:             # <<<<<<<<<<<<<<
  *     from pygame.mask import from_surface
@@ -36113,7 +36113,7 @@ if (!__Pyx_RefNanny) {
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
       /* "pygame/_sprite.pyx":105
- * 
+ *
  * # Don't depend on pygame.mask if it's not there...
  * try:             # <<<<<<<<<<<<<<
  *     from pygame.mask import from_surface
@@ -36133,7 +36133,7 @@ if (!__Pyx_RefNanny) {
  *     from pygame.mask import from_surface
  * except:             # <<<<<<<<<<<<<<
  *     pass
- * 
+ *
  */
     /*except:*/ {
       __Pyx_ErrRestore(0,0,0);
@@ -36149,10 +36149,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":156
  *             self.add(*groups)
- * 
+ *
  *     def add(self, *groups):             # <<<<<<<<<<<<<<
  *         """add the sprite to groups
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_5add, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_add, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36162,10 +36162,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":174
  *                 self.add(*group)
- * 
+ *
  *     def remove(self, *groups):             # <<<<<<<<<<<<<<
  *         """remove the sprite from groups
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_7remove, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_remove, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36175,10 +36175,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":192
  *                 self.remove(*group)
- * 
+ *
  *     cpdef void add_internal(self, group):             # <<<<<<<<<<<<<<
  *         self.__g[group] = 0
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_9add_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_add_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36188,10 +36188,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":195
  *         self.__g[group] = 0
- * 
+ *
  *     cpdef void remove_internal(self, group):             # <<<<<<<<<<<<<<
  *         del self.__g[group]
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_11remove_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_remove_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36201,10 +36201,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":198
  *         del self.__g[group]
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """method to control sprite behavior
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_13update, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_update, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 198, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36214,10 +36214,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":213
  *         pass
- * 
+ *
  *     def kill(self):             # <<<<<<<<<<<<<<
  *         """remove the Sprite from all Groups
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_15kill, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_kill, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36227,10 +36227,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":228
  *         self.__g.clear()
- * 
+ *
  *     def groups(self):             # <<<<<<<<<<<<<<
  *         """list of Groups that contain this Sprite
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_17groups, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_groups, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 228, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36240,10 +36240,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":238
  *         return list(self.__g)
- * 
+ *
  *     def alive(self):             # <<<<<<<<<<<<<<
  *         """does the sprite belong to any groups
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_6Sprite_19alive, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Sprite_alive, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 238, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36273,11 +36273,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "pygame/_sprite.pyx":251
- * 
- * 
+ *
+ *
  * class DirtySprite(Sprite):             # <<<<<<<<<<<<<<
  *     """a more featureful subclass of Sprite with more attributes
- * 
+ *
  */
   __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36297,9 +36297,9 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":283
  *     """
- * 
+ *
  *     def __init__(self, *groups):             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.dirty = 1
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_11DirtySprite_1__init__, 0, __pyx_n_s_DirtySprite___init, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
@@ -36309,7 +36309,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":294
  *         Sprite.__init__(self, *groups)
- * 
+ *
  *     def _set_visible(self, val):             # <<<<<<<<<<<<<<
  *         """set the visible value (0 or 1) and makes the sprite dirty"""
  *         self._visible = val
@@ -36321,7 +36321,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":300
  *             self.dirty = 1
- * 
+ *
  *     def _get_visible(self):             # <<<<<<<<<<<<<<
  *         """return the visible value of that sprite"""
  *         return self._visible
@@ -36333,7 +36333,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":304
  *         return self._visible
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),             # <<<<<<<<<<<<<<
  *                        lambda self, value: self._set_visible(value),
  *                        doc="you can make this sprite disappear without "
@@ -36342,7 +36342,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
 
   /* "pygame/_sprite.pyx":305
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),
  *                        lambda self, value: self._set_visible(value),             # <<<<<<<<<<<<<<
  *                        doc="you can make this sprite disappear without "
@@ -36353,7 +36353,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":304
  *         return self._visible
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),             # <<<<<<<<<<<<<<
  *                        lambda self, value: self._set_visible(value),
  *                        doc="you can make this sprite disappear without "
@@ -36380,7 +36380,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":304
  *         return self._visible
- * 
+ *
  *     visible = property(lambda self: self._get_visible(),             # <<<<<<<<<<<<<<
  *                        lambda self, value: self._set_visible(value),
  *                        doc="you can make this sprite disappear without "
@@ -36394,7 +36394,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":310
  *                            "assign 0 for invisible and 1 for visible")
- * 
+ *
  *     def __repr__(self):             # <<<<<<<<<<<<<<
  *         return "<%s DirtySprite(in %d groups)>" % \
  *             (self.__class__.__name__, len(self.groups()))
@@ -36405,11 +36405,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "pygame/_sprite.pyx":251
- * 
- * 
+ *
+ *
  * class DirtySprite(Sprite):             # <<<<<<<<<<<<<<
  *     """a more featureful subclass of Sprite with more attributes
- * 
+ *
  */
   __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_8, __pyx_n_s_DirtySprite, __pyx_t_2, __pyx_t_9, NULL, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -36420,10 +36420,10 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pygame/_sprite.pyx":328
- * 
+ *
  *     # dummy val to identify sprite groups, and avoid infinite recursion
  *     _spritegroup = True             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef public dict spritedict
  */
   if (PyDict_SetItem((PyObject *)__pyx_ptype_6pygame_7_sprite_AbstractGroup->tp_dict, __pyx_n_s_spritegroup, Py_True) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
@@ -36431,10 +36431,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":337
  *         self.lostsprites = []
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """get a list of sprites in the group
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_3sprites, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_sprites, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36444,10 +36444,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":350
  *         return list(self.spritedict)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         self.spritedict[sprite] = 0
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_5add_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_add_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36457,7 +36457,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":353
  *         self.spritedict[sprite] = 0
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         r = self.spritedict[sprite]
  *         if r:
@@ -36470,10 +36470,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":359
  *         del self.spritedict[sprite]
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return sprite in self.spritedict
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_9has_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_has_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36483,10 +36483,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":362
  *         return sprite in self.spritedict
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         """copy a group with all the same sprites
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_11copy, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_copy, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 362, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36496,10 +36496,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":379
  *         return self.has(sprite)
- * 
+ *
  *     def add(self, *sprites):             # <<<<<<<<<<<<<<
  *         """add sprite(s) to group
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_17add, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_add, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36509,10 +36509,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":414
  *                         sprite.add_internal(self)
- * 
+ *
  *     def remove(self, *sprites):             # <<<<<<<<<<<<<<
  *         """remove sprite(s) from group
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_19remove, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_remove, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 414, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36522,10 +36522,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":446
  *                         sprite.remove_internal(self)
- * 
+ *
  *     def has(self, *sprites):             # <<<<<<<<<<<<<<
  *         """ask if group has a sprite or sprites
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_21has, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_has, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36535,10 +36535,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":486
  *         return return_value
- * 
+ *
  *     def update(self, *args, **kwargs):             # <<<<<<<<<<<<<<
  *         """call the update method of every member sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_23update, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_update, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36548,10 +36548,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":498
  *             s.update(*args, **kwargs)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites onto the surface
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_25draw, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_draw, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36561,10 +36561,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":525
  *         self.lostsprites[:] = []
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """erase the previous position of all sprites
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_27clear, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_clear, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36574,10 +36574,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":550
  *                     surface_blit(bgd, r, r)
- * 
+ *
  *     def empty(self):             # <<<<<<<<<<<<<<
  *         """remove all sprites
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_13AbstractGroup_29empty, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_AbstractGroup_empty, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 550, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36629,24 +36629,24 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":601
  *         self.add(*sprites)
- * 
+ *
  * RenderPlain = Group             # <<<<<<<<<<<<<<
  * RenderClear = Group
- * 
+ *
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_RenderPlain, ((PyObject *)__pyx_ptype_6pygame_7_sprite_Group)) < 0) __PYX_ERR(0, 601, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":602
- * 
+ *
  * RenderPlain = Group
  * RenderClear = Group             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef class RenderUpdates(Group):
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_RenderClear, ((PyObject *)__pyx_ptype_6pygame_7_sprite_Group)) < 0) __PYX_ERR(0, 602, __pyx_L1_error)
 
   /* "pygame/_sprite.pyx":613
- * 
+ *
  *     """
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *        spritedict = self.spritedict
@@ -36681,10 +36681,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":651
  *         RenderUpdates.__init__(self, *sprites)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         return list(self._spritelist)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14OrderedUpdates_3sprites, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_OrderedUpdates_sprites, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 651, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36694,7 +36694,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":654
  *         return list(self._spritelist)
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.add_internal(self, sprite)
  *         self._spritelist.append(sprite)
@@ -36707,7 +36707,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":658
  *         self._spritelist.append(sprite)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         RenderUpdates.remove_internal(self, sprite)
  *         self._spritelist.remove(sprite)
@@ -36741,9 +36741,9 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":673
  *     """
- * 
+ *
  *     _init_rect = Rect(0, 0, 0, 0)             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef public dict _spritelayers
  */
   __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6pygame_5_sdl2_5video_Rect), __pyx_tuple__58, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 673, __pyx_L1_error)
@@ -36754,10 +36754,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":701
  *         self.add(*sprites, **kwargs)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_5add_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_add_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36768,10 +36768,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":737
  *         sprites.insert(mid, sprite)
- * 
+ *
  *     def add(self, *sprites, **kwargs):             # <<<<<<<<<<<<<<
  *         """add a sprite or sequence of sprites to a group
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_7add, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_add, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36781,10 +36781,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":783
  *                         sprite.add_internal(self)
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_9remove_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_remove_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 783, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36794,10 +36794,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":800
  *         del self._spritelayers[sprite]
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         """return a ordered list of sprites (first back, last top).
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_11sprites, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_sprites, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 800, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36807,10 +36807,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":808
  *         return list(self._spritelist)
- * 
+ *
  *     def draw(self, surface):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the passed surface
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_13draw, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_draw, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 808, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36820,10 +36820,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":834
  *         return dirty
- * 
+ *
  *     def get_sprites_at(self, pos):             # <<<<<<<<<<<<<<
  *         """return a list with all sprites at that position
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_15get_sprites_at, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_sprites_at, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__69)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 834, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36833,10 +36833,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":848
  *         return colliding
- * 
+ *
  *     def get_sprite(self, idx):             # <<<<<<<<<<<<<<
  *         """return the sprite at the index idx from the groups sprites
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_17get_sprite, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_sprite, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__71)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36846,10 +36846,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":858
  *         return self._spritelist[idx]
- * 
+ *
  *     def remove_sprites_of_layer(self, layer_nr):             # <<<<<<<<<<<<<<
  *         """remove all sprites from a layer and return them as a list
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_19remove_sprites_of_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_remove_sprites_of, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__73)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 858, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36858,11 +36858,11 @@ if (!__Pyx_RefNanny) {
   PyType_Modified(__pyx_ptype_6pygame_7_sprite_LayeredUpdates);
 
   /* "pygame/_sprite.pyx":869
- * 
+ *
  *     #---# layer methods
  *     def layers(self):             # <<<<<<<<<<<<<<
  *         """return a list of unique defined layers defined.
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_21layers, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_layers, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 869, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36872,10 +36872,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":877
  *         return sorted(set(self._spritelayers.values()))
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_23change_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_change_layer, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 877, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36885,10 +36885,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":913
  *         sprites_layers[sprite] = new_layer
- * 
+ *
  *     def get_layer_of_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         """return the layer that sprite is currently in
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_25get_layer_of_sprite, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_layer_of_spri, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 913, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36898,10 +36898,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":921
  *         return self._spritelayers.get(sprite, self._default_layer)
- * 
+ *
  *     def get_top_layer(self):             # <<<<<<<<<<<<<<
  *         """return the top layer
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_27get_top_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_top_layer, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 921, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36911,10 +36911,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":929
  *         return self._spritelayers[self._spritelist[-1]]
- * 
+ *
  *     def get_bottom_layer(self):             # <<<<<<<<<<<<<<
  *         """return the bottom layer
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_29get_bottom_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_bottom_layer, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 929, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36924,10 +36924,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":937
  *         return self._spritelayers[self._spritelist[0]]
- * 
+ *
  *     def move_to_front(self, sprite):             # <<<<<<<<<<<<<<
  *         """bring the sprite to front layer
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_31move_to_front, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_move_to_front, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__80)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 937, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36937,10 +36937,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":949
  *         self.change_layer(sprite, self.get_top_layer())
- * 
+ *
  *     def move_to_back(self, sprite):             # <<<<<<<<<<<<<<
  *         """move the sprite to the bottom layer
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_33move_to_back, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_move_to_back, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 949, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36950,10 +36950,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":960
  *         self.change_layer(sprite, self.get_bottom_layer() - 1)
- * 
+ *
  *     def get_top_sprite(self):             # <<<<<<<<<<<<<<
  *         """return the topmost sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_35get_top_sprite, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_top_sprite, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 960, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36963,10 +36963,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":968
  *         return self._spritelist[-1]
- * 
+ *
  *     def get_sprites_from_layer(self, layer):             # <<<<<<<<<<<<<<
  *         """return all sprites from a layer ordered as they where added
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_37get_sprites_from_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_get_sprites_from, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__84)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 968, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -36976,10 +36976,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":989
  *         return sprites
- * 
+ *
  *     def switch_layer(self, layer1_nr, layer2_nr):             # <<<<<<<<<<<<<<
  *         """switch the sprites from layer1_nr to layer2_nr
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_14LayeredUpdates_39switch_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredUpdates_switch_layer, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 989, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37010,10 +37010,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1063
  *                     setattr(self, key, val)
- * 
+ *
  *     cpdef void add_internal(self, sprite, layer=None):             # <<<<<<<<<<<<<<
  *         """Do not use this method directly.
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_3add_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_add_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__89)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1063, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37024,10 +37024,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1085
  *         LayeredUpdates.add_internal(self, sprite, layer)
- * 
+ *
  *     def draw(self, surface, bgd=None):             # <<<<<<<<<<<<<<
  *         """draw all sprites in the right order onto the given surface
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_5draw, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_draw, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__91)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1085, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37038,10 +37038,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1225
  *         return _ret
- * 
+ *
  *     def clear(self, surface, bgd):             # <<<<<<<<<<<<<<
  *         """use to set background
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_7clear, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_clear, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__93)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37051,10 +37051,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1233
  *         self._bgd = bgd
- * 
+ *
  *     def repaint_rect(self, screen_rect):             # <<<<<<<<<<<<<<
  *         """repaint the given area
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_9repaint_rect, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_repaint_rect, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__95)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1233, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37064,10 +37064,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1246
  *             self.lostsprites.append(Rect(screen_rect))
- * 
+ *
  *     def set_clip(self, screen_rect=None):             # <<<<<<<<<<<<<<
  *         """clip the area where to draw; pass None (default) to reset the clip
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_11set_clip, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_set_clip, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__96)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1246, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37078,10 +37078,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1258
  *         self._use_update = False
- * 
+ *
  *     def get_clip(self):             # <<<<<<<<<<<<<<
  *         """get the area where drawing will occur
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_13get_clip, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_get_clip, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__97)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1258, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37091,10 +37091,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1266
  *         return self._clip
- * 
+ *
  *     def change_layer(self, sprite, new_layer):             # <<<<<<<<<<<<<<
  *         """change the layer of the sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_15change_layer, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_change_layer, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__99)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37104,10 +37104,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1279
  *             sprite.dirty = 1
- * 
+ *
  *     def set_timing_treshold(self, time_ms):             # <<<<<<<<<<<<<<
  *         """set the treshold in milliseconds
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_12LayeredDirty_17set_timing_treshold, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_LayeredDirty_set_timing_treshold, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__101)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37138,10 +37138,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1313
  *             self.add(sprite)
- * 
+ *
  *     def copy(self):             # <<<<<<<<<<<<<<
  *         return GroupSingle(self.__sprite)
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_11GroupSingle_3copy, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_GroupSingle_copy, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__104)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37151,7 +37151,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1316
  *         return GroupSingle(self.__sprite)
- * 
+ *
  *     cpdef list sprites(self):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             return [self.__sprite]
@@ -37164,7 +37164,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1322
  *             return []
- * 
+ *
  *     cpdef void add_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if self.__sprite is not None:
  *             self.__sprite.remove_internal(self)
@@ -37177,10 +37177,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1331
  *         return self.__sprite is not None
- * 
+ *
  *     def _get_sprite(self):             # <<<<<<<<<<<<<<
  *         return self.__sprite
- * 
+ *
  */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_11GroupSingle_11_get_sprite, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_GroupSingle__get_sprite, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__107)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -37190,7 +37190,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1334
  *         return self.__sprite
- * 
+ *
  *     def _set_sprite(self, sprite):             # <<<<<<<<<<<<<<
  *         self.add_internal(sprite)
  *         sprite.add_internal(self)
@@ -37203,7 +37203,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1339
  *         return sprite
- * 
+ *
  *     sprite = property(_get_sprite,             # <<<<<<<<<<<<<<
  *                       _set_sprite,
  *                       None,
@@ -37212,7 +37212,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_2);
 
   /* "pygame/_sprite.pyx":1340
- * 
+ *
  *     sprite = property(_get_sprite,
  *                       _set_sprite,             # <<<<<<<<<<<<<<
  *                       None,
@@ -37223,7 +37223,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1339
  *         return sprite
- * 
+ *
  *     sprite = property(_get_sprite,             # <<<<<<<<<<<<<<
  *                       _set_sprite,
  *                       None,
@@ -37251,7 +37251,7 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1344
  *                       "The sprite contained in this group")
- * 
+ *
  *     cpdef void remove_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         if sprite is self.__sprite:
  *             self.__sprite = None
@@ -37264,10 +37264,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1350
  *             AbstractGroup.remove_internal(self, sprite)
- * 
+ *
  *     cpdef bint has_internal(self, sprite):             # <<<<<<<<<<<<<<
  *         return self.__sprite is sprite
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_11GroupSingle_17has_internal, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_GroupSingle_has_internal, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__110)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37297,11 +37297,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
   /* "pygame/_sprite.pyx":1359
- * 
+ *
  * # Some different collision detection functions that could be used.
  * def collide_rect(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using rects.
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_1collide_rect, 0, __pyx_n_s_collide_rect, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__114)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37310,20 +37310,20 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1374
  *     return left.rect.colliderect(right.rect)
- * 
+ *
  * class collide_rect_ratio:             # <<<<<<<<<<<<<<
  *     """A callable class that checks for collisions using scaled rects
- * 
+ *
  */
   __pyx_t_8 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_collide_rect_ratio, __pyx_n_s_collide_rect_ratio, (PyObject *) NULL, __pyx_n_s_pygame__sprite, __pyx_kp_s_A_callable_class_that_checks_for); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
 
   /* "pygame/_sprite.pyx":1386
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """create a new collide_rect_ratio callable
- * 
+ *
  */
   __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_18collide_rect_ratio_1__init__, 0, __pyx_n_s_collide_rect_ratio___init, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__116)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
@@ -37332,10 +37332,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1395
  *         self.ratio = ratio
- * 
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled rects
- * 
+ *
  */
   __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_18collide_rect_ratio_3__call__, 0, __pyx_n_s_collide_rect_ratio___call, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__118)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1395, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
@@ -37344,10 +37344,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1374
  *     return left.rect.colliderect(right.rect)
- * 
+ *
  * class collide_rect_ratio:             # <<<<<<<<<<<<<<
  *     """A callable class that checks for collisions using scaled rects
- * 
+ *
  */
   __pyx_t_9 = __Pyx_Py3ClassCreate(((PyObject*)&__Pyx_DefaultClassType), __pyx_n_s_collide_rect_ratio, __pyx_empty_tuple, __pyx_t_8, NULL, 0, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
@@ -37357,10 +37357,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1422
  *         return leftrect.colliderect(rightrect)
- * 
+ *
  * def collide_circle(left, right):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using circles
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_3collide_circle, 0, __pyx_n_s_collide_circle, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__120)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37369,10 +37369,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1464
  *     return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * class collide_circle_ratio(object):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using scaled circles
- * 
+ *
  */
   __pyx_t_8 = __Pyx_PEP560_update_bases(__pyx_tuple__122); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37386,10 +37386,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1476
  *     """
- * 
+ *
  *     def __init__(self, ratio):             # <<<<<<<<<<<<<<
  *         """creates a new collide_circle_ratio callable instance
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_20collide_circle_ratio_1__init__, 0, __pyx_n_s_collide_circle_ratio___init, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__123)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -37397,11 +37397,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "pygame/_sprite.pyx":1489
- * 
- * 
+ *
+ *
  *     def __call__(self, left, right):             # <<<<<<<<<<<<<<
  *         """detect collision between two sprites using scaled circles
- * 
+ *
  */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_20collide_circle_ratio_3__call__, 0, __pyx_n_s_collide_circle_ratio___call, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__125)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -37410,10 +37410,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1464
  *     return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * class collide_circle_ratio(object):             # <<<<<<<<<<<<<<
  *     """detect collision between two sprites using scaled circles
- * 
+ *
  */
   __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_9, __pyx_n_s_collide_circle_ratio, __pyx_t_8, __pyx_t_2, NULL, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1464, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -37425,10 +37425,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1528
  *         return distancesquared <= (leftradius + rightradius) ** 2
- * 
+ *
  * def collide_mask(left, right):             # <<<<<<<<<<<<<<
  *     """collision detection between two sprites, using masks.
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_5collide_mask, 0, __pyx_n_s_collide_mask, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__127)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1528, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37437,10 +37437,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1554
  *     return leftmask.overlap(rightmask, (xoffset, yoffset))
- * 
+ *
  * def spritecollide(sprite, group, dokill, collided=None):             # <<<<<<<<<<<<<<
  *     """find Sprites in a Group that intersect another Sprite
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_7spritecollide, 0, __pyx_n_s_spritecollide, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__129)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1554, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37449,11 +37449,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
   /* "pygame/_sprite.pyx":1600
- * 
- * 
+ *
+ *
  * def groupcollide(groupa, groupb, dokilla, dokillb, collided=None):             # <<<<<<<<<<<<<<
  *     """detect collision between a group and another group
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_9groupcollide, 0, __pyx_n_s_groupcollide, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__132)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1600, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37463,10 +37463,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/_sprite.pyx":1633
  *     return crashed
- * 
+ *
  * def spritecollideany(sprite, group, collided=None):             # <<<<<<<<<<<<<<
  *     """finds any sprites in a group that collide with the given sprite
- * 
+ *
  */
   __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_6pygame_7_sprite_11spritecollideany, 0, __pyx_n_s_spritecollideany, NULL, __pyx_n_s_pygame__sprite, __pyx_d, ((PyObject *)__pyx_codeobj__135)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 1633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -37487,7 +37487,7 @@ if (!__Pyx_RefNanny) {
   /* "_sdl2/video.pxd":1
  * # cython: language_level=3str             # <<<<<<<<<<<<<<
  * #
- * 
+ *
  */
 
   /*--- Wrapped vars code ---*/
@@ -39630,7 +39630,7 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
         const long b = intval;
         long x;
         long a = PyInt_AS_LONG(op1);
-        
+
             x = (long)((unsigned long)a - b);
             if (likely((x^a) >= 0 || (x^~b) >= 0))
                 return PyInt_FromLong(x);
@@ -39665,7 +39665,7 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case 2:
                     if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
                         a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -39676,7 +39676,7 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case -3:
                     if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
                         a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -39731,8 +39731,8 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
                 llx = lla - llb;
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     if (PyFloat_CheckExact(op1)) {
@@ -39743,7 +39743,7 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, long int
         double a = PyFloat_AS_DOUBLE(op1);
 #endif
             double result;
-            
+
             PyFPE_START_PROTECT("subtract", return NULL)
             result = ((double)a) - (double)b;
             PyFPE_END_PROTECT(result)
@@ -39764,7 +39764,7 @@ static PyObject* __Pyx_PyInt_FloorDivideObjC(PyObject *op1, PyObject *op2, long 
         const long b = intval;
         long x;
         long a = PyInt_AS_LONG(op1);
-        
+
             if (unlikely(b == -1 && ((unsigned long)a) == 0-(unsigned long)a))
                 return PyInt_Type.tp_as_number->nb_floor_divide(op1, op2);
             else {
@@ -39805,7 +39805,7 @@ static PyObject* __Pyx_PyInt_FloorDivideObjC(PyObject *op1, PyObject *op2, long 
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case 2:
                     if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
                         a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -39816,7 +39816,7 @@ static PyObject* __Pyx_PyInt_FloorDivideObjC(PyObject *op1, PyObject *op2, long 
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case -3:
                     if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
                         a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -39883,8 +39883,8 @@ static PyObject* __Pyx_PyInt_FloorDivideObjC(PyObject *op1, PyObject *op2, long 
                 }
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     return (inplace ? PyNumber_InPlaceFloorDivide : PyNumber_FloorDivide)(op1, op2);
@@ -40045,7 +40045,7 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
         const long b = intval;
         long x;
         long a = PyInt_AS_LONG(op1);
-        
+
             x = (long)((unsigned long)a + b);
             if (likely((x^a) >= 0 || (x^b) >= 0))
                 return PyInt_FromLong(x);
@@ -40080,7 +40080,7 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case 2:
                     if (8 * sizeof(long) - 1 > 2 * PyLong_SHIFT) {
                         a = (long) (((((unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -40091,7 +40091,7 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
                         goto long_long;
                     #endif
                     }
-                    CYTHON_FALLTHROUGH;
+
                 case -3:
                     if (8 * sizeof(long) - 1 > 3 * PyLong_SHIFT) {
                         a = -(long) (((((((unsigned long)digits[2]) << PyLong_SHIFT) | (unsigned long)digits[1]) << PyLong_SHIFT) | (unsigned long)digits[0]));
@@ -40146,8 +40146,8 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
                 llx = lla + llb;
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     if (PyFloat_CheckExact(op1)) {
@@ -40158,7 +40158,7 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
         double a = PyFloat_AS_DOUBLE(op1);
 #endif
             double result;
-            
+
             PyFPE_START_PROTECT("add", return NULL)
             result = ((double)a) + (double)b;
             PyFPE_END_PROTECT(result)
