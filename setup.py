@@ -73,7 +73,7 @@ from setuptools import setup
 
 
 # A (bit hacky) fix for https://github.com/pygame/pygame/issues/2613
-# This is due to the fact that distutils uses command line args to 
+# This is due to the fact that distutils uses command line args to
 # export PyInit_* functions on windows, but those functions are already exported
 # and that is why compiler gives warnings
 from distutils.command.build_ext import build_ext
@@ -390,7 +390,9 @@ for e in extensions:
         and e.name not in ("pypm", "_sprite", "gfxdraw")
     ):
         # Do -Werror only on CI, and exclude -Werror on Cython C files and gfxdraw
-        e.extra_compile_args.append("/WX" if sys.platform == "win32" else "-Werror")
+        # but not when building static for wasm
+        if os.environ.get('EMSDK', None) is None:
+            e.extra_compile_args.append("/WX" if sys.platform == "win32" else "-Werror")
 
 # if not building font, try replacing with ftfont
 alternate_font = os.path.join('src_py', 'font.py')
