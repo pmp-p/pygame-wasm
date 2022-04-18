@@ -67,6 +67,19 @@ import re
 import sys
 import os
 
+#=================================================================
+print("@"*60)
+print(os.environ.get('PYTHONPYCACHEPREFIX'))
+for p in sys.path:
+    print(p)
+
+sys.path.insert(0, f"{os.environ.get('PYTHONPYCACHEPREFIX')}/sysconfig")
+import sysconfig
+print( sysconfig.get_config_var('MACHDEP'))
+print("@"*60)
+#=================================================================
+
+
 # just import these always and fail early if not present
 import distutils
 from setuptools import setup
