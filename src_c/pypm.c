@@ -442,7 +442,7 @@ END: Cython Metadata */
   #define __Pyx_PyFrame_SetLineNumber(frame, lineno) PyFrame_SetLineNumber(frame, lineno)
 #else
   #define __Pyx_PyCode_HasFreeVars(co)  (PyCode_GetNumFree(co) > 0)
-  #define __Pyx_PyFrame_SetLineNumber(frame, lineno)  (frame)->f_lineno = (lineno)
+  #define __Pyx_PyFrame_SetLineNumber(frame, lineno)
 #endif
 #if !CYTHON_FAST_THREAD_STATE || PY_VERSION_HEX < 0x02070000
   #define __Pyx_PyThreadState_Current PyThreadState_GET()
@@ -909,11 +909,11 @@ struct __pyx_obj_6pygame_4pypm_Output;
 struct __pyx_obj_6pygame_4pypm_Input;
 
 /* "pygame/pypm.pyx":256
- * 
- * 
+ *
+ *
  * cdef class Output:             # <<<<<<<<<<<<<<
  *     """Represents an output MIDI stream device.
- * 
+ *
  */
 struct __pyx_obj_6pygame_4pypm_Output {
   PyObject_HEAD
@@ -925,11 +925,11 @@ struct __pyx_obj_6pygame_4pypm_Output {
 
 
 /* "pygame/pypm.pyx":525
- * 
- * 
+ *
+ *
  * cdef class Input:             # <<<<<<<<<<<<<<
  *     """Represents an input MIDI stream device.
- * 
+ *
  */
 struct __pyx_obj_6pygame_4pypm_Input {
   PyObject_HEAD
@@ -1659,10 +1659,10 @@ static PyObject *__pyx_codeobj__24;
 
 /* "pygame/pypm.pyx":154
  * cdef long _pypm_initialized
- * 
+ *
  * def Initialize():             # <<<<<<<<<<<<<<
  *     """Initialize PortMidi library.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -1687,7 +1687,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_Initialize(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannySetupContext("Initialize", 0);
 
   /* "pygame/pypm.pyx":161
- * 
+ *
  *     """
  *     Pm_Initialize()             # <<<<<<<<<<<<<<
  *     # equiv to TIME_START: start timer w/ ms accuracy
@@ -1700,7 +1700,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_Initialize(CYTHON_UNUSED PyObject *__pyx
  *     # equiv to TIME_START: start timer w/ ms accuracy
  *     Pt_Start(1, NULL, NULL)             # <<<<<<<<<<<<<<
  *     _pypm_initialized = 1
- * 
+ *
  */
   (void)(Pt_Start(1, NULL, NULL));
 
@@ -1708,17 +1708,17 @@ static PyObject *__pyx_pf_6pygame_4pypm_Initialize(CYTHON_UNUSED PyObject *__pyx
  *     # equiv to TIME_START: start timer w/ ms accuracy
  *     Pt_Start(1, NULL, NULL)
  *     _pypm_initialized = 1             # <<<<<<<<<<<<<<
- * 
+ *
  * def Terminate():
  */
   __pyx_v__pypm_initialized = 1;
 
   /* "pygame/pypm.pyx":154
  * cdef long _pypm_initialized
- * 
+ *
  * def Initialize():             # <<<<<<<<<<<<<<
  *     """Initialize PortMidi library.
- * 
+ *
  */
 
   /* function exit code */
@@ -1730,10 +1730,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_Initialize(CYTHON_UNUSED PyObject *__pyx
 
 /* "pygame/pypm.pyx":166
  *     _pypm_initialized = 1
- * 
+ *
  * def Terminate():             # <<<<<<<<<<<<<<
  *     """Terminate use of PortMidi library.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -1758,11 +1758,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_2Terminate(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannySetupContext("Terminate", 0);
 
   /* "pygame/pypm.pyx":175
- * 
+ *
  *     """
  *     Pm_Terminate()             # <<<<<<<<<<<<<<
  *     _pypm_initialized = 0
- * 
+ *
  */
   (void)(Pm_Terminate());
 
@@ -1770,17 +1770,17 @@ static PyObject *__pyx_pf_6pygame_4pypm_2Terminate(CYTHON_UNUSED PyObject *__pyx
  *     """
  *     Pm_Terminate()
  *     _pypm_initialized = 0             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_v__pypm_initialized = 0;
 
   /* "pygame/pypm.pyx":166
  *     _pypm_initialized = 1
- * 
+ *
  * def Terminate():             # <<<<<<<<<<<<<<
  *     """Terminate use of PortMidi library.
- * 
+ *
  */
 
   /* function exit code */
@@ -1791,11 +1791,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_2Terminate(CYTHON_UNUSED PyObject *__pyx
 }
 
 /* "pygame/pypm.pyx":179
- * 
- * 
+ *
+ *
  * def GetDefaultInputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI input device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -1823,10 +1823,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_4GetDefaultInputDeviceID(CYTHON_UNUSED P
   __Pyx_RefNannySetupContext("GetDefaultInputDeviceID", 0);
 
   /* "pygame/pypm.pyx":186
- * 
+ *
  *     """
  *     return Pm_GetDefaultInputDeviceID()             # <<<<<<<<<<<<<<
- * 
+ *
  * def GetDefaultOutputDeviceID():
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1837,11 +1837,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_4GetDefaultInputDeviceID(CYTHON_UNUSED P
   goto __pyx_L0;
 
   /* "pygame/pypm.pyx":179
- * 
- * 
+ *
+ *
  * def GetDefaultInputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI input device.
- * 
+ *
  */
 
   /* function exit code */
@@ -1857,10 +1857,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_4GetDefaultInputDeviceID(CYTHON_UNUSED P
 
 /* "pygame/pypm.pyx":188
  *     return Pm_GetDefaultInputDeviceID()
- * 
+ *
  * def GetDefaultOutputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI output device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -1888,10 +1888,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6GetDefaultOutputDeviceID(CYTHON_UNUSED 
   __Pyx_RefNannySetupContext("GetDefaultOutputDeviceID", 0);
 
   /* "pygame/pypm.pyx":195
- * 
+ *
  *     """
  *     return Pm_GetDefaultOutputDeviceID()             # <<<<<<<<<<<<<<
- * 
+ *
  * def CountDevices():
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1903,10 +1903,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6GetDefaultOutputDeviceID(CYTHON_UNUSED 
 
   /* "pygame/pypm.pyx":188
  *     return Pm_GetDefaultInputDeviceID()
- * 
+ *
  * def GetDefaultOutputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI output device.
- * 
+ *
  */
 
   /* function exit code */
@@ -1922,10 +1922,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6GetDefaultOutputDeviceID(CYTHON_UNUSED 
 
 /* "pygame/pypm.pyx":197
  *     return Pm_GetDefaultOutputDeviceID()
- * 
+ *
  * def CountDevices():             # <<<<<<<<<<<<<<
  *     """Return number of available MIDI (input and output) devices."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -1954,9 +1954,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_8CountDevices(CYTHON_UNUSED PyObject *__
 
   /* "pygame/pypm.pyx":200
  *     """Return number of available MIDI (input and output) devices."""
- * 
+ *
  *     return Pm_CountDevices()             # <<<<<<<<<<<<<<
- * 
+ *
  * def GetDeviceInfo(device_no):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -1968,10 +1968,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_8CountDevices(CYTHON_UNUSED PyObject *__
 
   /* "pygame/pypm.pyx":197
  *     return Pm_GetDefaultOutputDeviceID()
- * 
+ *
  * def CountDevices():             # <<<<<<<<<<<<<<
  *     """Return number of available MIDI (input and output) devices."""
- * 
+ *
  */
 
   /* function exit code */
@@ -1987,10 +1987,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_8CountDevices(CYTHON_UNUSED PyObject *__
 
 /* "pygame/pypm.pyx":202
  *     return Pm_CountDevices()
- * 
+ *
  * def GetDeviceInfo(device_no):             # <<<<<<<<<<<<<<
  *     """Return device info tuple for MIDI device given by device_no.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2029,7 +2029,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
  *     # disregarding the constness from Pm_GetDeviceInfo,
  *     # since pyrex doesn't do const.
  *     info = <PmDeviceInfo *>Pm_GetDeviceInfo(device_no)             # <<<<<<<<<<<<<<
- * 
+ *
  *     if info != NULL:
  */
   __pyx_t_1 = __Pyx_PyInt_As_PmDeviceID(__pyx_v_device_no); if (unlikely((__pyx_t_1 == ((PmDeviceID)-1)) && PyErr_Occurred())) __PYX_ERR(0, 218, __pyx_L1_error)
@@ -2037,7 +2037,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
 
   /* "pygame/pypm.pyx":220
  *     info = <PmDeviceInfo *>Pm_GetDeviceInfo(device_no)
- * 
+ *
  *     if info != NULL:             # <<<<<<<<<<<<<<
  *         return info.interf, info.name, info.input, info.output, info.opened
  *     # return None
@@ -2046,11 +2046,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
   if (__pyx_t_2) {
 
     /* "pygame/pypm.pyx":221
- * 
+ *
  *     if info != NULL:
  *         return info.interf, info.name, info.input, info.output, info.opened             # <<<<<<<<<<<<<<
  *     # return None
- * 
+ *
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_3 = __Pyx_PyBytes_FromString(__pyx_v_info->interf); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 221, __pyx_L1_error)
@@ -2086,7 +2086,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
 
     /* "pygame/pypm.pyx":220
  *     info = <PmDeviceInfo *>Pm_GetDeviceInfo(device_no)
- * 
+ *
  *     if info != NULL:             # <<<<<<<<<<<<<<
  *         return info.interf, info.name, info.input, info.output, info.opened
  *     # return None
@@ -2095,10 +2095,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
 
   /* "pygame/pypm.pyx":202
  *     return Pm_CountDevices()
- * 
+ *
  * def GetDeviceInfo(device_no):             # <<<<<<<<<<<<<<
  *     """Return device info tuple for MIDI device given by device_no.
- * 
+ *
  */
 
   /* function exit code */
@@ -2121,10 +2121,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_10GetDeviceInfo(CYTHON_UNUSED PyObject *
 
 /* "pygame/pypm.pyx":224
  *     # return None
- * 
+ *
  * def Time():             # <<<<<<<<<<<<<<
  *     """Return the current time in ms of the PortMidi timer."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2153,9 +2153,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_12Time(CYTHON_UNUSED PyObject *__pyx_sel
 
   /* "pygame/pypm.pyx":227
  *     """Return the current time in ms of the PortMidi timer."""
- * 
+ *
  *     return Pt_Time()             # <<<<<<<<<<<<<<
- * 
+ *
  * def GetErrorText(err):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -2167,10 +2167,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_12Time(CYTHON_UNUSED PyObject *__pyx_sel
 
   /* "pygame/pypm.pyx":224
  *     # return None
- * 
+ *
  * def Time():             # <<<<<<<<<<<<<<
  *     """Return the current time in ms of the PortMidi timer."""
- * 
+ *
  */
 
   /* function exit code */
@@ -2186,10 +2186,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_12Time(CYTHON_UNUSED PyObject *__pyx_sel
 
 /* "pygame/pypm.pyx":229
  *     return Pt_Time()
- * 
+ *
  * def GetErrorText(err):             # <<<<<<<<<<<<<<
  *     """Return human-readable error message translated from error number."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2219,9 +2219,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_14GetErrorText(CYTHON_UNUSED PyObject *_
 
   /* "pygame/pypm.pyx":232
  *     """Return human-readable error message translated from error number."""
- * 
+ *
  *     return Pm_GetErrorText(err)             # <<<<<<<<<<<<<<
- * 
+ *
  * def Channel(chan):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -2234,10 +2234,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_14GetErrorText(CYTHON_UNUSED PyObject *_
 
   /* "pygame/pypm.pyx":229
  *     return Pt_Time()
- * 
+ *
  * def GetErrorText(err):             # <<<<<<<<<<<<<<
  *     """Return human-readable error message translated from error number."""
- * 
+ *
  */
 
   /* function exit code */
@@ -2253,10 +2253,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_14GetErrorText(CYTHON_UNUSED PyObject *_
 
 /* "pygame/pypm.pyx":234
  *     return Pm_GetErrorText(err)
- * 
+ *
  * def Channel(chan):             # <<<<<<<<<<<<<<
  *     """Return Channel object for given MIDI channel number 1 - 16.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2285,11 +2285,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_16Channel(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_RefNannySetupContext("Channel", 0);
 
   /* "pygame/pypm.pyx":253
- * 
+ *
  *     """
  *     return Pm_Channel(chan - 1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_SubtractObjC(__pyx_v_chan, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 253, __pyx_L1_error)
@@ -2304,10 +2304,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_16Channel(CYTHON_UNUSED PyObject *__pyx_
 
   /* "pygame/pypm.pyx":234
  *     return Pm_GetErrorText(err)
- * 
+ *
  * def Channel(chan):             # <<<<<<<<<<<<<<
  *     """Return Channel object for given MIDI channel number 1 - 16.
- * 
+ *
  */
 
   /* function exit code */
@@ -2323,10 +2323,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_16Channel(CYTHON_UNUSED PyObject *__pyx_
 
 /* "pygame/pypm.pyx":271
  *     cdef int _aborted
- * 
+ *
  *     def __init__(self, output_device, latency=0, buffer_size=256):             # <<<<<<<<<<<<<<
  *         """Instantiate MIDI output stream object."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2434,7 +2434,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
   /* "pygame/pypm.pyx":279
  *         cdef const char * errmsg
- * 
+ *
  *         self.device = output_device             # <<<<<<<<<<<<<<
  *         self.debug = 0
  *         self._aborted = 0
@@ -2443,11 +2443,11 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
   __pyx_v_self->device = __pyx_t_1;
 
   /* "pygame/pypm.pyx":280
- * 
+ *
  *         self.device = output_device
  *         self.debug = 0             # <<<<<<<<<<<<<<
  *         self._aborted = 0
- * 
+ *
  */
   __pyx_v_self->debug = 0;
 
@@ -2455,14 +2455,14 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *         self.device = output_device
  *         self.debug = 0
  *         self._aborted = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *         if latency == 0:
  */
   __pyx_v_self->_aborted = 0;
 
   /* "pygame/pypm.pyx":283
  *         self._aborted = 0
- * 
+ *
  *         if latency == 0:             # <<<<<<<<<<<<<<
  *             PmPtr = NULL
  *         else:
@@ -2474,7 +2474,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
   if (__pyx_t_3) {
 
     /* "pygame/pypm.pyx":284
- * 
+ *
  *         if latency == 0:
  *             PmPtr = NULL             # <<<<<<<<<<<<<<
  *         else:
@@ -2484,7 +2484,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
     /* "pygame/pypm.pyx":283
  *         self._aborted = 0
- * 
+ *
  *         if latency == 0:             # <<<<<<<<<<<<<<
  *             PmPtr = NULL
  *         else:
@@ -2496,7 +2496,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *             PmPtr = NULL
  *         else:
  *             PmPtr = <PmTimeProcPtr>&Pt_Time             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
   /*else*/ {
@@ -2506,19 +2506,19 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
   /* "pygame/pypm.pyx":288
  *             PmPtr = <PmTimeProcPtr>&Pt_Time
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Opening Midi Output", output_device
- * 
+ *
  */
   __pyx_t_3 = (__pyx_v_self->debug != 0);
   if (__pyx_t_3) {
 
     /* "pygame/pypm.pyx":289
- * 
+ *
  *         if self.debug:
  *             print "Opening Midi Output", output_device             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_OpenOutput(&(self.midi), output_device, NULL, buffer_size,
  */
     __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
@@ -2534,16 +2534,16 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
     /* "pygame/pypm.pyx":288
  *             PmPtr = <PmTimeProcPtr>&Pt_Time
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Opening Midi Output", output_device
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":291
  *             print "Opening Midi Output", output_device
- * 
+ *
  *         err = Pm_OpenOutput(&(self.midi), output_device, NULL, buffer_size,             # <<<<<<<<<<<<<<
  *                             PmPtr, NULL, latency)
  *         if self.debug:
@@ -2552,7 +2552,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
   __pyx_t_5 = __Pyx_PyInt_As_long(__pyx_v_buffer_size); if (unlikely((__pyx_t_5 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 291, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":292
- * 
+ *
  *         err = Pm_OpenOutput(&(self.midi), output_device, NULL, buffer_size,
  *                             PmPtr, NULL, latency)             # <<<<<<<<<<<<<<
  *         if self.debug:
@@ -2562,7 +2562,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
   /* "pygame/pypm.pyx":291
  *             print "Opening Midi Output", output_device
- * 
+ *
  *         err = Pm_OpenOutput(&(self.midi), output_device, NULL, buffer_size,             # <<<<<<<<<<<<<<
  *                             PmPtr, NULL, latency)
  *         if self.debug:
@@ -2574,7 +2574,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *                             PmPtr, NULL, latency)
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Pm_OpenOutput err", err
- * 
+ *
  */
   __pyx_t_3 = (__pyx_v_self->debug != 0);
   if (__pyx_t_3) {
@@ -2583,7 +2583,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *                             PmPtr, NULL, latency)
  *         if self.debug:
  *             print "Pm_OpenOutput err", err             # <<<<<<<<<<<<<<
- * 
+ *
  *         if err < 0:
  */
     __pyx_t_2 = __Pyx_PyInt_From_PmError(__pyx_v_err); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
@@ -2604,13 +2604,13 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *                             PmPtr, NULL, latency)
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Pm_OpenOutput err", err
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":296
  *             print "Pm_OpenOutput err", err
- * 
+ *
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             errmsg = Pm_GetErrorText(err)
  *             # Something's amiss here - if we try to throw an Exception
@@ -2619,7 +2619,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
   if (__pyx_t_3) {
 
     /* "pygame/pypm.pyx":297
- * 
+ *
  *         if err < 0:
  *             errmsg = Pm_GetErrorText(err)             # <<<<<<<<<<<<<<
  *             # Something's amiss here - if we try to throw an Exception
@@ -2667,7 +2667,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *             else:
  *                 print "Unable to open Midi OutputDevice=%i: %s" % (             # <<<<<<<<<<<<<<
  *                     output_device, errmsg)
- * 
+ *
  */
     /*else*/ {
 
@@ -2675,7 +2675,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *             else:
  *                 print "Unable to open Midi OutputDevice=%i: %s" % (
  *                     output_device, errmsg)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __dealloc__(self):
  */
       __pyx_t_2 = __Pyx_PyBytes_FromString(__pyx_v_errmsg); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 304, __pyx_L1_error)
@@ -2694,7 +2694,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
  *             else:
  *                 print "Unable to open Midi OutputDevice=%i: %s" % (             # <<<<<<<<<<<<<<
  *                     output_device, errmsg)
- * 
+ *
  */
       __pyx_t_2 = __Pyx_PyString_Format(__pyx_kp_s_Unable_to_open_Midi_OutputDevice, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -2705,7 +2705,7 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
     /* "pygame/pypm.pyx":296
  *             print "Pm_OpenOutput err", err
- * 
+ *
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             errmsg = Pm_GetErrorText(err)
  *             # Something's amiss here - if we try to throw an Exception
@@ -2714,10 +2714,10 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
   /* "pygame/pypm.pyx":271
  *     cdef int _aborted
- * 
+ *
  *     def __init__(self, output_device, latency=0, buffer_size=256):             # <<<<<<<<<<<<<<
  *         """Instantiate MIDI output stream object."""
- * 
+ *
  */
 
   /* function exit code */
@@ -2735,10 +2735,10 @@ static int __pyx_pf_6pygame_4pypm_6Output___init__(struct __pyx_obj_6pygame_4pyp
 
 /* "pygame/pypm.pyx":306
  *                     output_device, errmsg)
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         """Close midi device if still open when the instance is destroyed."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2766,35 +2766,35 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
 
   /* "pygame/pypm.pyx":311
  *         cdef PmError err
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Closing MIDI output stream and destroying instance."
- * 
+ *
  */
   __pyx_t_1 = (__pyx_v_self->debug != 0);
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":312
- * 
+ *
  *         if self.debug:
  *             print "Closing MIDI output stream and destroying instance."             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.midi and _pypm_initialized:
  */
     if (__Pyx_PrintOne(0, __pyx_kp_s_Closing_MIDI_output_stream_and_d) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":311
  *         cdef PmError err
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Closing MIDI output stream and destroying instance."
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":314
  *             print "Closing MIDI output stream and destroying instance."
- * 
+ *
  *         if self.midi and _pypm_initialized:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -2811,7 +2811,7 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":315
- * 
+ *
  *         if self.midi and _pypm_initialized:
  *             err = Pm_Close(self.midi)             # <<<<<<<<<<<<<<
  *             if err < 0:
@@ -2824,7 +2824,7 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     __pyx_t_1 = ((__pyx_v_err < 0) != 0);
     if (unlikely(__pyx_t_1)) {
@@ -2833,7 +2833,7 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
  *             err = Pm_Close(self.midi)
  *             if err < 0:
  *                 raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _check_open(self):
  */
       __pyx_t_3 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 317, __pyx_L1_error)
@@ -2850,13 +2850,13 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     }
 
     /* "pygame/pypm.pyx":314
  *             print "Closing MIDI output stream and destroying instance."
- * 
+ *
  *         if self.midi and _pypm_initialized:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -2865,10 +2865,10 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
 
   /* "pygame/pypm.pyx":306
  *                     output_device, errmsg)
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         """Close midi device if still open when the instance is destroyed."""
- * 
+ *
  */
 
   /* function exit code */
@@ -2883,10 +2883,10 @@ static void __pyx_pf_6pygame_4pypm_6Output_2__dealloc__(struct __pyx_obj_6pygame
 
 /* "pygame/pypm.pyx":319
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def _check_open(self):             # <<<<<<<<<<<<<<
  *         """Check whether midi device is open, and if not, raises an error.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -2915,19 +2915,19 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":326
  *         """
- * 
+ *
  *         if self.midi == NULL:             # <<<<<<<<<<<<<<
  *             raise Exception("midi Output not open.")
- * 
+ *
  */
   __pyx_t_1 = ((__pyx_v_self->midi == NULL) != 0);
   if (unlikely(__pyx_t_1)) {
 
     /* "pygame/pypm.pyx":327
- * 
+ *
  *         if self.midi == NULL:
  *             raise Exception("midi Output not open.")             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self._aborted:
  */
     __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
@@ -2938,16 +2938,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
 
     /* "pygame/pypm.pyx":326
  *         """
- * 
+ *
  *         if self.midi == NULL:             # <<<<<<<<<<<<<<
  *             raise Exception("midi Output not open.")
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":329
  *             raise Exception("midi Output not open.")
- * 
+ *
  *         if self._aborted:             # <<<<<<<<<<<<<<
  *             raise Exception(
  *                 "midi Output aborted. Need to call Close after Abort.")
@@ -2956,11 +2956,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
   if (unlikely(__pyx_t_1)) {
 
     /* "pygame/pypm.pyx":330
- * 
+ *
  *         if self._aborted:
  *             raise Exception(             # <<<<<<<<<<<<<<
  *                 "midi Output aborted. Need to call Close after Abort.")
- * 
+ *
  */
     __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -2970,7 +2970,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
 
     /* "pygame/pypm.pyx":329
  *             raise Exception("midi Output not open.")
- * 
+ *
  *         if self._aborted:             # <<<<<<<<<<<<<<
  *             raise Exception(
  *                 "midi Output aborted. Need to call Close after Abort.")
@@ -2979,10 +2979,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":319
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def _check_open(self):             # <<<<<<<<<<<<<<
  *         """Check whether midi device is open, and if not, raises an error.
- * 
+ *
  */
 
   /* function exit code */
@@ -3000,10 +3000,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_4_check_open(struct __pyx_obj_6p
 
 /* "pygame/pypm.pyx":333
  *                 "midi Output aborted. Need to call Close after Abort.")
- * 
+ *
  *     def Close(self):             # <<<<<<<<<<<<<<
  *         """Close the midi output device, flushing any pending buffers.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -3035,10 +3035,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
 
   /* "pygame/pypm.pyx":343
  *         cdef PmError err
- * 
+ *
  *         if not self.midi or not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   __pyx_t_2 = ((!(__pyx_v_self->midi != 0)) != 0);
   if (!__pyx_t_2) {
@@ -3052,10 +3052,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":344
- * 
+ *
  *         if not self.midi or not _pypm_initialized:
  *             return             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_Close(self.midi)
  */
     __Pyx_XDECREF(__pyx_r);
@@ -3064,16 +3064,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
 
     /* "pygame/pypm.pyx":343
  *         cdef PmError err
- * 
+ *
  *         if not self.midi or not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":346
  *             return
- * 
+ *
  *         err = Pm_Close(self.midi)             # <<<<<<<<<<<<<<
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))
@@ -3081,11 +3081,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
   __pyx_v_err = Pm_Close(__pyx_v_self->midi);
 
   /* "pygame/pypm.pyx":347
- * 
+ *
  *         err = Pm_Close(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_1 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_1)) {
@@ -3094,7 +3094,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
  *         err = Pm_Close(self.midi)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.midi = NULL
  */
     __pyx_t_3 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 348, __pyx_L1_error)
@@ -3107,29 +3107,29 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
     __PYX_ERR(0, 348, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":347
- * 
+ *
  *         err = Pm_Close(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":350
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         self.midi = NULL             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Abort(self):
  */
   __pyx_v_self->midi = NULL;
 
   /* "pygame/pypm.pyx":333
  *                 "midi Output aborted. Need to call Close after Abort.")
- * 
+ *
  *     def Close(self):             # <<<<<<<<<<<<<<
  *         """Close the midi output device, flushing any pending buffers.
- * 
+ *
  */
 
   /* function exit code */
@@ -3148,10 +3148,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_6Close(struct __pyx_obj_6pygame_
 
 /* "pygame/pypm.pyx":352
  *         self.midi = NULL
- * 
+ *
  *     def Abort(self):             # <<<<<<<<<<<<<<
  *         """Terminate outgoing messages immediately.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -3182,19 +3182,19 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
 
   /* "pygame/pypm.pyx":363
  *         cdef PmError err
- * 
+ *
  *         if not self.midi:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   __pyx_t_1 = ((!(__pyx_v_self->midi != 0)) != 0);
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":364
- * 
+ *
  *         if not self.midi:
  *             return             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_Abort(self.midi)
  */
     __Pyx_XDECREF(__pyx_r);
@@ -3203,16 +3203,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
 
     /* "pygame/pypm.pyx":363
  *         cdef PmError err
- * 
+ *
  *         if not self.midi:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":366
  *             return
- * 
+ *
  *         err = Pm_Abort(self.midi)             # <<<<<<<<<<<<<<
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))
@@ -3220,11 +3220,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
   __pyx_v_err = Pm_Abort(__pyx_v_self->midi);
 
   /* "pygame/pypm.pyx":367
- * 
+ *
  *         err = Pm_Abort(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_1 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_1)) {
@@ -3233,7 +3233,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
  *         err = Pm_Abort(self.midi)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         self._aborted = 1
  */
     __pyx_t_2 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
@@ -3246,29 +3246,29 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
     __PYX_ERR(0, 368, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":367
- * 
+ *
  *         err = Pm_Abort(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":370
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         self._aborted = 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Write(self, data):
  */
   __pyx_v_self->_aborted = 1;
 
   /* "pygame/pypm.pyx":352
  *         self.midi = NULL
- * 
+ *
  *     def Abort(self):             # <<<<<<<<<<<<<<
  *         """Terminate outgoing messages immediately.
- * 
+ *
  */
 
   /* function exit code */
@@ -3287,10 +3287,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_8Abort(struct __pyx_obj_6pygame_
 
 /* "pygame/pypm.pyx":372
  *         self._aborted = 1
- * 
+ *
  *     def Write(self, data):             # <<<<<<<<<<<<<<
  *         """Output a series of MIDI events given by data list n this device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -3338,9 +3338,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
   /* "pygame/pypm.pyx":410
  *         cdef int ev_no
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         if len(data) > 1024:
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 410, __pyx_L1_error)
@@ -3364,7 +3364,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
   /* "pygame/pypm.pyx":412
  *         self._check_open()
- * 
+ *
  *         if len(data) > 1024:             # <<<<<<<<<<<<<<
  *             raise IndexError('Maximum event list length is 1024.')
  *         else:
@@ -3374,7 +3374,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
   if (unlikely(__pyx_t_5)) {
 
     /* "pygame/pypm.pyx":413
- * 
+ *
  *         if len(data) > 1024:
  *             raise IndexError('Maximum event list length is 1024.')             # <<<<<<<<<<<<<<
  *         else:
@@ -3388,7 +3388,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
     /* "pygame/pypm.pyx":412
  *         self._check_open()
- * 
+ *
  *         if len(data) > 1024:             # <<<<<<<<<<<<<<
  *             raise IndexError('Maximum event list length is 1024.')
  *         else:
@@ -3508,7 +3508,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *                 if len(event[0]) > 4:
  *                     raise ValueError('Too many data bytes (%i) in event no. %i.'
  *                         % (len(event[0]), ev_no))             # <<<<<<<<<<<<<<
- * 
+ *
  *                 buffer[ev_no].message = 0
  */
         __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_event, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)
@@ -3536,7 +3536,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *                 if len(event[0]) > 4:
  *                     raise ValueError('Too many data bytes (%i) in event no. %i.'             # <<<<<<<<<<<<<<
  *                         % (len(event[0]), ev_no))
- * 
+ *
  */
         __pyx_t_10 = __Pyx_PyObject_CallOneArg(__pyx_builtin_ValueError, __pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 419, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
@@ -3556,16 +3556,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
       /* "pygame/pypm.pyx":422
  *                         % (len(event[0]), ev_no))
- * 
+ *
  *                 buffer[ev_no].message = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *                 for item in range(len(event[0])):
  */
       (__pyx_v_buffer[__pyx_v_ev_no]).message = 0;
 
       /* "pygame/pypm.pyx":424
  *                 buffer[ev_no].message = 0
- * 
+ *
  *                 for item in range(len(event[0])):             # <<<<<<<<<<<<<<
  *                     buffer[ev_no].message += (
  *                         (event[0][item] & 0xFF) << (8 * item))
@@ -3579,11 +3579,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
         __pyx_v_item = __pyx_t_12;
 
         /* "pygame/pypm.pyx":425
- * 
+ *
  *                 for item in range(len(event[0])):
  *                     buffer[ev_no].message += (             # <<<<<<<<<<<<<<
  *                         (event[0][item] & 0xFF) << (8 * item))
- * 
+ *
  */
         __pyx_t_13 = __pyx_v_ev_no;
         __pyx_t_10 = __Pyx_PyInt_From_PmMessage((__pyx_v_buffer[__pyx_t_13]).message); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 425, __pyx_L1_error)
@@ -3593,7 +3593,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *                 for item in range(len(event[0])):
  *                     buffer[ev_no].message += (
  *                         (event[0][item] & 0xFF) << (8 * item))             # <<<<<<<<<<<<<<
- * 
+ *
  *                 buffer[ev_no].timestamp = event[1]
  */
         __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_event, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 426, __pyx_L1_error)
@@ -3612,11 +3612,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
         /* "pygame/pypm.pyx":425
- * 
+ *
  *                 for item in range(len(event[0])):
  *                     buffer[ev_no].message += (             # <<<<<<<<<<<<<<
  *                         (event[0][item] & 0xFF) << (8 * item))
- * 
+ *
  */
         __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_t_10, __pyx_t_14); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 425, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
@@ -3629,9 +3629,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
       /* "pygame/pypm.pyx":428
  *                         (event[0][item] & 0xFF) << (8 * item))
- * 
+ *
  *                 buffer[ev_no].timestamp = event[1]             # <<<<<<<<<<<<<<
- * 
+ *
  *                 if self.debug:
  */
       __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_event, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
@@ -3642,7 +3642,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
       /* "pygame/pypm.pyx":430
  *                 buffer[ev_no].timestamp = event[1]
- * 
+ *
  *                 if self.debug:             # <<<<<<<<<<<<<<
  *                     print "%i : %r : %s" % (
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)
@@ -3654,7 +3654,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *                 if self.debug:
  *                     print "%i : %r : %s" % (
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
         __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_ev_no); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 432, __pyx_L1_error)
@@ -3676,11 +3676,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
         __pyx_t_10 = 0;
 
         /* "pygame/pypm.pyx":431
- * 
+ *
  *                 if self.debug:
  *                     print "%i : %r : %s" % (             # <<<<<<<<<<<<<<
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)
- * 
+ *
  */
         __pyx_t_10 = __Pyx_PyString_Format(__pyx_kp_s_i_r_s, __pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 431, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
@@ -3690,7 +3690,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
         /* "pygame/pypm.pyx":430
  *                 buffer[ev_no].timestamp = event[1]
- * 
+ *
  *                 if self.debug:             # <<<<<<<<<<<<<<
  *                     print "%i : %r : %s" % (
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)
@@ -3710,7 +3710,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
   /* "pygame/pypm.pyx":434
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Writing to midi buffer."
  *         err = Pm_Write(self.midi, buffer, len(data))
@@ -3719,7 +3719,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
   if (__pyx_t_8) {
 
     /* "pygame/pypm.pyx":435
- * 
+ *
  *         if self.debug:
  *             print "Writing to midi buffer."             # <<<<<<<<<<<<<<
  *         err = Pm_Write(self.midi, buffer, len(data))
@@ -3729,7 +3729,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
     /* "pygame/pypm.pyx":434
  *                         ev_no, buffer[ev_no].message, buffer[ev_no].timestamp)
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Writing to midi buffer."
  *         err = Pm_Write(self.midi, buffer, len(data))
@@ -3751,7 +3751,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *         err = Pm_Write(self.midi, buffer, len(data))
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_8 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_8)) {
@@ -3760,7 +3760,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *         err = Pm_Write(self.midi, buffer, len(data))
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def WriteShort(self, status, data1=0, data2=0):
  */
     __pyx_t_1 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
@@ -3777,16 +3777,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
  *         err = Pm_Write(self.midi, buffer, len(data))
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":372
  *         self._aborted = 1
- * 
+ *
  *     def Write(self, data):             # <<<<<<<<<<<<<<
  *         """Output a series of MIDI events given by data list n this device.
- * 
+ *
  */
 
   /* function exit code */
@@ -3809,10 +3809,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_10Write(struct __pyx_obj_6pygame
 
 /* "pygame/pypm.pyx":440
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def WriteShort(self, status, data1=0, data2=0):             # <<<<<<<<<<<<<<
  *         """Output MIDI event of three bytes or less immediately on this device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -3914,9 +3914,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":468
  *         cdef PmError err
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         buffer[0].timestamp = Pt_Time()
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 468, __pyx_L1_error)
@@ -3940,7 +3940,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":470
  *         self._check_open()
- * 
+ *
  *         buffer[0].timestamp = Pt_Time()             # <<<<<<<<<<<<<<
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
@@ -3948,11 +3948,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
   (__pyx_v_buffer[0]).timestamp = Pt_Time();
 
   /* "pygame/pypm.pyx":471
- * 
+ *
  *         buffer[0].timestamp = Pt_Time()
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |             # <<<<<<<<<<<<<<
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyInt_LshiftObjC(__pyx_v_data2, __pyx_int_16, 16, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3964,7 +3964,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
  *         buffer[0].timestamp = Pt_Time()
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
   __pyx_t_1 = __Pyx_PyInt_LshiftObjC(__pyx_v_data1, __pyx_int_8, 8, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 472, __pyx_L1_error)
@@ -3974,11 +3974,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pygame/pypm.pyx":471
- * 
+ *
  *         buffer[0].timestamp = Pt_Time()
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |             # <<<<<<<<<<<<<<
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
- * 
+ *
  */
   __pyx_t_1 = PyNumber_Or(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3989,7 +3989,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
  *         buffer[0].timestamp = Pt_Time()
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
   __pyx_t_3 = __Pyx_PyInt_AndObjC(__pyx_v_status, __pyx_int_255, 0xFF, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 472, __pyx_L1_error)
@@ -4002,17 +4002,17 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "pygame/pypm.pyx":471
- * 
+ *
  *         buffer[0].timestamp = Pt_Time()
  *         buffer[0].message = (((data2 << 16) & 0xFF0000) |             # <<<<<<<<<<<<<<
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
- * 
+ *
  */
   (__pyx_v_buffer[0]).message = __pyx_t_4;
 
   /* "pygame/pypm.pyx":474
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Writing to MIDI buffer."
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
@@ -4021,7 +4021,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
   if (__pyx_t_5) {
 
     /* "pygame/pypm.pyx":475
- * 
+ *
  *         if self.debug:
  *             print "Writing to MIDI buffer."             # <<<<<<<<<<<<<<
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
@@ -4031,7 +4031,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
 
     /* "pygame/pypm.pyx":474
  *             ((data1 << 8) & 0xFF00) | (status & 0xFF))
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Writing to MIDI buffer."
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
@@ -4052,7 +4052,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_5 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_5)) {
@@ -4061,7 +4061,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def WriteSysEx(self, when, msg):
  */
     __pyx_t_2 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 478, __pyx_L1_error)
@@ -4078,16 +4078,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
  *         err = Pm_Write(self.midi, buffer, 1) # stream, buffer, length
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":440
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def WriteShort(self, status, data1=0, data2=0):             # <<<<<<<<<<<<<<
  *         """Output MIDI event of three bytes or less immediately on this device.
- * 
+ *
  */
 
   /* function exit code */
@@ -4107,10 +4107,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_12WriteShort(struct __pyx_obj_6p
 
 /* "pygame/pypm.pyx":480
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def WriteSysEx(self, when, msg):             # <<<<<<<<<<<<<<
  *         """Output a timestamped system-exclusive MIDI message on this device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -4202,9 +4202,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":503
  *         cdef PtTimestamp cur_time
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         if type(msg) is list:
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
@@ -4228,7 +4228,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":505
  *         self._check_open()
- * 
+ *
  *         if type(msg) is list:             # <<<<<<<<<<<<<<
  *             # Markus Pfaff contribution
  *             arr = array.array('B', msg)
@@ -4361,7 +4361,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *             else:
  *                 msg = arr.tostring()             # <<<<<<<<<<<<<<
  *         cmsg = msg
- * 
+ *
  */
     /*else*/ {
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_arr, __pyx_n_s_tostring); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 511, __pyx_L1_error)
@@ -4388,7 +4388,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
 
     /* "pygame/pypm.pyx":505
  *         self._check_open()
- * 
+ *
  *         if type(msg) is list:             # <<<<<<<<<<<<<<
  *             # Markus Pfaff contribution
  *             arr = array.array('B', msg)
@@ -4399,7 +4399,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *             else:
  *                 msg = arr.tostring()
  *         cmsg = msg             # <<<<<<<<<<<<<<
- * 
+ *
  *         cur_time = Pt_Time()
  */
   __pyx_t_8 = __Pyx_PyObject_AsWritableString(__pyx_v_msg); if (unlikely((!__pyx_t_8) && PyErr_Occurred())) __PYX_ERR(0, 512, __pyx_L1_error)
@@ -4407,7 +4407,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":514
  *         cmsg = msg
- * 
+ *
  *         cur_time = Pt_Time()             # <<<<<<<<<<<<<<
  *         err = Pm_WriteSysEx(self.midi, when, <unsigned char *> cmsg)
  *         if err < 0:
@@ -4415,7 +4415,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
   __pyx_v_cur_time = Pt_Time();
 
   /* "pygame/pypm.pyx":515
- * 
+ *
  *         cur_time = Pt_Time()
  *         err = Pm_WriteSysEx(self.midi, when, <unsigned char *> cmsg)             # <<<<<<<<<<<<<<
  *         if err < 0:
@@ -4429,7 +4429,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *         err = Pm_WriteSysEx(self.midi, when, <unsigned char *> cmsg)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_5 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_5)) {
@@ -4438,7 +4438,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *         err = Pm_WriteSysEx(self.midi, when, <unsigned char *> cmsg)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         # wait for SysEx to go thru or...
  */
     __pyx_t_3 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 517, __pyx_L1_error)
@@ -4455,7 +4455,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *         err = Pm_WriteSysEx(self.midi, when, <unsigned char *> cmsg)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
@@ -4464,7 +4464,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
  *         # my win32 machine crashes w/ multiple SysEx
  *         while Pt_Time() == cur_time:             # <<<<<<<<<<<<<<
  *             pass
- * 
+ *
  */
   while (1) {
     __pyx_t_5 = ((Pt_Time() == __pyx_v_cur_time) != 0);
@@ -4473,10 +4473,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_14WriteSysEx(struct __pyx_obj_6p
 
   /* "pygame/pypm.pyx":480
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def WriteSysEx(self, when, msg):             # <<<<<<<<<<<<<<
  *         """Output a timestamped system-exclusive MIDI message on this device.
- * 
+ *
  */
 
   /* function exit code */
@@ -4612,10 +4612,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_6Output_18__setstate_cython__(CYTHON_UNU
 
 /* "pygame/pypm.pyx":537
  *     cdef int debug
- * 
+ *
  *     def __init__(self, input_device, buffersize=4096):             # <<<<<<<<<<<<<<
  *         """Instantiate MIDI input stream object."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -4706,11 +4706,11 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "pygame/pypm.pyx":541
- * 
+ *
  *         cdef PmError err
  *         self.device = input_device             # <<<<<<<<<<<<<<
  *         self.debug = 0
- * 
+ *
  */
   __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_input_device); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 541, __pyx_L1_error)
   __pyx_v_self->device = __pyx_t_1;
@@ -4719,14 +4719,14 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
  *         cdef PmError err
  *         self.device = input_device
  *         self.debug = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_OpenInput(&(self.midi), input_device, NULL, buffersize,
  */
   __pyx_v_self->debug = 0;
 
   /* "pygame/pypm.pyx":544
  *         self.debug = 0
- * 
+ *
  *         err = Pm_OpenInput(&(self.midi), input_device, NULL, buffersize,             # <<<<<<<<<<<<<<
  *                            &Pt_Time, NULL)
  *         if err < 0:
@@ -4735,7 +4735,7 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
   __pyx_t_3 = __Pyx_PyInt_As_long(__pyx_v_buffersize); if (unlikely((__pyx_t_3 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 544, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":545
- * 
+ *
  *         err = Pm_OpenInput(&(self.midi), input_device, NULL, buffersize,
  *                            &Pt_Time, NULL)             # <<<<<<<<<<<<<<
  *         if err < 0:
@@ -4748,7 +4748,7 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
  *                            &Pt_Time, NULL)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_4 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_4)) {
@@ -4757,7 +4757,7 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
  *                            &Pt_Time, NULL)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
     __pyx_t_5 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 547, __pyx_L1_error)
@@ -4774,25 +4774,25 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
  *                            &Pt_Time, NULL)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":549
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "MIDI input opened.", input_device
- * 
+ *
  */
   __pyx_t_4 = (__pyx_v_self->debug != 0);
   if (__pyx_t_4) {
 
     /* "pygame/pypm.pyx":550
- * 
+ *
  *         if self.debug:
  *             print "MIDI input opened.", input_device             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __dealloc__(self):
  */
     __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 550, __pyx_L1_error)
@@ -4808,19 +4808,19 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
 
     /* "pygame/pypm.pyx":549
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "MIDI input opened.", input_device
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":537
  *     cdef int debug
- * 
+ *
  *     def __init__(self, input_device, buffersize=4096):             # <<<<<<<<<<<<<<
  *         """Instantiate MIDI input stream object."""
- * 
+ *
  */
 
   /* function exit code */
@@ -4838,10 +4838,10 @@ static int __pyx_pf_6pygame_4pypm_5Input___init__(struct __pyx_obj_6pygame_4pypm
 
 /* "pygame/pypm.pyx":552
  *             print "MIDI input opened.", input_device
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         """Close midi device if still open when the instance is destroyed."""
- * 
+ *
  */
 
 /* Python wrapper */
@@ -4867,11 +4867,11 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
   /* "pygame/pypm.pyx":556
- * 
+ *
  *         cdef PmError err
  *         if not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   __pyx_t_1 = ((!(__pyx_v_6pygame_4pypm__pypm_initialized != 0)) != 0);
   if (__pyx_t_1) {
@@ -4880,51 +4880,51 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
  *         cdef PmError err
  *         if not _pypm_initialized:
  *             return             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.debug:
  */
     goto __pyx_L0;
 
     /* "pygame/pypm.pyx":556
- * 
+ *
  *         cdef PmError err
  *         if not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":559
  *             return
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Closing MIDI input stream and destroying instance"
- * 
+ *
  */
   __pyx_t_1 = (__pyx_v_self->debug != 0);
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":560
- * 
+ *
  *         if self.debug:
  *             print "Closing MIDI input stream and destroying instance"             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.midi:
  */
     if (__Pyx_PrintOne(0, __pyx_kp_s_Closing_MIDI_input_stream_and_de) < 0) __PYX_ERR(0, 560, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":559
  *             return
- * 
+ *
  *         if self.debug:             # <<<<<<<<<<<<<<
  *             print "Closing MIDI input stream and destroying instance"
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":562
  *             print "Closing MIDI input stream and destroying instance"
- * 
+ *
  *         if self.midi:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -4933,7 +4933,7 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":563
- * 
+ *
  *         if self.midi:
  *             err = Pm_Close(self.midi)             # <<<<<<<<<<<<<<
  *             if err < 0:
@@ -4946,7 +4946,7 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     __pyx_t_1 = ((__pyx_v_err < 0) != 0);
     if (unlikely(__pyx_t_1)) {
@@ -4955,7 +4955,7 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
  *             err = Pm_Close(self.midi)
  *             if err < 0:
  *                 raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _check_open(self):
  */
       __pyx_t_2 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 565, __pyx_L1_error)
@@ -4972,13 +4972,13 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     }
 
     /* "pygame/pypm.pyx":562
  *             print "Closing MIDI input stream and destroying instance"
- * 
+ *
  *         if self.midi:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -4987,10 +4987,10 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
 
   /* "pygame/pypm.pyx":552
  *             print "MIDI input opened.", input_device
- * 
+ *
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
  *         """Close midi device if still open when the instance is destroyed."""
- * 
+ *
  */
 
   /* function exit code */
@@ -5005,10 +5005,10 @@ static void __pyx_pf_6pygame_4pypm_5Input_2__dealloc__(struct __pyx_obj_6pygame_
 
 /* "pygame/pypm.pyx":567
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def _check_open(self):             # <<<<<<<<<<<<<<
  *         """Check whether midi device is open, and if not, raises an error.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5036,11 +5036,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_4_check_open(struct __pyx_obj_6py
   __Pyx_RefNannySetupContext("_check_open", 0);
 
   /* "pygame/pypm.pyx":573
- * 
+ *
  *         """
  *         if self.midi == NULL:             # <<<<<<<<<<<<<<
  *             raise Exception("midi Input not open.")
- * 
+ *
  */
   __pyx_t_1 = ((__pyx_v_self->midi == NULL) != 0);
   if (unlikely(__pyx_t_1)) {
@@ -5049,7 +5049,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_4_check_open(struct __pyx_obj_6py
  *         """
  *         if self.midi == NULL:
  *             raise Exception("midi Input not open.")             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Close(self):
  */
     __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 574, __pyx_L1_error)
@@ -5059,20 +5059,20 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_4_check_open(struct __pyx_obj_6py
     __PYX_ERR(0, 574, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":573
- * 
+ *
  *         """
  *         if self.midi == NULL:             # <<<<<<<<<<<<<<
  *             raise Exception("midi Input not open.")
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":567
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def _check_open(self):             # <<<<<<<<<<<<<<
  *         """Check whether midi device is open, and if not, raises an error.
- * 
+ *
  */
 
   /* function exit code */
@@ -5090,10 +5090,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_4_check_open(struct __pyx_obj_6py
 
 /* "pygame/pypm.pyx":576
  *             raise Exception("midi Input not open.")
- * 
+ *
  *     def Close(self):             # <<<<<<<<<<<<<<
  *         """Close the midi input device.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5127,7 +5127,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *         cdef PmError err
  *         if not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   __pyx_t_1 = ((!(__pyx_v_6pygame_4pypm__pypm_initialized != 0)) != 0);
   if (__pyx_t_1) {
@@ -5136,7 +5136,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *         cdef PmError err
  *         if not _pypm_initialized:
  *             return             # <<<<<<<<<<<<<<
- * 
+ *
  *         if not self.midi:
  */
     __Pyx_XDECREF(__pyx_r);
@@ -5148,25 +5148,25 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *         cdef PmError err
  *         if not _pypm_initialized:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":588
  *             return
- * 
+ *
  *         if not self.midi:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   __pyx_t_1 = ((!(__pyx_v_self->midi != 0)) != 0);
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":589
- * 
+ *
  *         if not self.midi:
  *             return             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.midi:
  */
     __Pyx_XDECREF(__pyx_r);
@@ -5175,16 +5175,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
 
     /* "pygame/pypm.pyx":588
  *             return
- * 
+ *
  *         if not self.midi:             # <<<<<<<<<<<<<<
  *             return
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":591
  *             return
- * 
+ *
  *         if self.midi:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -5193,7 +5193,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
   if (__pyx_t_1) {
 
     /* "pygame/pypm.pyx":592
- * 
+ *
  *         if self.midi:
  *             err = Pm_Close(self.midi)             # <<<<<<<<<<<<<<
  *             if err < 0:
@@ -5206,7 +5206,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     __pyx_t_1 = ((__pyx_v_err < 0) != 0);
     if (unlikely(__pyx_t_1)) {
@@ -5215,7 +5215,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *             err = Pm_Close(self.midi)
  *             if err < 0:
  *                 raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.midi = NULL
  */
       __pyx_t_2 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 594, __pyx_L1_error)
@@ -5232,13 +5232,13 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
  *             err = Pm_Close(self.midi)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     }
 
     /* "pygame/pypm.pyx":591
  *             return
- * 
+ *
  *         if self.midi:             # <<<<<<<<<<<<<<
  *             err = Pm_Close(self.midi)
  *             if err < 0:
@@ -5247,19 +5247,19 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":596
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         self.midi = NULL             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __pyx_v_self->midi = NULL;
 
   /* "pygame/pypm.pyx":576
  *             raise Exception("midi Input not open.")
- * 
+ *
  *     def Close(self):             # <<<<<<<<<<<<<<
  *         """Close the midi input device.
- * 
+ *
  */
 
   /* function exit code */
@@ -5277,11 +5277,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_6Close(struct __pyx_obj_6pygame_4
 }
 
 /* "pygame/pypm.pyx":599
- * 
- * 
+ *
+ *
  *     def SetFilter(self, filters):             # <<<<<<<<<<<<<<
  *         """Set filters on an open input stream.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5315,9 +5315,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
 
   /* "pygame/pypm.pyx":629
  *         cdef PmError err
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_SetFilter(self.midi, filters)
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 629, __pyx_L1_error)
@@ -5341,9 +5341,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
 
   /* "pygame/pypm.pyx":631
  *         self._check_open()
- * 
+ *
  *         err = Pm_SetFilter(self.midi, filters)             # <<<<<<<<<<<<<<
- * 
+ *
  *         if err < 0:
  */
   __pyx_t_4 = __Pyx_PyInt_As_long(__pyx_v_filters); if (unlikely((__pyx_t_4 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 631, __pyx_L1_error)
@@ -5351,19 +5351,19 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
 
   /* "pygame/pypm.pyx":633
  *         err = Pm_SetFilter(self.midi, filters)
- * 
+ *
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_5 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_5)) {
 
     /* "pygame/pypm.pyx":634
- * 
+ *
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         while(Pm_Poll(self.midi) != pmNoError):
  */
     __pyx_t_1 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 634, __pyx_L1_error)
@@ -5377,16 +5377,16 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
 
     /* "pygame/pypm.pyx":633
  *         err = Pm_SetFilter(self.midi, filters)
- * 
+ *
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":636
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         while(Pm_Poll(self.midi) != pmNoError):             # <<<<<<<<<<<<<<
  *             err = Pm_Read(self.midi, buffer, 1)
  *             if err < 0:
@@ -5396,7 +5396,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
     if (!__pyx_t_5) break;
 
     /* "pygame/pypm.pyx":637
- * 
+ *
  *         while(Pm_Poll(self.midi) != pmNoError):
  *             err = Pm_Read(self.midi, buffer, 1)             # <<<<<<<<<<<<<<
  *             if err < 0:
@@ -5409,7 +5409,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
  *             err = Pm_Read(self.midi, buffer, 1)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     __pyx_t_5 = ((__pyx_v_err < 0) != 0);
     if (unlikely(__pyx_t_5)) {
@@ -5418,7 +5418,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
  *             err = Pm_Read(self.midi, buffer, 1)
  *             if err < 0:
  *                 raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def SetChannelMask(self, mask):
  */
       __pyx_t_2 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 639, __pyx_L1_error)
@@ -5435,17 +5435,17 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
  *             err = Pm_Read(self.midi, buffer, 1)
  *             if err < 0:             # <<<<<<<<<<<<<<
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
     }
   }
 
   /* "pygame/pypm.pyx":599
- * 
- * 
+ *
+ *
  *     def SetFilter(self, filters):             # <<<<<<<<<<<<<<
  *         """Set filters on an open input stream.
- * 
+ *
  */
 
   /* function exit code */
@@ -5465,10 +5465,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_8SetFilter(struct __pyx_obj_6pyga
 
 /* "pygame/pypm.pyx":641
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def SetChannelMask(self, mask):             # <<<<<<<<<<<<<<
  *         """Set channel mask to filter incoming messages based on channel.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5501,9 +5501,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
 
   /* "pygame/pypm.pyx":662
  *         cdef PmError err
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_SetChannelMask(self.midi, mask)
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 662, __pyx_L1_error)
@@ -5527,7 +5527,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
 
   /* "pygame/pypm.pyx":664
  *         self._check_open()
- * 
+ *
  *         err = Pm_SetChannelMask(self.midi, mask)             # <<<<<<<<<<<<<<
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))
@@ -5536,11 +5536,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
   __pyx_v_err = Pm_SetChannelMask(__pyx_v_self->midi, __pyx_t_4);
 
   /* "pygame/pypm.pyx":665
- * 
+ *
  *         err = Pm_SetChannelMask(self.midi, mask)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_5 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_5)) {
@@ -5549,7 +5549,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
  *         err = Pm_SetChannelMask(self.midi, mask)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Poll(self):
  */
     __pyx_t_1 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 666, __pyx_L1_error)
@@ -5562,20 +5562,20 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
     __PYX_ERR(0, 666, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":665
- * 
+ *
  *         err = Pm_SetChannelMask(self.midi, mask)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":641
  *                 raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def SetChannelMask(self, mask):             # <<<<<<<<<<<<<<
  *         """Set channel mask to filter incoming messages based on channel.
- * 
+ *
  */
 
   /* function exit code */
@@ -5595,10 +5595,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_10SetChannelMask(struct __pyx_obj
 
 /* "pygame/pypm.pyx":668
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def Poll(self):             # <<<<<<<<<<<<<<
  *         """Test whether input is available.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5630,9 +5630,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":676
  *         cdef PmError err
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         err = Pm_Poll(self.midi)
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 676, __pyx_L1_error)
@@ -5656,7 +5656,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":678
  *         self._check_open()
- * 
+ *
  *         err = Pm_Poll(self.midi)             # <<<<<<<<<<<<<<
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))
@@ -5664,11 +5664,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
   __pyx_v_err = Pm_Poll(__pyx_v_self->midi);
 
   /* "pygame/pypm.pyx":679
- * 
+ *
  *         err = Pm_Poll(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   __pyx_t_4 = ((__pyx_v_err < 0) != 0);
   if (unlikely(__pyx_t_4)) {
@@ -5677,7 +5677,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
  *         err = Pm_Poll(self.midi)
  *         if err < 0:
  *             raise Exception(Pm_GetErrorText(err))             # <<<<<<<<<<<<<<
- * 
+ *
  *         return err
  */
     __pyx_t_1 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_err)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 680, __pyx_L1_error)
@@ -5690,19 +5690,19 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
     __PYX_ERR(0, 680, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":679
- * 
+ *
  *         err = Pm_Poll(self.midi)
  *         if err < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":682
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *         return err             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Read(self, max_events):
  */
   __Pyx_XDECREF(__pyx_r);
@@ -5714,10 +5714,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":668
  *             raise Exception(Pm_GetErrorText(err))
- * 
+ *
  *     def Poll(self):             # <<<<<<<<<<<<<<
  *         """Test whether input is available.
- * 
+ *
  */
 
   /* function exit code */
@@ -5735,10 +5735,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_12Poll(struct __pyx_obj_6pygame_4
 
 /* "pygame/pypm.pyx":684
  *         return err
- * 
+ *
  *     def Read(self, max_events):             # <<<<<<<<<<<<<<
  *         """Read and return up to max_events events from input.
- * 
+ *
  */
 
 /* Python wrapper */
@@ -5781,9 +5781,9 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":700
  *         cdef PmError num_events
- * 
+ *
  *         self._check_open()             # <<<<<<<<<<<<<<
- * 
+ *
  *         if max_events > 1024:
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_check_open); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 700, __pyx_L1_error)
@@ -5807,7 +5807,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":702
  *         self._check_open()
- * 
+ *
  *         if max_events > 1024:             # <<<<<<<<<<<<<<
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:
@@ -5818,7 +5818,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
   if (unlikely(__pyx_t_4)) {
 
     /* "pygame/pypm.pyx":703
- * 
+ *
  *         if max_events > 1024:
  *             raise ValueError('Maximum buffer length is 1024.')             # <<<<<<<<<<<<<<
  *         if not max_events:
@@ -5832,7 +5832,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
 
     /* "pygame/pypm.pyx":702
  *         self._check_open()
- * 
+ *
  *         if max_events > 1024:             # <<<<<<<<<<<<<<
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:
@@ -5844,7 +5844,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:             # <<<<<<<<<<<<<<
  *             raise ValueError('Minimum buffer length is 1.')
- * 
+ *
  */
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_max_events); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 704, __pyx_L1_error)
   __pyx_t_5 = ((!__pyx_t_4) != 0);
@@ -5854,7 +5854,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:
  *             raise ValueError('Minimum buffer length is 1.')             # <<<<<<<<<<<<<<
- * 
+ *
  *         num_events = Pm_Read(self.midi, buffer, max_events)
  */
     __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 705, __pyx_L1_error)
@@ -5868,13 +5868,13 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:             # <<<<<<<<<<<<<<
  *             raise ValueError('Minimum buffer length is 1.')
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":707
  *             raise ValueError('Minimum buffer length is 1.')
- * 
+ *
  *         num_events = Pm_Read(self.midi, buffer, max_events)             # <<<<<<<<<<<<<<
  *         if num_events < 0:
  *             raise Exception(Pm_GetErrorText(num_events))
@@ -5883,11 +5883,11 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
   __pyx_v_num_events = Pm_Read(__pyx_v_self->midi, __pyx_v_buffer, __pyx_t_6);
 
   /* "pygame/pypm.pyx":708
- * 
+ *
  *         num_events = Pm_Read(self.midi, buffer, max_events)
  *         if num_events < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(num_events))
- * 
+ *
  */
   __pyx_t_5 = ((__pyx_v_num_events < 0) != 0);
   if (unlikely(__pyx_t_5)) {
@@ -5896,7 +5896,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
  *         num_events = Pm_Read(self.midi, buffer, max_events)
  *         if num_events < 0:
  *             raise Exception(Pm_GetErrorText(num_events))             # <<<<<<<<<<<<<<
- * 
+ *
  *         events = []
  */
     __pyx_t_1 = __Pyx_PyBytes_FromString(Pm_GetErrorText(__pyx_v_num_events)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 709, __pyx_L1_error)
@@ -5909,17 +5909,17 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
     __PYX_ERR(0, 709, __pyx_L1_error)
 
     /* "pygame/pypm.pyx":708
- * 
+ *
  *         num_events = Pm_Read(self.midi, buffer, max_events)
  *         if num_events < 0:             # <<<<<<<<<<<<<<
  *             raise Exception(Pm_GetErrorText(num_events))
- * 
+ *
  */
   }
 
   /* "pygame/pypm.pyx":711
  *             raise Exception(Pm_GetErrorText(num_events))
- * 
+ *
  *         events = []             # <<<<<<<<<<<<<<
  *         if num_events >= 1:
  *             for ev_no in range(<int>num_events):
@@ -5930,7 +5930,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
   __pyx_t_2 = 0;
 
   /* "pygame/pypm.pyx":712
- * 
+ *
  *         events = []
  *         if num_events >= 1:             # <<<<<<<<<<<<<<
  *             for ev_no in range(<int>num_events):
@@ -6051,7 +6051,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
     }
 
     /* "pygame/pypm.pyx":712
- * 
+ *
  *         events = []
  *         if num_events >= 1:             # <<<<<<<<<<<<<<
  *             for ev_no in range(<int>num_events):
@@ -6061,7 +6061,7 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":726
  *                 )
- * 
+ *
  *         return events             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
@@ -6071,10 +6071,10 @@ static PyObject *__pyx_pf_6pygame_4pypm_5Input_14Read(struct __pyx_obj_6pygame_4
 
   /* "pygame/pypm.pyx":684
  *         return err
- * 
+ *
  *     def Read(self, max_events):             # <<<<<<<<<<<<<<
  *         """Read and return up to max_events events from input.
- * 
+ *
  */
 
   /* function exit code */
@@ -6591,10 +6591,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "pygame/pypm.pyx":327
- * 
+ *
  *         if self.midi == NULL:
  *             raise Exception("midi Output not open.")             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self._aborted:
  */
   __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_midi_Output_not_open); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 327, __pyx_L1_error)
@@ -6602,18 +6602,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple_);
 
   /* "pygame/pypm.pyx":330
- * 
+ *
  *         if self._aborted:
  *             raise Exception(             # <<<<<<<<<<<<<<
  *                 "midi Output aborted. Need to call Close after Abort.")
- * 
+ *
  */
   __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_midi_Output_aborted_Need_to_call); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
   /* "pygame/pypm.pyx":413
- * 
+ *
  *         if len(data) > 1024:
  *             raise IndexError('Maximum event list length is 1024.')             # <<<<<<<<<<<<<<
  *         else:
@@ -6646,7 +6646,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """
  *         if self.midi == NULL:
  *             raise Exception("midi Input not open.")             # <<<<<<<<<<<<<<
- * 
+ *
  *     def Close(self):
  */
   __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s_midi_Input_not_open); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 574, __pyx_L1_error)
@@ -6654,7 +6654,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__6);
 
   /* "pygame/pypm.pyx":703
- * 
+ *
  *         if max_events > 1024:
  *             raise ValueError('Maximum buffer length is 1024.')             # <<<<<<<<<<<<<<
  *         if not max_events:
@@ -6668,7 +6668,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *             raise ValueError('Maximum buffer length is 1024.')
  *         if not max_events:
  *             raise ValueError('Minimum buffer length is 1.')             # <<<<<<<<<<<<<<
- * 
+ *
  *         num_events = Pm_Read(self.midi, buffer, max_events)
  */
   __pyx_tuple__8 = PyTuple_Pack(1, __pyx_kp_s_Minimum_buffer_length_is_1); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 705, __pyx_L1_error)
@@ -6696,10 +6696,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/pypm.pyx":154
  * cdef long _pypm_initialized
- * 
+ *
  * def Initialize():             # <<<<<<<<<<<<<<
  *     """Initialize PortMidi library.
- * 
+ *
  */
   __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_pypm_initialized); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
@@ -6708,10 +6708,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/pypm.pyx":166
  *     _pypm_initialized = 1
- * 
+ *
  * def Terminate():             # <<<<<<<<<<<<<<
  *     """Terminate use of PortMidi library.
- * 
+ *
  */
   __pyx_tuple__13 = PyTuple_Pack(1, __pyx_n_s_pypm_initialized); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
@@ -6719,38 +6719,38 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame_pypm_pyx, __pyx_n_s_Terminate, 166, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 166, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":179
- * 
- * 
+ *
+ *
  * def GetDefaultInputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI input device.
- * 
+ *
  */
   __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame_pypm_pyx, __pyx_n_s_GetDefaultInputDeviceID, 179, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 179, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":188
  *     return Pm_GetDefaultInputDeviceID()
- * 
+ *
  * def GetDefaultOutputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI output device.
- * 
+ *
  */
   __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame_pypm_pyx, __pyx_n_s_GetDefaultOutputDeviceID, 188, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 188, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":197
  *     return Pm_GetDefaultOutputDeviceID()
- * 
+ *
  * def CountDevices():             # <<<<<<<<<<<<<<
  *     """Return number of available MIDI (input and output) devices."""
- * 
+ *
  */
   __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame_pypm_pyx, __pyx_n_s_CountDevices, 197, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 197, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":202
  *     return Pm_CountDevices()
- * 
+ *
  * def GetDeviceInfo(device_no):             # <<<<<<<<<<<<<<
  *     """Return device info tuple for MIDI device given by device_no.
- * 
+ *
  */
   __pyx_tuple__18 = PyTuple_Pack(2, __pyx_n_s_device_no, __pyx_n_s_info); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 202, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
@@ -6759,19 +6759,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/pypm.pyx":224
  *     # return None
- * 
+ *
  * def Time():             # <<<<<<<<<<<<<<
  *     """Return the current time in ms of the PortMidi timer."""
- * 
+ *
  */
   __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_c_cython_pygame_pypm_pyx, __pyx_n_s_Time, 224, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 224, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":229
  *     return Pt_Time()
- * 
+ *
  * def GetErrorText(err):             # <<<<<<<<<<<<<<
  *     """Return human-readable error message translated from error number."""
- * 
+ *
  */
   __pyx_tuple__21 = PyTuple_Pack(1, __pyx_n_s_err); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
@@ -6780,10 +6780,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "pygame/pypm.pyx":234
  *     return Pm_GetErrorText(err)
- * 
+ *
  * def Channel(chan):             # <<<<<<<<<<<<<<
  *     """Return Channel object for given MIDI channel number 1 - 16.
- * 
+ *
  */
   __pyx_tuple__23 = PyTuple_Pack(1, __pyx_n_s_chan); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
@@ -7140,19 +7140,19 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":10
  * # cython: language_level=2
- * 
+ *
  * __version__ = "0.0.6"             # <<<<<<<<<<<<<<
- * 
+ *
  * import array
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_s_0_0_6) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":12
  * __version__ = "0.0.6"
- * 
+ *
  * import array             # <<<<<<<<<<<<<<
  * import sys
- * 
+ *
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_array, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7160,10 +7160,10 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pygame/pypm.pyx":13
- * 
+ *
  * import array
  * import sys             # <<<<<<<<<<<<<<
- * 
+ *
  * # CHANGES:
  */
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_sys, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
@@ -7172,8 +7172,8 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pygame/pypm.pyx":43
- * 
- * 
+ *
+ *
  * FILT_ACTIVE = 0x1             # <<<<<<<<<<<<<<
  * FILT_SYSEX = 0x2
  * FILT_CLOCK = 0x4
@@ -7181,7 +7181,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_FILT_ACTIVE, __pyx_int_1) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":44
- * 
+ *
  * FILT_ACTIVE = 0x1
  * FILT_SYSEX = 0x2             # <<<<<<<<<<<<<<
  * FILT_CLOCK = 0x4
@@ -7365,7 +7365,7 @@ if (!__Pyx_RefNanny) {
  * FILT_TUNE = 0x10000
  * FALSE = 0             # <<<<<<<<<<<<<<
  * TRUE = 1
- * 
+ *
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_FALSE, __pyx_int_0) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
 
@@ -7373,17 +7373,17 @@ if (!__Pyx_RefNanny) {
  * FILT_TUNE = 0x10000
  * FALSE = 0
  * TRUE = 1             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef extern from "portmidi.h":
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_TRUE, __pyx_int_1) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
 
   /* "pygame/pypm.pyx":154
  * cdef long _pypm_initialized
- * 
+ *
  * def Initialize():             # <<<<<<<<<<<<<<
  *     """Initialize PortMidi library.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_1Initialize, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7392,10 +7392,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":166
  *     _pypm_initialized = 1
- * 
+ *
  * def Terminate():             # <<<<<<<<<<<<<<
  *     """Terminate use of PortMidi library.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_3Terminate, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7403,11 +7403,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "pygame/pypm.pyx":179
- * 
- * 
+ *
+ *
  * def GetDefaultInputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI input device.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_5GetDefaultInputDeviceID, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7416,10 +7416,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":188
  *     return Pm_GetDefaultInputDeviceID()
- * 
+ *
  * def GetDefaultOutputDeviceID():             # <<<<<<<<<<<<<<
  *     """Return the number of the default MIDI output device.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_7GetDefaultOutputDeviceID, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7428,10 +7428,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":197
  *     return Pm_GetDefaultOutputDeviceID()
- * 
+ *
  * def CountDevices():             # <<<<<<<<<<<<<<
  *     """Return number of available MIDI (input and output) devices."""
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_9CountDevices, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 197, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7440,10 +7440,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":202
  *     return Pm_CountDevices()
- * 
+ *
  * def GetDeviceInfo(device_no):             # <<<<<<<<<<<<<<
  *     """Return device info tuple for MIDI device given by device_no.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_11GetDeviceInfo, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 202, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7452,10 +7452,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":224
  *     # return None
- * 
+ *
  * def Time():             # <<<<<<<<<<<<<<
  *     """Return the current time in ms of the PortMidi timer."""
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_13Time, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7464,10 +7464,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":229
  *     return Pt_Time()
- * 
+ *
  * def GetErrorText(err):             # <<<<<<<<<<<<<<
  *     """Return human-readable error message translated from error number."""
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_15GetErrorText, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7476,10 +7476,10 @@ if (!__Pyx_RefNanny) {
 
   /* "pygame/pypm.pyx":234
  *     return Pm_GetErrorText(err)
- * 
+ *
  * def Channel(chan):             # <<<<<<<<<<<<<<
  *     """Return Channel object for given MIDI channel number 1 - 16.
- * 
+ *
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6pygame_4pypm_17Channel, NULL, __pyx_n_s_pygame_pypm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7673,8 +7673,8 @@ static PyObject* __Pyx_PyInt_SubtractObjC(PyObject *op1, PyObject *op2, CYTHON_U
                 llx = lla - llb;
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     if (PyFloat_CheckExact(op1)) {
@@ -8558,8 +8558,8 @@ static PyObject* __Pyx_PyInt_AndObjC(PyObject *op1, PyObject *op2, CYTHON_UNUSED
                 llx = lla & llb;
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     return (inplace ? PyNumber_InPlaceAnd : PyNumber_And)(op1, op2);
@@ -8680,8 +8680,8 @@ static PyObject* __Pyx_PyInt_LshiftObjC(PyObject *op1, PyObject *op2, CYTHON_UNU
                 if (likely(lla == llx >> llb))
             return PyLong_FromLongLong(llx);
 #endif
-        
-        
+
+
     }
     #endif
     return (inplace ? PyNumber_InPlaceLshift : PyNumber_Lshift)(op1, op2);
