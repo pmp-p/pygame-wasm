@@ -1,8 +1,6 @@
 from cpython cimport PyObject
-#from . import error
-#from . import error as errorfnc
-error = RuntimeError
-errorfnc = RuntimeError
+from . import error
+from . import error as errorfnc
 from libc.stdlib cimport free, malloc
 
 
@@ -81,7 +79,7 @@ def get_drivers():
     for ind from 0 <= ind < num:
         SDL_GetRenderDriverInfo(ind, &info)
         ret = RendererDriverInfo()
-        ret.name = info.name
+        ret.name = info.name.decode("utf-8")
         ret.flags = info.flags
         ret.num_texture_formats = info.num_texture_formats
         ret.max_texture_width = info.max_texture_width
@@ -279,13 +277,12 @@ cdef class Window:
         if not self._win:
             raise error()
         SDL_SetWindowData(self._win, "pg_window", <PyObject*>self)
-        import sys
-        if not sys.platform == 'emscripten':
-            import pygame.pkgdata
-            surf = pygame.image.load(pygame.pkgdata.getResource(
-                                     'pygame_icon.bmp'))
-            surf.set_colorkey(0)
-            self.set_icon(surf)
+
+        import pygame.pkgdata
+        surf = pygame.image.load(pygame.pkgdata.getResource(
+                                 'pygame_icon.bmp'))
+        surf.set_colorkey(0)
+        self.set_icon(surf)
 
     @property
     def grab(self):
@@ -1255,7 +1252,7 @@ cdef class Renderer:
 
     @staticmethod
     def compose_custom_blend_mode(color_mode, alpha_mode):
-        """ Use this function to compose a custom blend mode..
+        """ Use this function to compose a custom blend mode.. 
 
         :param color_mode: A tuple (srcColorFactor, dstColorFactor, colorOperation)
         :param alpha_mode: A tuple (srcAlphaFactor, dstAlphaFactor, alphaOperation)
