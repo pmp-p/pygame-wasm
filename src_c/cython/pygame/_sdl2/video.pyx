@@ -1252,7 +1252,7 @@ cdef class Renderer:
 
     @staticmethod
     def compose_custom_blend_mode(color_mode, alpha_mode):
-        """ Use this function to compose a custom blend mode..
+        """ Use this function to compose a custom blend mode.. 
 
         :param color_mode: A tuple (srcColorFactor, dstColorFactor, colorOperation)
         :param alpha_mode: A tuple (srcAlphaFactor, dstAlphaFactor, alphaOperation)

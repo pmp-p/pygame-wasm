@@ -22496,7 +22496,7 @@ PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_6pygame_5_sdl2_5video_8Renderer_26compose_custom_blend_mode, " Use this function to compose a custom blend mode..\n\n        :param color_mode: A tuple (srcColorFactor, dstColorFactor, colorOperation)\n        :param alpha_mode: A tuple (srcAlphaFactor, dstAlphaFactor, alphaOperation)\n        :return: A blend mode to be used with Renderer.draw_blend_mode and Texure.blend_mode\n        ");
+PyDoc_STRVAR(__pyx_doc_6pygame_5_sdl2_5video_8Renderer_26compose_custom_blend_mode, " Use this function to compose a custom blend mode.. \n\n        :param color_mode: A tuple (srcColorFactor, dstColorFactor, colorOperation)\n        :param alpha_mode: A tuple (srcAlphaFactor, dstAlphaFactor, alphaOperation)\n        :return: A blend mode to be used with Renderer.draw_blend_mode and Texure.blend_mode\n        ");
 static PyMethodDef __pyx_mdef_6pygame_5_sdl2_5video_8Renderer_27compose_custom_blend_mode = {"compose_custom_blend_mode", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_6pygame_5_sdl2_5video_8Renderer_27compose_custom_blend_mode, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_6pygame_5_sdl2_5video_8Renderer_26compose_custom_blend_mode};
 static PyObject *__pyx_pw_6pygame_5_sdl2_5video_8Renderer_27compose_custom_blend_mode(CYTHON_UNUSED PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
