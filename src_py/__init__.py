@@ -1,109 +1,60 @@
-# pygame - Python Game Library
-# Copyright (C) 2000-2001  Pete Shinners
-#
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Library General Public
-# License as published by the Free Software Foundation; either
-# version 2 of the License, or (at your option) any later version.
-#
-# This library is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-# Library General Public License for more details.
-#
-# You should have received a copy of the GNU Library General Public
-# License along with this library; if not, write to the Free
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-#
-# Pete Shinners
-# pete@shinners.org
-"""Pygame is a set of Python modules designed for writing games.
-It is written on top of the excellent SDL library. This allows you
-to create fully featured games and multimedia programs in the python
-language. The package is highly portable, with games running on
-Windows, MacOS, OS X, BeOS, FreeBSD, IRIX, and Linux."""
-
 import sys
 import os
-
-# Choose Windows display driver
-if os.name == "nt":
-    pygame_dir = os.path.split(__file__)[0]
-
-    # pypy does not find the dlls, so we add package folder to PATH.
-    os.environ["PATH"] = os.environ["PATH"] + ";" + pygame_dir
-
-    # windows store python does not find the dlls, so we run this
-    if sys.version_info > (3, 8):
-        os.add_dll_directory(pygame_dir)  # only available in 3.8+
-
-# when running under X11, always set the SDL window WM_CLASS to make the
-#   window managers correctly match the pygame window.
-elif "DISPLAY" in os.environ and "SDL_VIDEO_X11_WMCLASS" not in os.environ:
-    os.environ["SDL_VIDEO_X11_WMCLASS"] = os.path.basename(sys.argv[0])
+import builtins
 
 
-def _attribute_undefined(name):
-    raise RuntimeError(f"{name} is not available")
+def clean_mod(modname):
+    mod = sys.modules.pop(modname.replace(".", "_"))
+    sys.modules[modname] = mod
+    return mod
 
 
-class MissingModule:
-    _NOT_IMPLEMENTED_ = True
+from pygame_base import *
 
-    def __init__(self, name, urgent=0):
-        self.name = name
-        exc_type, exc_msg = sys.exc_info()[:2]
-        self.info = str(exc_msg)
-        self.reason = f"{exc_type.__name__}: {self.info}"
-        self.urgent = urgent
-        if urgent:
-            self.warn()
+base = clean_mod("pygame.base")
 
-    def __getattr__(self, var):
-        if not self.urgent:
-            self.warn()
-            self.urgent = 1
-        missing_msg = f"{self.name} module not available ({self.reason})"
-        raise NotImplementedError(missing_msg)
+from pygame_constants import *
 
-    def __bool__(self):
-        return False
+constants = clean_mod("pygame.constants")
 
-    def warn(self):
-        msg_type = "import" if self.urgent else "use"
-        message = f"{msg_type} {self.name}: {self.info}\n({self.reason})"
-        try:
-            import warnings
+from pygame.version import *
 
-            level = 4 if self.urgent else 3
-            warnings.warn(message, RuntimeWarning, level)
-        except ImportError:
-            print(message)
+import pygame_rect
+from pygame_rect import Rect
+
+rect = clean_mod("pygame.rect")
+
+from pygame_rwobject import encode_string, encode_file_path
+
+rwobject = clean_mod("pygame.rwobject")
 
 
-# we need to import like this, each at a time. the cleanest way to import
-# our modules is with the import command (not the __import__ function)
-# isort: skip_file
+import pygame_surflock
 
-# first, the "required" modules
-from pygame.base import *  # pylint: disable=wildcard-import; lgtm[py/polluting-import]
-from pygame.constants import *  # now has __all__ pylint: disable=wildcard-import; lgtm[py/polluting-import]
-from pygame.version import *  # pylint: disable=wildcard-import; lgtm[py/polluting-import]
-from pygame.rect import Rect
-from pygame.rwobject import encode_string, encode_file_path
-import pygame.surflock
-import pygame.color
+surflock = clean_mod("pygame.surflock")
+
+import pygame.colordict
+
+import pygame_color
+
+color = clean_mod("pygame.color")
 
 Color = pygame.color.Color
-import pygame.bufferproxy
 
+import pygame_bufferproxy
+
+bufferproxy = clean_mod("pygame.bufferproxy")
 BufferProxy = pygame.bufferproxy.BufferProxy
-import pygame.math
 
+
+import pygame_math
+
+math = clean_mod("pygame.math")
 Vector2 = pygame.math.Vector2
 Vector3 = pygame.math.Vector3
 
 __version__ = ver
+
 
 # next, the "standard" modules
 # we still allow them to be missing for stripped down pygame distributions
@@ -114,281 +65,146 @@ if get_sdl_version() < (2, 0, 0):
     except (ImportError, IOError):
         cdrom = MissingModule("cdrom", urgent=1)
 
-try:
-    import pygame.display
-except (ImportError, IOError):
-    display = MissingModule("display", urgent=1)
 
-try:
-    import pygame.draw
-except (ImportError, IOError):
-    draw = MissingModule("draw", urgent=1)
-
-try:
-    import pygame.event
-except (ImportError, IOError):
-    event = MissingModule("event", urgent=1)
+import pygame_display
 
-try:
-    import pygame.image
-except (ImportError, IOError):
-    image = MissingModule("image", urgent=1)
+display = clean_mod("pygame.display")
 
-try:
-    import pygame.joystick
-except (ImportError, IOError):
-    joystick = MissingModule("joystick", urgent=1)
+import pygame_draw
 
-try:
-    import pygame.key
-except (ImportError, IOError):
-    key = MissingModule("key", urgent=1)
+draw = clean_mod("pygame.draw")
 
-try:
-    import pygame.mouse
-except (ImportError, IOError):
-    mouse = MissingModule("mouse", urgent=1)
+import pygame__freetype
 
-try:
-    import pygame.cursors
-    from pygame.cursors import Cursor
-except (ImportError, IOError):
-    cursors = MissingModule("cursors", urgent=1)
+_freetype = clean_mod("pygame._freetype")
 
-    def Cursor(*args):  # pylint: disable=unused-argument
-        _attribute_undefined("pygame.Cursor")
 
+import pygame_font
 
-try:
-    import pygame.sprite
-except (ImportError, IOError):
-    sprite = MissingModule("sprite", urgent=1)
+font = clean_mod("pygame.font")
 
-try:
-    import pygame.threads
-except (ImportError, IOError):
-    threads = MissingModule("threads", urgent=1)
+import pygame.sysfont
 
-try:
-    import pygame.pixelcopy
-except (ImportError, IOError):
-    pixelcopy = MissingModule("pixelcopy", urgent=1)
+pygame.font.SysFont = pygame.sysfont.SysFont
+pygame.font.get_fonts = pygame.sysfont.get_fonts
+pygame.font.match_font = pygame.sysfont.match_font
 
 
-def warn_unwanted_files():
-    """warn about unneeded old files"""
+"""
+import pygame.mask
+from pygame.mask import Mask
 
-    # a temporary hack to warn about camera.so and camera.pyd.
-    install_path = os.path.split(pygame.base.__file__)[0]
-    extension_ext = os.path.splitext(pygame.base.__file__)[1]
+from pygame.pixelarray import PixelArray
 
-    # here are the .so/.pyd files we need to ask to remove.
-    ext_to_remove = ["camera"]
+from pygame.overlay import Overlay
 
-    # here are the .py/.pyo/.pyc files we need to ask to remove.
-    py_to_remove = ["color"]
+"""
 
-    # Don't warn on Symbian. The color.py is used as a wrapper.
-    if os.name == "e32":
-        py_to_remove = []
 
-    # See if any of the files are there.
-    extension_files = [f"{x}{extension_ext}" for x in ext_to_remove]
+import pygame_surface
 
-    py_files = [
-        f"{x}{py_ext}" for py_ext in [".py", ".pyc", ".pyo"] for x in py_to_remove
-    ]
+Surface = pygame_surface.Surface
+surface = clean_mod("pygame.surface")
 
-    files = py_files + extension_files
 
-    unwanted_files = []
-    for f in files:
-        unwanted_files.append(os.path.join(install_path, f))
+import pygame_transform
 
-    ask_remove = []
-    for f in unwanted_files:
-        if os.path.exists(f):
-            ask_remove.append(f)
+transform = clean_mod("pygame.transform")
 
-    if ask_remove:
-        message = "Detected old file(s).  Please remove the old files:\n"
-        message += " ".join(ask_remove)
-        message += "\nLeaving them there might break pygame.  Cheers!\n\n"
 
-        try:
-            import warnings
+import pygame_key
 
-            level = 4
-            warnings.warn(message, RuntimeWarning, level)
-        except ImportError:
-            print(message)
+key = clean_mod("pygame.key")
 
+import pygame_mouse
 
-# disable, because we hopefully don't need it.
-# warn_unwanted_files()
+mouse = clean_mod("pygame.mouse")
 
+import pygame_event
 
-try:
-    from pygame.surface import Surface, SurfaceType
-except (ImportError, IOError):
+event = clean_mod("pygame.event")
 
-    def Surface(size, flags, depth, masks):  # pylint: disable=unused-argument
-        _attribute_undefined("pygame.Surface")
+import pygame_imageext
 
-    SurfaceType = Surface
+imageext = clean_mod("pygame.imageext")
 
-try:
-    import pygame.mask
-    from pygame.mask import Mask
-except (ImportError, IOError):
-    mask = MissingModule("mask", urgent=0)
+import pygame_mask
 
-    def Mask(size, fill):  # pylint: disable=unused-argument
-        _attribute_undefined("pygame.Mask")
+mask = clean_mod("pygame.mask")
 
+import pygame_image
 
-try:
-    from pygame.pixelarray import PixelArray
-except (ImportError, IOError):
+image = clean_mod("pygame.image")
 
-    def PixelArray(surface):  # pylint: disable=unused-argument
-        _attribute_undefined("pygame.PixelArray")
+import pygame_joystick
 
+joystick = clean_mod("pygame.joystick")
 
-try:
-    from pygame.overlay import Overlay
-except (ImportError, IOError):
+import pygame_time
 
-    def Overlay(format, size):  # pylint: disable=unused-argument
-        _attribute_undefined("pygame.Overlay")
+time = clean_mod("pygame.time")
+time._internal_mod_init()  # FIXME: won't work
+# while ./emscripten/src/library_sdl.js:  SDL_CreateMutex: function() { return 0 },
 
+import pygame.cursors as cursors
 
-try:
-    import pygame.time
-except (ImportError, IOError):
-    time = MissingModule("time", urgent=1)
+import pygame_mixer
 
-try:
-    import pygame.transform
-except (ImportError, IOError):
-    transform = MissingModule("transform", urgent=1)
+mixer = clean_mod("pygame.mixer")
 
-# lastly, the "optional" pygame modules
-if "PYGAME_FREETYPE" in os.environ:
-    try:
-        import pygame.ftfont as font
+import pygame_mixer_music
 
-        sys.modules["pygame.font"] = font
-    except (ImportError, IOError):
-        pass
-try:
-    import pygame.font
-    import pygame.sysfont
+music = clean_mod("pygame.mixer_music")
 
-    pygame.font.SysFont = pygame.sysfont.SysFont
-    pygame.font.get_fonts = pygame.sysfont.get_fonts
-    pygame.font.match_font = pygame.sysfont.match_font
-except (ImportError, IOError):
-    font = MissingModule("font", urgent=0)
+mixer.music = music
+#=============================================
+# fix pygame._sdl2
+_sdl2 = type(builtins)("pygame._sdl2")
+sys.modules["pygame._sdl2"] = _sdl2
 
-# try and load pygame.mixer_music before mixer, for py2app...
-try:
-    import pygame.mixer_music
+import pygame__sdl2_sdl2
+sys.modules["pygame._sdl2.sdl2"] = pygame__sdl2_sdl2
+_sdl2.sdl2 = pygame__sdl2_sdl2
 
-    # del pygame.mixer_music
-    # print ("NOTE2: failed importing pygame.mixer_music in lib/__init__.py")
-except (ImportError, IOError):
-    pass
+import pygame_sdl2_video
+sys.modules["pygame._sdl2.video"] = pygame_sdl2_video
+_sdl2.video = pygame_sdl2_video
 
-try:
-    import pygame.mixer
-except (ImportError, IOError):
-    mixer = MissingModule("mixer", urgent=0)
+_sdl2.audio = type(builtins)("pygame._sdl2.audio")
+sys.modules["pygame._sdl2.video"] = _sdl2.audio
 
-try:
-    import pygame.scrap
-except (ImportError, IOError):
-    scrap = MissingModule("scrap", urgent=0)
+#=============================================
+del _sdl2
+sys.modules.pop("pygame._sdl2")
 
-try:
-    import pygame.surfarray
-except (ImportError, IOError):
-    surfarray = MissingModule("surfarray", urgent=0)
+import pygame._sdl2 as _sdl2
 
-try:
-    import pygame.sndarray
-except (ImportError, IOError):
-    sndarray = MissingModule("sndarray", urgent=0)
+#sys.modules["pygame._sdl2.video"] = pygame._sdl2.video
 
-try:
-    import pygame.fastevent
-except (ImportError, IOError):
-    fastevent = MissingModule("fastevent", urgent=0)
+import pygame_context
 
-try:
-    import pygame.context
-except (ImportError, IOError):
-    context = MissingModule("context", urgent=0)
+context = clean_mod("pygame.context")
 
-# there's also a couple "internal" modules not needed
-# by users, but putting them here helps "dependency finder"
-# programs get everything they need (like py2exe)
-try:
-    import pygame.imageext
 
-    del pygame.imageext
-except (ImportError, IOError):
-    pass
+# fastevent is deprecated
 
-# this internal module needs to be included for dependency
-# finders, but can't be deleted, as some tests need it
-try:
-    import pygame.pkgdata
 
-except (ImportError, IOError):
-    pass
+import pygame_sprite
 
+sprite = clean_mod("pygame.sprite")
 
-def packager_imports():
-    """some additional imports that py2app/py2exe will want to see"""
-    import atexit
-    import numpy
-    import OpenGL.GL
-    import pygame.macosx
-    import pygame.colordict
 
+import pygame.pkgdata as pkgdata
 
-# make Rects pickleable
 
-import copyreg
+del clean_mod
 
-
-def __rect_constructor(x, y, w, h):
-    return Rect(x, y, w, h)
-
-
-def __rect_reduce(r):
-    assert isinstance(r, Rect)
-    return __rect_constructor, (r.x, r.y, r.w, r.h)
-
-
-copyreg.pickle(Rect, __rect_reduce, __rect_constructor)
-
-
-# make Colors pickleable
-def __color_constructor(r, g, b, a):
-    return Color(r, g, b, a)
-
-
-def __color_reduce(c):
-    assert isinstance(c, Color)
-    return __color_constructor, (c.r, c.g, c.b, c.a)
-
-
-copyreg.pickle(Color, __color_reduce, __color_constructor)
 
 # Thanks for supporting pygame. Without support now, there won't be pygame later.
 if "PYGAME_HIDE_SUPPORT_PROMPT" not in os.environ:
+    print("\n\n")
+    print(open("/data/data/org.python/assets/pygame.six").read())
+
     print(
         "pygame {} (SDL {}.{}.{}, Python {}.{}.{})".format(  # pylint: disable=consider-using-f-string
             ver, *get_sdl_version() + sys.version_info[0:3]
@@ -396,5 +212,5 @@ if "PYGAME_HIDE_SUPPORT_PROMPT" not in os.environ:
     )
     print("Hello from the pygame community. https://www.pygame.org/contribute.html")
 
-# cleanup namespace
-del pygame, os, sys, MissingModule, copyreg, warn_unwanted_files, packager_imports
+
+#

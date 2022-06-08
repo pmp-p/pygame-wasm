@@ -68,8 +68,9 @@ import sys
 import os
 
 # just import these always and fail early if not present
-import distutils
 from setuptools import setup
+import distutils
+
 
 import distutils.ccompiler
 
@@ -124,7 +125,7 @@ distutils.ccompiler.CCompiler.__spawn = distutils.ccompiler.CCompiler.spawn
 distutils.ccompiler.CCompiler.spawn = spawn
 
 # A (bit hacky) fix for https://github.com/pygame/pygame/issues/2613
-# This is due to the fact that distutils uses command line args to 
+# This is due to the fact that distutils uses command line args to
 # export PyInit_* functions on windows, but those functions are already exported
 # and that is why compiler gives warnings
 from distutils.command.build_ext import build_ext
