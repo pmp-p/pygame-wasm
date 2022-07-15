@@ -152,9 +152,8 @@ PyInit_pixelcopy(void);
 PyMODINIT_FUNC
 PyInit_gfxdraw(void);
 
-
 void
-PyGame_static_init()
+Inittab_pygame()
 {
     PyImport_AppendInittab("pygame_base", PyInit_base);
     PyImport_AppendInittab("pygame_color", PyInit_color);
@@ -189,6 +188,37 @@ PyGame_static_init()
     PyImport_AppendInittab("pygame__sdl2_sdl2_mixer", PyInit_mixer);
     PyImport_AppendInittab("pygame__sdl2_controller", PyInit_controller);
 }
+
+// pygame_static module
+
+static PyObject *
+mod_pygame_static_init(PyObject *self, PyObject *_null)
+{
+    Py_RETURN_NONE;
+}
+
+static PyMethodDef mod_pygame_static_methods[] = {
+    {"init", mod_pygame_static_init, METH_NOARGS, "load all static modules"},
+    {NULL, NULL, 0, NULL}
+};
+
+static struct PyModuleDef mod_pygame_static = {
+    PyModuleDef_HEAD_INIT,
+    "pygame_static",
+    NULL,
+    -1,
+    mod_pygame_static_methods
+};
+
+PyMODINIT_FUNC
+PyInit_pygame_static() {
+    (void)Inittab_pygame;
+    PyObject *pygame_static_mod = PyModule_Create(&mod_pygame_static);
+    PyObject *mod_dict = PyModule_GetDict(pygame_static_mod);
+    PyDict_SetItemString(mod_dict, "base", PyModule_Create((PyModuleDef*)PyInit_base) );
+    return pygame_static_mod;
+}
+
 
 #endif  // defined(BUILD_STATIC)
 
