@@ -6,7 +6,7 @@
         "depends": [],
         "name": "pygame._sdl2.sdl2",
         "sources": [
-            "src_c\\cython\\pygame\\_sdl2\\sdl2.pyx"
+            "src_c/cython/pygame/_sdl2/sdl2.pyx"
         ]
     },
     "module_name": "pygame._sdl2.sdl2"
@@ -918,7 +918,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src_c\\cython\\pygame\\_sdl2\\sdl2.pyx",
+  "src_c/cython/pygame/_sdl2/sdl2.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1365,7 +1365,7 @@ static const char __pyx_k_INIT_NOPARACHUTE[] = "INIT_NOPARACHUTE";
 static const char __pyx_k_pygame__sdl2_sdl2[] = "pygame._sdl2.sdl2";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_INIT_GAMECONTROLLER[] = "INIT_GAMECONTROLLER";
-static const char __pyx_k_src_c_cython_pygame__sdl2_sdl2_p[] = "src_c\\cython\\pygame\\_sdl2\\sdl2.pyx";
+static const char __pyx_k_src_c_cython_pygame__sdl2_sdl2_p[] = "src_c/cython/pygame/_sdl2/sdl2.pyx";
 static PyObject *__pyx_n_s_INIT_AUDIO;
 static PyObject *__pyx_n_s_INIT_EVENTS;
 static PyObject *__pyx_n_s_INIT_EVERYTHING;

@@ -152,73 +152,235 @@ PyInit_pixelcopy(void);
 PyMODINIT_FUNC
 PyInit_gfxdraw(void);
 
-void
-Inittab_pygame()
-{
-    PyImport_AppendInittab("pygame_base", PyInit_base);
-    PyImport_AppendInittab("pygame_color", PyInit_color);
-    PyImport_AppendInittab("pygame_constants", PyInit_constants);
-    PyImport_AppendInittab("pygame_rect", PyInit_rect);
-    PyImport_AppendInittab("pygame_surflock", PyInit_surflock);
-    PyImport_AppendInittab("pygame_rwobject", PyInit_rwobject);
-    PyImport_AppendInittab("pygame_bufferproxy", PyInit_bufferproxy);
-    PyImport_AppendInittab("pygame_math", PyInit_pg_math);
-    PyImport_AppendInittab("pygame_surface", PyInit_surface);
-    PyImport_AppendInittab("pygame_pixelcopy", PyInit_pixelcopy);
-    PyImport_AppendInittab("pygame_transform", PyInit_transform);
-    PyImport_AppendInittab("pygame_display", PyInit_display);
-    PyImport_AppendInittab("pygame__freetype", PyInit__freetype);
-    PyImport_AppendInittab("pygame_font", PyInit_font);
-    PyImport_AppendInittab("pygame_draw", PyInit_draw);
-    PyImport_AppendInittab("pygame_gfxdraw", PyInit_gfxdraw);
-    PyImport_AppendInittab("pygame_imageext", PyInit_imageext);
-    PyImport_AppendInittab("pygame_image", PyInit_image);
-    PyImport_AppendInittab("pygame_mask", PyInit_mask);
-    PyImport_AppendInittab("pygame_mixer_music", PyInit_mixer_music);
-    PyImport_AppendInittab("pygame_mixer", PyInit_pg_mixer);
-    PyImport_AppendInittab("pygame_mouse", PyInit_mouse);
-    PyImport_AppendInittab("pygame_key", PyInit_key);
-    PyImport_AppendInittab("pygame_event", PyInit_event);
-    PyImport_AppendInittab("pygame_joystick", PyInit_joystick);
-    PyImport_AppendInittab("pygame_time", PyInit_pg_time);
-    PyImport_AppendInittab("pygame_sdl2_video", PyInit_video);
-    PyImport_AppendInittab("pygame_context", PyInit_context);
-    PyImport_AppendInittab("pygame_sprite", PyInit__sprite);
-    PyImport_AppendInittab("pygame__sdl2_sdl2", PyInit_sdl2);
-    PyImport_AppendInittab("pygame__sdl2_sdl2_mixer", PyInit_mixer);
-    PyImport_AppendInittab("pygame__sdl2_controller", PyInit_controller);
-}
+PyMODINIT_FUNC
+PyInit_audio(void);
 
 // pygame_static module
 
-static PyObject *
-mod_pygame_static_init(PyObject *self, PyObject *_null)
+void
+load_submodule(PyObject *modules, const char *parent, PyObject *mod,
+               const char *alias)
 {
+    char fqn[1024];
+    snprintf(fqn, sizeof(fqn), "%s.%s", parent, alias);
+
+    PyObject *pmod = PyDict_GetItemString(modules, parent);
+
+    if (!mod) {
+        snprintf(fqn, sizeof(fqn), "ERROR: %s.%s", parent, alias);
+        puts(fqn);
+        PyErr_Print();
+        PyErr_Clear();
+    }
+    else {
+        PyDict_SetItemString(modules, fqn, mod);
+        PyDict_SetItemString(PyModule_GetDict(mod), "__name__",
+                             PyUnicode_FromString(fqn));
+        PyModule_AddObjectRef(pmod, alias, mod);
+        Py_XDECREF(mod);
+    }
+}
+
+void
+load_submodule_mphase(PyObject *modules, const char *parent, PyObject *mdef,
+                      PyObject *spec, const char *alias)
+{
+    char fqn[1024];
+    snprintf(fqn, sizeof(fqn), "%s.%s", parent, alias);
+
+    PyObject *pmod = PyDict_GetItemString(modules, parent);
+
+    PyObject *mod = PyModule_FromDefAndSpec((PyModuleDef *)mdef, spec);
+
+    PyDict_SetItemString(PyModule_GetDict(mod), "__package__",
+                         PyUnicode_FromString(parent));
+
+    // TODO SET PACKAGE
+
+    PyModule_ExecDef( mod, (PyModuleDef*)mdef);
+
+    if (!mod) {
+        snprintf(fqn, sizeof(fqn), "ERROR: %s.%s", parent, alias);
+        puts(fqn);
+    }
+    else {
+        PyDict_SetItemString(modules, fqn, mod);
+        PyDict_SetItemString(PyModule_GetDict(mod), "__name__",
+                             PyUnicode_FromString(fqn));
+        PyModule_AddObjectRef(pmod, alias, mod);
+        Py_XDECREF(mod);
+    }
+    PyErr_Print();
+    PyErr_Clear();
+}
+
+static PyObject *
+mod_pygame_static_sdl2(PyObject *self, PyObject *args)
+{
+    PyObject *modules;
+    PyObject *spec;
+    char *alias;
+
+    if (!PyArg_ParseTuple(args, "OOs", &modules, &spec, &alias)) {
+        return NULL;
+    }
+
+    if (!strcmp(alias, "_sprite")) {
+        load_submodule_mphase(modules, "pygame", PyInit__sprite(), spec,
+                              alias);
+        Py_RETURN_NONE;
+    }
+
+    if (!strcmp(alias, "mixer")) {
+        load_submodule_mphase(modules, "pygame._sdl2", PyInit_mixer(), spec,
+                              alias);
+        Py_RETURN_NONE;
+    }
+
+
+    if (!strcmp(alias, "sdl2")) {
+        load_submodule_mphase(modules, "pygame._sdl2", PyInit_sdl2(), spec,
+                              alias);
+        Py_RETURN_NONE;
+    }
+
+    if (!strcmp(alias, "controller")) {
+        load_submodule_mphase(modules, "pygame._sdl2", PyInit_controller(),
+                              spec, alias);
+        Py_RETURN_NONE;
+    }
+
+    if (!strcmp(alias, "audio")) {
+        load_submodule_mphase(modules, "pygame._sdl2", PyInit_audio(), spec,
+                              alias);
+        Py_RETURN_NONE;
+    }
+
+    if (!strcmp(alias, "video")) {
+        load_submodule_mphase(modules, "pygame._sdl2", PyInit_video(), spec,
+                              alias);
+        Py_RETURN_NONE;
+    }
+
+
+    return NULL;
+
+    /*
+        PyObject *pygame_sdl2 = PyDict_GetItemString(modules, "pygame._sdl2");
+
+        puts("spec:");
+        puts( fqn );
+
+        PyObject *mdef = PyC PyInit_sdl2();
+
+        PyObject *mod = PyModule_FromDefAndSpec( (PyModuleDef*)mdef , spec);
+
+
+        PyModule_AddObjectRef(pygame_sdl2, alias, mod);
+        Py_XDECREF(mod);
+
+        PyDict_SetItemString(modules, fqn, mod);
+
+        PyDict_SetItemString(PyModule_GetDict(mod), "__name__",
+       PyUnicode_FromString(fqn) );
+        //PyErr_Print();
+        //PyErr_Clear();
+
+        return mod;
+    */
+}
+
+static PyObject *
+mod_pygame_static_init(PyObject *self, PyObject *modules)
+{
+    // pdict;
+    // PyObject *pygame = PyDict_GetItemString(modules, "pygame");
+    //
+
+    load_submodule(modules, "pygame", PyInit_base(), "base");
+    load_submodule(modules, "pygame", PyInit_constants(), "constants");
+    load_submodule(modules, "pygame", PyInit_surflock(), "surflock");
+    load_submodule(modules, "pygame", PyInit_rwobject(), "rwobject");
+    load_submodule(modules, "pygame", PyInit_pg_math(), "math");
+    load_submodule(modules, "pygame", PyInit_display(), "display");
+    load_submodule(modules, "pygame", PyInit_surface(), "surface");
+    load_submodule(modules, "pygame", PyInit_context(), "context");
+    load_submodule(modules, "pygame", PyInit_key(), "key");
+
+    load_submodule(modules, "pygame", PyInit_rect(), "rect");
+    load_submodule(modules, "pygame", PyInit_gfxdraw(), "gfxdraw");
+    load_submodule(modules, "pygame", PyInit_pg_time(), "time");
+    load_submodule(modules, "pygame", PyInit__freetype(), "_freetype");
+
+    load_submodule(modules, "pygame", PyInit_imageext(), "imageext");
+
+    load_submodule(modules, "pygame", PyInit_image(), "image");
+    load_submodule(modules, "pygame", PyInit_font(), "font");
+    load_submodule(modules, "pygame", PyInit_pixelcopy(), "pixelcopy");
+
+    load_submodule(modules, "pygame", PyInit_color(), "color");
+    load_submodule(modules, "pygame", PyInit_bufferproxy(), "bufferproxy");
+
+    load_submodule(modules, "pygame", PyInit_transform(), "transform");
+    load_submodule(modules, "pygame", PyInit_draw(), "draw");
+
+    load_submodule(modules, "pygame", PyInit_mask(), "mask");
+    load_submodule(modules, "pygame", PyInit_mouse(), "mouse");
+    load_submodule(modules, "pygame", PyInit_event(), "event");
+    load_submodule(modules, "pygame", PyInit_joystick(), "joystick");
+
+    load_submodule(modules, "pygame", PyInit_pg_mixer(), "mixer");
+
+    load_submodule(modules, "pygame.mixer", PyInit_mixer_music(), "music");
+
+    /* PyModule_Create
+        load_submodule(modules, "pygame", PyInit__sprite(),     "_sprite");
+
+
+
+
+
+        // fill pygame._sdl2 module
+        PyObject *_sdl2 = PyInit_sdl2();
+        pdict = PyModule_GetDict(_sdl2);
+
+
+        load_submodule(modules, "pygame", PyInit_controller(),
+       "_sdl2.controller"); load_submodule(modules, "pygame", PyInit_audio(),
+       "_sdl2.audio"); load_submodule(modules, "pygame", PyInit_video(),
+       "_sdl2.video"); load_submodule(modules, "pygame", PyInit_mixer(),
+       "_sdl2.mixer");
+    */
     Py_RETURN_NONE;
 }
 
 static PyMethodDef mod_pygame_static_methods[] = {
-    {"init", mod_pygame_static_init, METH_NOARGS, "load all static modules"},
-    {NULL, NULL, 0, NULL}
-};
+    {"load_into", mod_pygame_static_init, METH_O, "load all static modules"},
+    {"load_sdl2", mod_pygame_static_sdl2, METH_VARARGS, "pygame._sdl2.sdl2"},
+    {NULL, NULL, 0, NULL}};
 
-static struct PyModuleDef mod_pygame_static = {
-    PyModuleDef_HEAD_INIT,
-    "pygame_static",
-    NULL,
-    -1,
-    mod_pygame_static_methods
-};
+static struct PyModuleDef mod_pygame_static = {PyModuleDef_HEAD_INIT,
+                                               "pygame_static", NULL, -1,
+                                               mod_pygame_static_methods};
 
 PyMODINIT_FUNC
-PyInit_pygame_static() {
-    (void)Inittab_pygame;
-    PyObject *pygame_static_mod = PyModule_Create(&mod_pygame_static);
-    PyObject *mod_dict = PyModule_GetDict(pygame_static_mod);
-    PyDict_SetItemString(mod_dict, "base", PyModule_Create((PyModuleDef*)PyInit_base) );
-    return pygame_static_mod;
+PyInit_pygame_static()
+{
+    /*
+        PyImport_AppendInittab("pygame_sprite", PyInit__sprite);
+        PyImport_AppendInittab("pygame__sdl2_sdl2", PyInit_sdl2);
+        PyImport_AppendInittab("pygame_sdl2_video", PyInit_video);
+        PyImport_AppendInittab("pygame_sdl2_audio", PyInit_audio);
+        PyImport_AppendInittab("pygame__sdl2_controller", PyInit_controller);
+    */
+    return PyModule_Create(&mod_pygame_static);
 }
 
+void
+Inittab_pygame()
+{
+    PyImport_AppendInittab("pygame_static", PyInit_pygame_static);
+}
 
 #endif  // defined(BUILD_STATIC)
 
