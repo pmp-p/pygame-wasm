@@ -158,8 +158,7 @@ PyInit_audio(void);
 // pygame_static module
 
 void
-load_submodule(const char *parent, PyObject *mod,
-               const char *alias)
+load_submodule(const char *parent, PyObject *mod, const char *alias)
 {
     char fqn[1024];
     snprintf(fqn, sizeof(fqn), "%s.%s", parent, alias);
@@ -184,17 +183,17 @@ load_submodule(const char *parent, PyObject *mod,
 }
 
 void
-load_submodule_mphase(const char *parent, PyObject *mdef,
-                      PyObject *spec, const char *alias)
+load_submodule_mphase(const char *parent, PyObject *mdef, PyObject *spec,
+                      const char *alias)
 {
     char fqn[1024];
     snprintf(fqn, sizeof(fqn), "%s.%s", parent, alias);
 
     PyObject *modules = PyImport_GetModuleDict();
 
-    Py_DECREF( PyObject_GetAttrString( spec, "name" ) );
+    Py_DECREF(PyObject_GetAttrString(spec, "name"));
 
-    PyObject_SetAttrString(spec, "name", PyUnicode_FromString(alias) );
+    PyObject_SetAttrString(spec, "name", PyUnicode_FromString(alias));
 
     PyObject *pmod = PyDict_GetItemString(modules, parent);
 
@@ -205,7 +204,7 @@ load_submodule_mphase(const char *parent, PyObject *mdef,
 
     // TODO SET PACKAGE
 
-    PyModule_ExecDef( mod, (PyModuleDef*)mdef);
+    PyModule_ExecDef(mod, (PyModuleDef *)mdef);
 
     if (!mod) {
         snprintf(fqn, sizeof(fqn), "ERROR: %s.%s", parent, alias);
@@ -227,7 +226,8 @@ mod_pygame_import_cython(PyObject *self, PyObject *spec)
 {
     load_submodule_mphase("pygame._sdl2", PyInit_sdl2(), spec, "sdl2");
     load_submodule_mphase("pygame._sdl2", PyInit_mixer(), spec, "mixer");
-    load_submodule_mphase("pygame._sdl2", PyInit_controller(), spec, "controller");
+    load_submodule_mphase("pygame._sdl2", PyInit_controller(), spec,
+                          "controller");
     load_submodule_mphase("pygame._sdl2", PyInit_audio(), spec, "audio");
     load_submodule_mphase("pygame._sdl2", PyInit_video(), spec, "video");
     // depends on pygame._sdl2.video
@@ -235,9 +235,9 @@ mod_pygame_import_cython(PyObject *self, PyObject *spec)
     Py_RETURN_NONE;
 }
 
-
 static PyMethodDef mod_pygame_static_methods[] = {
-    {"import_cython",  (PyCFunction)mod_pygame_import_cython, METH_O, "pygame._sdl2.sdl2"},
+    {"import_cython", (PyCFunction)mod_pygame_import_cython, METH_O,
+     "pygame._sdl2.sdl2"},
     {NULL, NULL, 0, NULL}};
 
 static struct PyModuleDef mod_pygame_static = {PyModuleDef_HEAD_INIT,
@@ -247,7 +247,6 @@ static struct PyModuleDef mod_pygame_static = {PyModuleDef_HEAD_INIT,
 PyMODINIT_FUNC
 PyInit_pygame_static()
 {
-
     load_submodule("pygame", PyInit_base(), "base");
     load_submodule("pygame", PyInit_constants(), "constants");
     load_submodule("pygame", PyInit_surflock(), "surflock");
