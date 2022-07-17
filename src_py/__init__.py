@@ -80,6 +80,39 @@ class MissingModule:
         except ImportError:
             print(message)
 
+# this is a special loader for WebAssembly platform
+# where pygame is actually statically linked
+
+if sys.platform in ("wasi","emscripten"):
+    import pygame_static
+    pygame_static.load_into(sys.modules)
+
+    pygame = sys.modules[__name__]
+
+    pygame.Color = pygame.color.Color
+
+    Vector2 = pygame.math.Vector2
+    Vector3 = pygame.math.Vector3
+
+    Rect = pygame.rect.Rect
+
+    BufferProxy = pygame.bufferproxy.BufferProxy
+
+    # cython modules use multiphase initialisation when not in builtin Inittab.
+
+    import pygame._sdl2 as _sdl2
+
+    import importlib.machinery
+
+    loader = importlib.machinery.FrozenImporter
+    for alias in ("sdl2","audio","video", "controller","mixer"):
+
+        spec = importlib.machinery.ModuleSpec(alias, loader)
+        try:
+            pygame_static.load_sdl2( sys.modules, spec, alias)
+        except Exception as e:
+            MissingModule("threads", urgent=1)
+        loaded = vars(pygame._sdl2).get(alias, None)
 
 # we need to import like this, each at a time. the cleanest way to import
 # our modules is with the import command (not the __import__ function)
