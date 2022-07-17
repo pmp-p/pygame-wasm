@@ -80,11 +80,13 @@ class MissingModule:
         except ImportError:
             print(message)
 
+
 # this is a special loader for WebAssembly platform
 # where pygame is actually statically linked
 
-if sys.platform in ("wasi","emscripten"):
+if sys.platform in ("wasi", "emscripten"):
     import pygame_static
+
     pygame_static.load_into(sys.modules)
 
     pygame = sys.modules[__name__]
@@ -105,14 +107,13 @@ if sys.platform in ("wasi","emscripten"):
     import importlib.machinery
 
     loader = importlib.machinery.FrozenImporter
-    for alias in ("sdl2","audio","video", "controller","mixer"):
+    for alias in ("sdl2", "audio", "video", "controller", "mixer"):
 
         spec = importlib.machinery.ModuleSpec(alias, loader)
         try:
-            pygame_static.load_sdl2( sys.modules, spec, alias)
-        except Exception as e:
-            MissingModule("threads", urgent=1)
-        loaded = vars(pygame._sdl2).get(alias, None)
+            pygame_static.load_sdl2(sys.modules, spec, alias)
+        except:
+            vars(pygame._sdl2)[alias] = MissingModule(alias, urgent=1)
 
 # we need to import like this, each at a time. the cleanest way to import
 # our modules is with the import command (not the __import__ function)
