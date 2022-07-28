@@ -1,4 +1,4 @@
-from typing import Sequence, Tuple, Union
+from typing import Optional, Sequence, Tuple, Union
 
 from pygame.bufferproxy import BufferProxy
 from pygame.surface import Surface
@@ -9,12 +9,12 @@ _BufferStyle = Union[BufferProxy, bytes, bytearray, memoryview]
 _to_string_format = Literal[
     "P", "RGB", "RGBX", "RGBA", "ARGB", "RGBA_PREMULT", "ARGB_PREMULT"
 ]
-_from_buffer_format = Literal["P", "RGB", "BGR", "RGBX", "RGBA", "ARGB"]
+_from_buffer_format = Literal["P", "RGB", "BGR", "BGRA", "RGBX", "RGBA", "ARGB"]
 _from_string_format = Literal["P", "RGB", "RGBX", "RGBA", "ARGB"]
 
 def load(filename: FileArg, namehint: str = "") -> Surface: ...
 def save(surface: Surface, filename: FileArg, namehint: str = "") -> None: ...
-def get_sdl_image_version() -> Union[None, Tuple[int, int, int]]: ...
+def get_sdl_image_version() -> Optional[Tuple[int, int, int]]: ...
 def get_extended() -> bool: ...
 def tostring(
     surface: Surface, format: _to_string_format, flipped: bool = False
