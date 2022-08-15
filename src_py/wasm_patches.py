@@ -1,14 +1,19 @@
 import sys
 import asyncio
+import json
 
-# do no change import order
+from pathlib import Path
 
+#=================================================
+# do no change import order for *thread*
 # patching threading.Thread
 import aio.gthread
-
 # patched module
-
 from threading import Thread
+#=================================================
+
+from platform import window
+
 
 pygame = sys.modules[__package__]
 
@@ -26,7 +31,6 @@ https://github.com/pygame-web/pygbag/issues/16
 # caveats :
 #   - could be possibly very late
 #   - delay cannot be less than frametime at device refresh rate.
-
 
 def patch_set_timer(cust_event_no, millis, loops=0):
     dlay = float(millis) / 1000
@@ -50,13 +54,13 @@ pygame.time.set_timer = patch_set_timer
 # so just clear screen cut music and hope for the best.
 
 
-def pygame_quit():
+def patch_pygame_quit():
     pygame.mixer.music.stop()
     pygame.mixer.music.unload()
     pygame.display.update()
 
 
-pygame.quit = pygame_quit
+pygame.quit = patch_pygame_quit
 
 
 # =====================================================================
@@ -91,32 +95,85 @@ pygame.display.set_mode = patch_pygame_display_set_mode
 tracks = { "current": 0 }
 
 
-
 def patch_pygame_mixer_music_stop_pause_unload():
     last = tracks["current"]
     if last:
-        window.tracks.stop(last)
+        window.MM.stop(last)
         tracks["current"] = 0
 
 pygame.mixer.music.unload = patch_pygame_mixer_music_stop_pause_unload
 
 def patch_pygame_mixer_music_load(fileobj, namehint=""):
-    from platform import window
+
     global tracks
 
     patch_pygame_mixer_music_stop_pause_unload()
 
-    tid = tracks.get( fileobj, 0 )
-    # track was never loaded
-    if not tid:
-        tid = window.tracks.add(fileobj)
+    tid = tracks.get( fileobj, None)
+
+    # stop previously loaded track
+    if tid is not None:
+        window.MM.stop(tid)
+    else:
+        # track was never loaded before
+        track = patch_pygame_mixer_sound(fileobj, auto=True)
+        tid = track.trackid
+
+    # set new current track
     tracks["current"] = tid
+
 pygame.mixer.music.load = patch_pygame_mixer_music_load
 
-def patch_pygame_mixer_music_play(loops=0, start=0.0, fade_ms=0):
-    patch_pygame_mixer_music_stop_pause_unload()
+# TODO various buffer input
+# FIXME tracks hash key
+def patch_pygame_mixer_sound(data, auto=False):
+    global tracks
+    if isinstance(data, (Path,str) ):
+        data = str(data)
+        trackid = tracks.get(data,None)
+        if trackid is not None:
+            return tracks[trackid]
+    else:
+        pdb(__file__, "137 TODO buffer types !")
 
-    window.tracks.play( tracks["current"], loops )
+    if Path(data).is_file():
+        transport = "fs"
+    else:
+        transport = "url"
+
+    cfg= {
+        "url"  : data,
+        "type" : "audio",
+        "auto" : auto,
+        "io" : transport
+    }
+
+    track = window.MM.prepare(data, json.dumps(cfg))
+
+    if track.error:
+        pdb("ERROR: on track",cfg)
+        # TODO stub track
+        return "stub track"
+
+    tracks[data] = track.trackid
+    tracks[track.trackid] = track
+    window.MM.load(track.trackid)
+    return track
+
+def patch_pygame_mixer_SoundPatch():
+    print("pygame mixer SFX patch is now active")
+    pygame.mixer.Sound = patch_pygame_mixer_sound
+
+pygame.mixer.SoundPatch = patch_pygame_mixer_SoundPatch
+
+
+def patch_pygame_mixer_music_play(loops=0, start=0.0, fade_ms=0):
+    trackid = tracks["current"]
+    if trackid:
+        window.MM.stop(trackid)
+        window.MM.play(trackid, loops )
+    else:
+        pdb(__file__, "ERROR 156: no track is loaded")
 
 pygame.mixer.music.play = patch_pygame_mixer_music_play
 
