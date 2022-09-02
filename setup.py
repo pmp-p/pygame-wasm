@@ -6,7 +6,6 @@
 # To configure, compile, install, just run this script.
 #     python setup.py install
 
-import io
 import platform
 import sysconfig
 
@@ -124,7 +123,7 @@ distutils.ccompiler.CCompiler.__spawn = distutils.ccompiler.CCompiler.spawn
 distutils.ccompiler.CCompiler.spawn = spawn
 
 # A (bit hacky) fix for https://github.com/pygame/pygame/issues/2613
-# This is due to the fact that distutils uses command line args to
+# This is due to the fact that distutils uses command line args to 
 # export PyInit_* functions on windows, but those functions are already exported
 # and that is why compiler gives warnings
 from distutils.command.build_ext import build_ext
@@ -290,7 +289,7 @@ if compile_cython:
     for i, kwargs in enumerate(queue):
         kwargs['progress'] = f'[{i + 1}/{count}] '
         cythonize_one(**kwargs)
-
+    
     if cython_only:
         sys.exit(0)
 
@@ -444,7 +443,7 @@ for e in extensions:
 
     if "freetype" in e.name and sys.platform not in ("darwin", "win32"):
         # TODO: fix freetype issues here
-        if sysconfig.get_config_var("MAINCC") != "clang":
+        if sysconfig.get_config_var("MAINCC") != "clang":        
             e.extra_compile_args.append("-Wno-error=unused-but-set-variable")
 
     if "mask" in e.name and sys.platform == "win32":
