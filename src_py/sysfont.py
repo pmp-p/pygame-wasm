@@ -56,30 +56,38 @@ def initsysfonts_win32():
     """initialize fonts dictionary on Windows"""
 
     fontdir = join(os.environ.get("WINDIR", "C:\\Windows"), "Fonts")
-
     fonts = {}
 
     # add fonts entered in the registry
-    key_path = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts"
-    key = _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE, key_path)
+    microsoft_font_dirs = [
+        "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Fonts",
+        "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Fonts",
+    ]
 
-    for i in range(_winreg.QueryInfoKey(key)[1]):
-        try:
-            # name is the font's name e.g. Times New Roman (TrueType)
-            # font is the font's filename e.g. times.ttf
-            name, font, _ = _winreg.EnumValue(key, i)
-        except OSError:
-            break
+    for domain in [_winreg.HKEY_LOCAL_MACHINE, _winreg.HKEY_CURRENT_USER]:
+        for font_dir in microsoft_font_dirs:
+            try:
+                key = _winreg.OpenKey(domain, font_dir)
+            except FileNotFoundError:
+                continue
 
-        if splitext(font)[1].lower() not in OpenType_extensions:
-            continue
-        if not dirname(font):
-            font = join(fontdir, font)
+            for i in range(_winreg.QueryInfoKey(key)[1]):
+                try:
+                    # name is the font's name e.g. Times New Roman (TrueType)
+                    # font is the font's filename e.g. times.ttf
+                    name, font, _ = _winreg.EnumValue(key, i)
+                except OSError:
+                    break
 
-        # Some are named A & B, both names should be processed separately
-        # Ex: the main Cambria file is marked as "Cambria & Cambria Math"
-        for name in name.split("&"):
-            _parse_font_entry_win(name, font, fonts)
+                if splitext(font)[1].lower() not in OpenType_extensions:
+                    continue
+                if not dirname(font):
+                    font = join(fontdir, font)
+
+                # Some are named A & B, both names should be processed separately
+                # Ex: the main Cambria file is marked as "Cambria & Cambria Math"
+                for name in name.split("&"):
+                    _parse_font_entry_win(name, font, fonts)
 
     return fonts
 
@@ -153,13 +161,13 @@ def _font_finder_darwin():
 
     username = os.getenv("USER")
     if username:
-        locations.append("/Users/" + username + "/Library/Fonts")
+        locations.append(f"/Users/{username}/Library/Fonts")
 
     strange_root = "/System/Library/Assets/com_apple_MobileAsset_Font3"
     if exists(strange_root):
         strange_locations = os.listdir(strange_root)
         for loc in strange_locations:
-            locations.append(strange_root + "/" + loc + "/AssetData")
+            locations.append(f"{strange_root}/{loc}/AssetData")
 
     fonts = {}
 
@@ -197,8 +205,8 @@ def initsysfonts_darwin():
 def initsysfonts_unix(path="fc-list"):
     """use the fc-list from fontconfig to get a list of fonts"""
     fonts = {}
-    
-    if sys.platform == 'emscripten':
+
+    if sys.platform == "emscripten":
         return fonts
 
     try:
@@ -350,6 +358,7 @@ def initsysfonts():
         fonts = initsysfonts_darwin()
     else:
         fonts = initsysfonts_unix()
+
     Sysfonts.update(fonts)
     create_aliases()
     is_init = True
@@ -500,6 +509,8 @@ def match_font(name, bold=0, italic=0):
                     bold = 0
                 elif not fontname:
                     fontname = list(styles.values())[0]
+
         if fontname:
             break
+
     return fontname

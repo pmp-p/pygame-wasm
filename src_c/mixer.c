@@ -439,8 +439,13 @@ _init(int freq, int size, int channels, int chunk, char *devicename,
         if (SDL_InitSubSystem(SDL_INIT_AUDIO))
             return RAISE(pgExc_SDLError, SDL_GetError());
 
-#if SDL_MIXER_MAJOR_VERSION >= 2 && SDL_MIXER_MINOR_VERSION >= 0 && \
-    SDL_MIXER_PATCHLEVEL >= 2
+/* This scary looking block is the expansion of
+ * SDL_MIXER_VERSION_ATLEAST(2, 0, 2), but SDL_MIXER_VERSION_ATLEAST is new in
+ * 2.0.2, and we currently aim to support down to 2.0.0 */
+#if ((SDL_MIXER_MAJOR_VERSION >= 2) &&                                \
+     (SDL_MIXER_MAJOR_VERSION > 2 || SDL_MIXER_MINOR_VERSION >= 0) && \
+     (SDL_MIXER_MAJOR_VERSION > 2 || SDL_MIXER_MINOR_VERSION > 0 ||   \
+      SDL_MIXER_PATCHLEVEL >= 2))
         if (Mix_OpenAudioDevice(freq, fmt, channels, chunk, devicename,
                                 allowedchanges) == -1) {
 #else
@@ -1030,16 +1035,17 @@ chan_play(PyObject *self, PyObject *args, PyObject *kwargs)
 }
 
 static PyObject *
-chan_queue(PyObject *self, PyObject *args)
+chan_queue(PyObject *self, PyObject *sound)
 {
     int channelnum = pgChannel_AsInt(self);
-    PyObject *sound;
     Mix_Chunk *chunk;
 
-    if (!PyArg_ParseTuple(args, "O!", &pgSound_Type, &sound))
-        return NULL;
-    chunk = pgSound_AsChunk(sound);
+    if (!pgSound_Check(sound)) {
+        return RAISE(PyExc_TypeError,
+                     "The argument must be an instance of Sound");
+    }
 
+    chunk = pgSound_AsChunk(sound);
     if (!channeldata[channelnum].sound) /*nothing playing*/
     {
         Py_BEGIN_ALLOW_THREADS;
@@ -1134,9 +1140,9 @@ chan_set_volume(PyObject *self, PyObject *args)
 
     MIXER_INIT_CHECK();
     if ((stereovolume <= -1.10f) && (stereovolume >= -1.12f)) {
-        /* The normal volume will be used.  No panning.  so panning is
-         * set to full.  this is incase it was set previously to
-         * something else.  NOTE: there is no way to GetPanning
+        /* The normal volume will be used. No panning. so panning is
+         * set to full. this is in case it was set previously to
+         * something else. NOTE: there is no way to GetPanning
          * variables.
          */
         left = 255;
@@ -1240,7 +1246,7 @@ chan_get_endevent(PyObject *self, PyObject *_null)
 static PyMethodDef channel_methods[] = {
     {"play", (PyCFunction)chan_play, METH_VARARGS | METH_KEYWORDS,
      DOC_CHANNELPLAY},
-    {"queue", chan_queue, METH_VARARGS, DOC_CHANNELQUEUE},
+    {"queue", chan_queue, METH_O, DOC_CHANNELQUEUE},
     {"get_busy", (PyCFunction)chan_get_busy, METH_NOARGS, DOC_CHANNELGETBUSY},
     {"fadeout", chan_fadeout, METH_VARARGS, DOC_CHANNELFADEOUT},
     {"stop", (PyCFunction)chan_stop, METH_NOARGS, DOC_CHANNELSTOP},
@@ -1580,7 +1586,7 @@ _chunk_from_array(void *buf, PG_sample_format_t view_format, int ndim,
      */
     if (step1 == (Py_ssize_t)itemsize * channels && step2 == itemsize) {
         /*OPTIMIZATION: in these cases, we don't need to loop through
-         *the samples individually, because the bytes are already layed
+         *the samples individually, because the bytes are already laid
          *out correctly*/
         memcpy(dst, buf, memsize);
     }

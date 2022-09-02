@@ -36,7 +36,7 @@ def download_sha1_unzip(url, checksum, save_to_directory, unzip=True):
             data = the_file.read()
             cont_checksum = hashlib.sha1(data).hexdigest()
             if cont_checksum == checksum:
-                print("Skipping download url:%s: save_to:%s:" % (url, save_to))
+                print(f"Skipping download url:{url}: save_to:{save_to}:")
     else:
         print("Downloading...", url, checksum)
 
@@ -53,7 +53,7 @@ def download_sha1_unzip(url, checksum, save_to_directory, unzip=True):
 
         if checksum != cont_checksum:
             raise ValueError(
-                'url:%s should have checksum:%s: Has:%s: ' % (url, checksum, cont_checksum)
+                f'url:{url} should have checksum:{checksum}: Has:{cont_checksum}: '
             )
         with open(save_to, 'wb') as f:
             if use_requests:
@@ -62,14 +62,14 @@ def download_sha1_unzip(url, checksum, save_to_directory, unzip=True):
                 f.write(response)
 
     if unzip and filename.endswith('.zip'):
-        print("Unzipping :%s:" % save_to)
+        print(f"Unzipping :{save_to}:")
         with zipfile.ZipFile(save_to, 'r') as zip_ref:
             zip_dir = os.path.join(
                 save_to_directory,
                 filename.replace('.zip', '')
             )
             if os.path.exists(zip_dir):
-                print("Skipping unzip to zip_dir exists:%s:" % zip_dir)
+                print(f"Skipping unzip to zip_dir exists:{zip_dir}:")
             else:
                 os.mkdir(zip_dir)
                 zip_ref.extractall(zip_dir)
@@ -86,12 +86,12 @@ def get_urls(x86=True, x64=True):
         '137f86474691f4e12e76e07d58d5920c8d844d5b',
         ],
         [
-        'https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-devel-2.0.18-VC.zip',
-        'a421d47e9336ab722eac4ba107fab7f7b080eb4e',
+        'https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.0/SDL2_ttf-devel-2.20.0-VC.zip',
+        'd5f6c8bc8084b3fd1decd4e7d2e43ad3f38d4cf4'
         ],
         [
-        'https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-devel-2.0.4-VC.zip',
-        '9097148f4529cf19f805ccd007618dec280f0ecc',
+        'https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.6.0/SDL2_mixer-devel-2.6.0-VC.zip',
+        'f70b5ad1c7ae4b62ae9e8c2a6f8885917d483fe3',
         ],
     ])
     if x86:
@@ -110,7 +110,7 @@ def download_prebuilts(temp_dir, x86=True, x64=True):
     """ For downloading prebuilt dependencies.
     """
     if not os.path.exists(temp_dir):
-        print("Making dir :%s:" % temp_dir)
+        print(f"Making dir :{temp_dir}:")
         os.makedirs(temp_dir)
     for url, checksum in get_urls(x86=x86, x64=x64):
         download_sha1_unzip(url, checksum, temp_dir, 1)
@@ -196,7 +196,7 @@ def place_downloaded_prebuilts(temp_dir, move_to_dir, x86=True, x64=True):
 
     for prebuilt_dir in prebuilt_dirs:
         path = os.path.join(move_to_dir, prebuilt_dir)
-        print("copying into %s" % path)
+        print(f"copying into {path}")
 
         copy(
             os.path.join(
@@ -212,23 +212,23 @@ def place_downloaded_prebuilts(temp_dir, move_to_dir, x86=True, x64=True):
         copy(
             os.path.join(
                 temp_dir,
-                'SDL2_mixer-devel-2.0.4-VC/SDL2_mixer-2.0.4'
+                'SDL2_mixer-devel-2.6.0-VC/SDL2_mixer-2.6.0'
             ),
             os.path.join(
                 move_to_dir,
                 prebuilt_dir,
-                'SDL2_mixer-2.0.4'
+                'SDL2_mixer-2.6.0'
             )
         )
         copy(
             os.path.join(
                 temp_dir,
-                'SDL2_ttf-devel-2.0.18-VC/SDL2_ttf-2.0.18'
+                'SDL2_ttf-devel-2.20.0-VC/SDL2_ttf-2.20.0'
             ),
             os.path.join(
                 move_to_dir,
                 prebuilt_dir,
-                'SDL2_ttf-2.0.18'
+                'SDL2_ttf-2.20.0'
             )
         )
         copy(
@@ -251,13 +251,13 @@ def update(x86=True, x64=True):
 def ask(x86=True, x64=True):
     move_to_dir = "."
     if x64:
-        dest_str = "\"%s/prebuilt-x64\"" % move_to_dir
+        dest_str = f"\"{move_to_dir}/prebuilt-x64\""
     else:
         dest_str = ""
     if x86:
         if dest_str:
-            dest_str = "%s and " % dest_str
-        dest_str = "%s\"%s/prebuilt-x86\"" % (dest_str, move_to_dir)
+            dest_str = f"{dest_str} and "
+        dest_str = f"{dest_str}\"{move_to_dir}/prebuilt-x86\""
     logging.info('Downloading prebuilts to "%s" and copying to %s.', (download_dir, dest_str))
     download_prebuilt = True
 

@@ -103,7 +103,7 @@ static SDL_Event _pg_last_keydown_event = {0};
 /* these macros are no-op here */
 #define PG_LOCK_EVFILTER_MUTEX
 #define PG_UNLOCK_EVFILTER_MUTEX
-#else /* __EMSCRIPTEN__ defined */
+#else /* not on emscripten */
 
 #define PG_LOCK_EVFILTER_MUTEX                                             \
     if (pg_evfilter_mutex) {                                               \
@@ -128,7 +128,7 @@ static SDL_Event _pg_last_keydown_event = {0};
             PG_EXIT(1);                                                    \
         }                                                                  \
     }
-#endif /* __EMSCRIPTEN__ defined */
+#endif /* not on emscripten */
 
 static Uint32
 _pg_repeat_callback(Uint32 interval, void *param)
@@ -149,8 +149,8 @@ _pg_repeat_callback(Uint32 interval, void *param)
 }
 
 /* This function attempts to determine the unicode attribute from
- * the keydown/keyup event. This is used as a last-resort, incase we
- * could not determine the unicode from TEXTINPUT feild. Why?
+ * the keydown/keyup event. This is used as a last-resort, in case we
+ * could not determine the unicode from TEXTINPUT field. Why?
  * Because this function is really basic and cannot determine the
  * fancy unicode characters, just the basic ones
  *
@@ -167,7 +167,7 @@ _pg_unicode_from_event(SDL_Event *event)
     SDL_Keycode key = event->key.keysym.sym;
 
     if (event->key.keysym.mod & KMOD_CTRL) {
-        /* Contol Key held, send control-key related unicode. */
+        /* Control Key held, send control-key related unicode. */
         if (key >= SDLK_a && key <= SDLK_z)
             return key - SDLK_a + 1;
         else {
@@ -222,7 +222,7 @@ _pg_unicode_from_event(SDL_Event *event)
 
 /* Strip a utf-8 encoded string to contain only first character. Also
  * ensure that character can be represented within 3 bytes, because SDL1
- * did not support unicode characters that took up 4 bytes. Incase this
+ * did not support unicode characters that took up 4 bytes. In case this
  * bit of code is not clear, here is a python equivalent
 def _pg_strip_utf8(string):
     if chr(string[0]) <= 0xFFFF:
@@ -314,7 +314,7 @@ _pg_get_event_unicode(SDL_Event *event)
  * Some SDL1 events (SDL_ACTIVEEVENT, SDL_VIDEORESIZE and SDL_VIDEOEXPOSE)
  * are redefined with SDL2, they HAVE to be proxied.
  *
- * SDL_USEREVENT is not proxied, because with SDL2, pygame assignes a
+ * SDL_USEREVENT is not proxied, because with SDL2, pygame assigns a
  * different event in place of SDL_USEREVENT, and users use PGE_USEREVENT
  *
  * Each WINDOW_* event must be defined twice, once as an event, and also
@@ -332,10 +332,8 @@ _pg_pgevent_proxify_helper(Uint32 type, Uint8 proxify)
         _PG_HANDLE_PROXIFY(APP_DIDENTERBACKGROUND);
         _PG_HANDLE_PROXIFY(APP_WILLENTERFOREGROUND);
         _PG_HANDLE_PROXIFY(APP_DIDENTERFOREGROUND);
-#ifdef SDL2_AUDIODEVICE_SUPPORTED
         _PG_HANDLE_PROXIFY(AUDIODEVICEADDED);
         _PG_HANDLE_PROXIFY(AUDIODEVICEREMOVED);
-#endif /* SDL2_AUDIODEVICE_SUPPORTED */
         _PG_HANDLE_PROXIFY(CLIPBOARDUPDATE);
         _PG_HANDLE_PROXIFY(CONTROLLERAXISMOTION);
         _PG_HANDLE_PROXIFY(CONTROLLERBUTTONDOWN);
@@ -362,9 +360,7 @@ _pg_pgevent_proxify_helper(Uint32 type, Uint8 proxify)
         _PG_HANDLE_PROXIFY(FINGERUP);
         _PG_HANDLE_PROXIFY(KEYDOWN);
         _PG_HANDLE_PROXIFY(KEYUP);
-#if SDL_VERSION_ATLEAST(2, 0, 4)
         _PG_HANDLE_PROXIFY(KEYMAPCHANGED);
-#endif
         _PG_HANDLE_PROXIFY(JOYAXISMOTION);
         _PG_HANDLE_PROXIFY(JOYBALLMOTION);
         _PG_HANDLE_PROXIFY(JOYHATMOTION);
@@ -382,12 +378,8 @@ _pg_pgevent_proxify_helper(Uint32 type, Uint8 proxify)
         _PG_HANDLE_PROXIFY(MULTIGESTURE);
         _PG_HANDLE_PROXIFY(NOEVENT);
         _PG_HANDLE_PROXIFY(QUIT);
-#if SDL_VERSION_ATLEAST(2, 0, 2)
         _PG_HANDLE_PROXIFY(RENDER_TARGETS_RESET);
-#endif
-#if SDL_VERSION_ATLEAST(2, 0, 4)
         _PG_HANDLE_PROXIFY(RENDER_DEVICE_RESET);
-#endif
         _PG_HANDLE_PROXIFY(SYSWMEVENT);
         _PG_HANDLE_PROXIFY(TEXTEDITING);
         _PG_HANDLE_PROXIFY(TEXTINPUT);
@@ -706,10 +698,8 @@ _pg_name_from_eventtype(int type)
             return "KeyDown";
         case SDL_KEYUP:
             return "KeyUp";
-#if SDL_VERSION_ATLEAST(2, 0, 4)
         case SDL_KEYMAPCHANGED:
             return "KeyMapChanged";
-#endif
 #if SDL_VERSION_ATLEAST(2, 0, 14)
         case SDL_LOCALECHANGED:
             return "LocaleChanged";
@@ -794,20 +784,14 @@ _pg_name_from_eventtype(int type)
         case SDL_CONTROLLERSENSORUPDATE:
             return "ControllerSensorUpdate";
 #endif /*SDL_VERSION_ATLEAST(2, 0, 14)*/
-#ifdef SDL2_AUDIODEVICE_SUPPORTED
         case SDL_AUDIODEVICEADDED:
             return "AudioDeviceAdded";
         case SDL_AUDIODEVICEREMOVED:
             return "AudioDeviceRemoved";
-#endif /* SDL2_AUDIODEVICE_SUPPORTED */
-#if SDL_VERSION_ATLEAST(2, 0, 2)
         case SDL_RENDER_TARGETS_RESET:
             return "RenderTargetsReset";
-#endif
-#if SDL_VERSION_ATLEAST(2, 0, 4)
         case SDL_RENDER_DEVICE_RESET:
             return "RenderDeviceReset";
-#endif
         case PGE_WINDOWSHOWN:
             return "WindowShown";
         case PGE_WINDOWHIDDEN:
@@ -1065,7 +1049,6 @@ dict_from_event(SDL_Event *event)
             _pg_insobj(dict, "x", PyLong_FromLong(event->window.data1));
             _pg_insobj(dict, "y", PyLong_FromLong(event->window.data2));
             break;
-#ifdef SDL2_AUDIODEVICE_SUPPORTED
         case SDL_AUDIODEVICEADDED:
         case SDL_AUDIODEVICEREMOVED:
             _pg_insobj(
@@ -1079,7 +1062,6 @@ dict_from_event(SDL_Event *event)
             _pg_insobj(dict, "iscapture",
                        PyLong_FromLong(event->adevice.iscapture));
             break;
-#endif /* SDL2_AUDIODEVICE_SUPPORTED */
         case SDL_FINGERMOTION:
         case SDL_FINGERDOWN:
         case SDL_FINGERUP:
@@ -1547,14 +1529,13 @@ event_name(PyObject *self, PyObject *arg)
 static PyObject *
 set_grab(PyObject *self, PyObject *arg)
 {
-    int doit;
-    SDL_Window *win = NULL;
-
-    if (!PyArg_ParseTuple(arg, "p", &doit))
+    int doit = PyObject_IsTrue(arg);
+    if (doit == -1)
         return NULL;
+
     VIDEO_INIT_CHECK();
 
-    win = pg_GetDefaultWindow();
+    SDL_Window *win = pg_GetDefaultWindow();
     if (win) {
         if (doit) {
             SDL_SetWindowGrab(win, SDL_TRUE);
@@ -2208,7 +2189,7 @@ static PyMethodDef _event_methods[] = {
 
     {"event_name", event_name, METH_VARARGS, DOC_PYGAMEEVENTEVENTNAME},
 
-    {"set_grab", set_grab, METH_VARARGS, DOC_PYGAMEEVENTSETGRAB},
+    {"set_grab", set_grab, METH_O, DOC_PYGAMEEVENTSETGRAB},
     {"get_grab", (PyCFunction)get_grab, METH_NOARGS, DOC_PYGAMEEVENTGETGRAB},
 
     {"pump", (PyCFunction)pg_event_pump, METH_NOARGS, DOC_PYGAMEEVENTPUMP},

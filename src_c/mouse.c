@@ -101,7 +101,7 @@ mouse_get_pos(PyObject *self, PyObject *_null)
 }
 
 static PyObject *
-mouse_get_rel(PyObject *self)
+mouse_get_rel(PyObject *self, PyObject *_null)
 {
     int x, y;
 
@@ -214,7 +214,7 @@ mouse_get_visible(PyObject *self, PyObject *_null)
 }
 
 static PyObject *
-mouse_get_focused(PyObject *self)
+mouse_get_focused(PyObject *self, PyObject *_null)
 {
     VIDEO_INIT_CHECK();
     return PyBool_FromLong(SDL_GetMouseFocus() != NULL);
@@ -240,7 +240,7 @@ struct CursorData {
 Since cursor_data type and constant both initialize to zero,
 When get_cursor() is called before set_cursor() has set something,
 it sees a type 0 (system cursor) cursor with the constant 0.
-The SDL2 constant SDL_SYSTEM_CURSOR_ARROW is 0, so it wil return the
+The SDL2 constant SDL_SYSTEM_CURSOR_ARROW is 0, so it will return the
 default cursor.*/
 
 static PyObject *
@@ -465,14 +465,14 @@ static PyMethodDef _mouse_methods[] = {
     {"set_pos", mouse_set_pos, METH_VARARGS, DOC_PYGAMEMOUSESETPOS},
     {"get_pos", (PyCFunction)mouse_get_pos, METH_NOARGS,
      DOC_PYGAMEMOUSEGETPOS},
-    {"get_rel", (PyCFunction)mouse_get_rel, METH_VARARGS,
+    {"get_rel", (PyCFunction)mouse_get_rel, METH_NOARGS,
      DOC_PYGAMEMOUSEGETREL},
     {"get_pressed", (PyCFunction)mouse_get_pressed,
      METH_VARARGS | METH_KEYWORDS, DOC_PYGAMEMOUSEGETPRESSED},
     {"set_visible", mouse_set_visible, METH_VARARGS,
      DOC_PYGAMEMOUSESETVISIBLE},
     {"get_visible", mouse_get_visible, METH_NOARGS, DOC_PYGAMEMOUSEGETVISIBLE},
-    {"get_focused", (PyCFunction)mouse_get_focused, METH_VARARGS,
+    {"get_focused", (PyCFunction)mouse_get_focused, METH_NOARGS,
      DOC_PYGAMEMOUSEGETFOCUSED},
     {"set_system_cursor", mouse_set_system_cursor, METH_VARARGS,
      "set_system_cursor(constant) -> None\nset the mouse cursor to a system "
