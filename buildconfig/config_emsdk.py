@@ -18,6 +18,16 @@ if os.environ.get("PYGAME_EXTRA_BASE"):
 else:
     extrabases = []
 
+EMSDK = os.environ.get("EMSDK", None)
+is_wasm = EMSDK is not None
+if not is_wasm:
+    print("EMSDK not found")
+    raise SystemExit(1)
+
+# EMCC_CFLAGS="-s USE_SDL=2 is required to prevent '-iwithsysroot/include/SDL'
+# which is SDL1 from ./emscripten/tools/ports/__init__.py
+# but CI is not expected to have that problem and that would trigger useless
+# rebuild
 
 EMCC_CFLAGS = os.environ.get("EMCC_CFLAGS", "")
 
@@ -45,61 +55,67 @@ CC = os.environ.get("CC", "emcc")
 os.environ["CC"] = CC.strip()
 
 
-
 class DependencyProg:
-    def __init__(self, name, envname, exename, minver, defaultlibs, version_flag="--version"):
+    def __init__(
+        self, name, envname, exename, minver, defaultlibs, version_flag="--version"
+    ):
         self.name = name
         command = os.environ.get(envname, exename)
-        self.lib_dir = ''
-        self.inc_dir = ''
+        self.lib_dir = ""
+        self.inc_dir = ""
         self.libs = []
-        self.cflags = ''
+        self.cflags = ""
         try:
             # freetype-config for freetype2 version 2.3.7 on Debian lenny
             # does not recognize multiple command line options. So execute
             # 'command' separately for each option.
-            config = (os.popen(command + ' ' + version_flag).readlines() +
-                      os.popen(command + ' --cflags').readlines() +
-                      os.popen(command + ' --libs').readlines())
-            flags = ' '.join(config[1:]).split()
+            config = (
+                os.popen(command + " " + version_flag).readlines()
+                + os.popen(command + " --cflags").readlines()
+                + os.popen(command + " --libs").readlines()
+            )
+            flags = " ".join(config[1:]).split()
 
             # remove this GNU_SOURCE if there... since python has it already,
             #   it causes a warning.
-            if '-D_GNU_SOURCE=1' in flags:
-                flags.remove('-D_GNU_SOURCE=1')
+            if "-D_GNU_SOURCE=1" in flags:
+                flags.remove("-D_GNU_SOURCE=1")
             self.ver = config[0].strip()
             if minver and self.ver < minver:
-                err= f'WARNING: requires {self.name} version {self.ver} ({minver} found)'
+                err = (
+                    f"WARNING: requires {self.name} version {self.ver} ({minver} found)"
+                )
                 raise ValueError(err)
             self.found = 1
-            self.cflags = ''
+            self.cflags = ""
             for f in flags:
-                if f[:2] in ('-l', '-D', '-I', '-L'):
-                    self.cflags += f + ' '
-                elif f[:3] == '-Wl':
-                    self.cflags += '-Xlinker ' + f + ' '
+                if f[:2] in ("-l", "-D", "-I", "-L"):
+                    self.cflags += f + " "
+                elif f[:3] == "-Wl":
+                    self.cflags += "-Xlinker " + f + " "
 
-            if self.name == 'SDL':
+            if self.name == "SDL":
                 inc = f"-I{EMSDK}/upstream/emscripten/cache/sysroot/include/SDL2 "
                 inc += f"-I{EMSDK}/upstream/emscripten/cache/sysroot/include/freetype2/freetype "
-                self.cflags = inc + ' ' + self.cflags
+                self.cflags = inc + " " + self.cflags
 
-            if self.name == 'FREETYPE':
+            if self.name == "FREETYPE":
                 inc = f"-I{EMSDK}/upstream/emscripten/cache/sysroot/include/freetype2/freetype "
-                self.cflags = inc + ' ' + self.cflags
+                self.cflags = inc + " " + self.cflags
 
         except (ValueError, TypeError):
             print(f'WARNING: "{command}" failed!')
             self.found = 0
-            self.ver = '0'
+            self.ver = "0"
             self.libs = defaultlibs
 
     def configure(self, incdirs, libdir):
         if self.found:
-            print(self.name + '        '[len(self.name):] + ': found ' + self.ver)
+            print(self.name + "        "[len(self.name) :] + ": found " + self.ver)
             self.found = 1
         else:
-            print(self.name + '        '[len(self.name):] + ': not found')
+            print(self.name + "        "[len(self.name) :] + ": not found")
+
 
 class Dependency:
     def __init__(self, name, checkhead, checklib, libs):
