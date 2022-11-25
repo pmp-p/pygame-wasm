@@ -15,6 +15,7 @@
 
 #if defined(__EMSCRIPTEN__)
 #undef WITH_THREAD
+#include "emscripten.h"
 #endif
 
 #if defined(BUILD_STATIC)
@@ -131,8 +132,8 @@ PyInit_sdl2(void);
 PyMODINIT_FUNC
 PyInit_mixer(void);
 
-PyMODINIT_FUNC
-PyInit_context(void);
+//PyMODINIT_FUNC
+//PyInit_context(void);
 
 PyMODINIT_FUNC
 PyInit_controller(void);
@@ -254,7 +255,7 @@ PyInit_pygame_static()
     load_submodule("pygame", PyInit_pg_math(), "math");
     load_submodule("pygame", PyInit_display(), "display");
     load_submodule("pygame", PyInit_surface(), "surface");
-    load_submodule("pygame", PyInit_context(), "context");
+//    load_submodule("pygame", PyInit_context(), "context");
     load_submodule("pygame", PyInit_key(), "key");
 
     load_submodule("pygame", PyInit_rect(), "rect");
@@ -286,7 +287,7 @@ PyInit_pygame_static()
     return PyModule_Create(&mod_pygame_static);
 }
 
-void
+void EMSCRIPTEN_KEEPALIVE
 pygame_Inittab()
 {
     PyImport_AppendInittab("pygame_static", PyInit_pygame_static);
@@ -327,6 +328,8 @@ pygame_Inittab()
 #undef pgSurface_SetSurface
 
 #include "surface.c"
+#include "simd_blitters_avx2.c"
+#include "simd_blitters_sse2.c"
 
 #undef pgVidInfo_Type
 #undef pgVidInfo_New

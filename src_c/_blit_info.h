@@ -1,3 +1,5 @@
+#pragma once
+
 #define NO_PYGAME_C_API
 #include "_surface.h"
 
