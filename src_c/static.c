@@ -15,7 +15,6 @@
 
 #if defined(__EMSCRIPTEN__)
 #undef WITH_THREAD
-#include "emscripten.h"
 #endif
 
 #if defined(BUILD_STATIC)
@@ -285,12 +284,6 @@ PyInit_pygame_static()
     load_submodule("pygame.mixer", PyInit_mixer_music(), "music");
 
     return PyModule_Create(&mod_pygame_static);
-}
-
-void EMSCRIPTEN_KEEPALIVE
-pygame_Inittab()
-{
-    PyImport_AppendInittab("pygame_static", PyInit_pygame_static);
 }
 
 #endif  // defined(BUILD_STATIC)
