@@ -83,6 +83,7 @@ class MissingModule:
         except ImportError:
             print(message)
 
+
 # this is a special loader for WebAssembly platform
 # where pygame is actually statically linked
 # mixing single phase (C) and multiphase modules (cython)
